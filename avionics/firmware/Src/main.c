@@ -749,12 +749,12 @@ static void OnStateChange(FlightState_t old_state, FlightState_t new_state)
 
 static void OnFireDrogue(void)
 {
-    Pyro_Fire(&pyro, 0);  /* Channel 0 = drogue */
+    Pyro_Fire(&pyro, PYRO_CHANNEL_DROGUE);
 }
 
 static void OnFireMain(void)
 {
-    Pyro_Fire(&pyro, 1);  /* Channel 1 = main */
+    Pyro_Fire(&pyro, PYRO_CHANNEL_MAIN);
 }
 
 static HAL_StatusTypeDef LoRaTransmit(uint8_t *data, uint16_t len)
