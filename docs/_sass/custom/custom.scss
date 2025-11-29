@@ -1,0 +1,93 @@
+// IREC 2026 Custom Styles
+// ========================
+
+$accent-blue: #00d4ff;
+$accent-orange: #ff6b35;
+$accent-green: #00ff88;
+$dark-bg: #0d1117;
+$darker-bg: #010409;
+$card-bg: #161b22;
+$border-color: #30363d;
+$text-primary: #e6edf3;
+
+// Site title gradient
+.site-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, $accent-blue, $accent-green);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+// Navigation
+.nav-list-link:hover {
+  color: $accent-blue !important;
+}
+
+.nav-list-link.active {
+  background: rgba($accent-blue, 0.15);
+  border-left: 3px solid $accent-blue;
+}
+
+// Headings
+h1 {
+  border-bottom: 3px solid $accent-blue;
+  padding-bottom: 0.5rem;
+}
+
+// Horizontal rules
+hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, $accent-blue, transparent);
+  margin: 2rem 0;
+}
+
+// Blockquotes
+blockquote {
+  background: $card-bg;
+  border-left: 4px solid $accent-orange;
+  border-radius: 0 8px 8px 0;
+  padding: 1rem 1.5rem;
+}
+
+// Inline code
+code.highlighter-rouge {
+  background: rgba($accent-blue, 0.1);
+  border: 1px solid rgba($accent-blue, 0.2);
+  border-radius: 4px;
+  padding: 2px 6px;
+  color: $accent-blue;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+// Scrollbar
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: $darker-bg;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $border-color;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $accent-blue;
+}
+
+// Selection
+::selection {
+  background: rgba($accent-blue, 0.3);
+}
+
+// Smooth scroll
+html {
+  scroll-behavior: smooth;
+}

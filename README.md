@@ -1,4 +1,16 @@
-# 🚀 ANKA Avionics - IREC 2026
+# IREC-2026
+
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=180&section=header&text=IREC%202026&fontSize=42&fontColor=fff&animation=twinkling&fontAlignY=32"/>
+</p>
+
+<p align="center">
+  <img src="https://media.giphy.com/media/3oKIPtjElfqwMOTbH2/giphy.gif" width="200"/>
+</p>
+
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=3584E4&center=true&vCenter=true&random=false&width=435&lines=Flight+Computer+Firmware;Dual+Redundant+Avionics;10K+COTS+Category" alt="Typing SVG" />
+</p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Competition-IREC%202026-red?style=for-the-badge" />
@@ -6,102 +18,53 @@
   <img src="https://img.shields.io/badge/MCU-STM32F429ZIT6-green?style=for-the-badge" />
 </p>
 
----
+<p align="center">
+  <img src="https://img.shields.io/badge/Status-In%20Development-yellow?style=flat-square" />
+  <img src="https://img.shields.io/github/last-commit/Bumply/IREC-2026?style=flat-square" />
+</p>
 
-## 📋 SRAD Flight Computer
-
-| Parameter | Value |
-|-----------|-------|
-| **MCU** | STM32F429ZIT6 (ARM Cortex-M4F @ 180MHz) |
-| **IMU 1** | MPU-9250 (Accel/Gyro/Mag) |
-| **IMU 2** | BNO055 (9-DOF + Sensor Fusion) |
-| **Baro 1** | BMP380 (0.016 Pa resolution) |
-| **Baro 2** | MS5611 (±10 cm resolution) |
-| **GPS** | NEO-7M (5 Hz, NMEA/UBX) |
-| **Telemetry** | E32-433T30D LoRa (433 MHz, 30dBm) |
-| **Storage** | W25Q40CLSNIG Flash (512 KB) |
-| **Pyro Channels** | 2x IRFU120 MOSFET drivers |
+<p align="center">
+  <a href="https://bumply.github.io/IREC-2026/"><strong>View Full Documentation</strong></a>
+</p>
 
 ---
 
-## 🏗️ Project Structure
+## Hardware
+
+| Component | Part | Interface |
+|-----------|------|-----------|
+| MCU | STM32F429ZIT6 | 180MHz Cortex-M4F |
+| IMU 1 | MPU-9250 | I2C1 (0x68) |
+| IMU 2 | BNO055 | I2C2 (0x28) |
+| Baro 1 | BMP380 | I2C1 (0x77) |
+| Baro 2 | MS5611 | I2C1 (0x76) |
+| GPS | NEO-7M | UART2 |
+| Radio | E32-433T30D | UART3 |
+| Flash | W25Q40 | SPI1 |
+| Pyro | 2x IRFU120 | GPIO |
+
+---
+
+## Project Structure
 
 ```
 avionics/
-├── firmware/
-│   ├── Drivers/
-│   │   ├── MPU9250/        # Primary IMU driver
-│   │   ├── BNO055/         # Backup IMU + fusion
-│   │   ├── BMP380/         # Primary barometer
-│   │   ├── MS5611/         # Backup barometer
-│   │   ├── NEO7M/          # GPS (NMEA parser)
-│   │   └── E32_LoRa/       # LoRa telemetry
-│   └── README.md
-└── README.md
+└── firmware/
+    ├── Drivers/    # Sensor & peripheral drivers
+    ├── Inc/        # Header files
+    ├── Src/        # Source files
+    └── Startup/    # Boot code
 ```
 
 ---
 
-## 🎯 Avionics System
+## Documentation
 
-### COTS Components
-| Component | Type | Purpose |
-|-----------|------|---------|
-| RRC3 Sport | Altimeter | Primary dual-deployment |
-| EasyMini | Altimeter | Backup dual-deployment |
-| Featherweight GPS | Tracker | Recovery tracking (915 MHz) |
+Full technical documentation available at **[bumply.github.io/IREC-2026](https://bumply.github.io/IREC-2026/)**
 
-### SRAD Flight Computer Sensors
-| Type | Primary | Backup | Purpose |
-|------|---------|--------|---------|
-| **IMU** | MPU9250 | BNO055 | Orientation, acceleration |
-| **Barometer** | BMP380 | MS5611 | Altitude, apogee detection |
-| **GPS** | NEO-7M | — | Position tracking |
-| **Radio** | E32-433T30D | — | Live telemetry (433 MHz) |
-
----
-
-## 🔧 Driver Features
-
-### MPU9250 (Primary IMU)
-- 9-DOF (Accel ±16g, Gyro ±2000°/s, Mag)
-- I2C interface, configurable sample rates
-- Gyroscope calibration routine
-
-### BNO055 (Backup IMU)
-- Built-in sensor fusion (Cortex-M0)
-- Euler angles, Quaternions output
-- Linear acceleration (gravity removed)
-- Calibration save/restore
-
-### BMP380 (Primary Barometer)
-- 0.016 Pa RMS noise
-- IIR filtering, up to 200 Hz ODR
-- Altitude calculation with sea-level calibration
-
-### MS5611 (Backup Barometer)
-- 24-bit ADC, ±10cm resolution
-- Second-order temperature compensation
-- Fast conversion (OSR selectable)
-
-### NEO-7M (GPS)
-- NMEA parsing (GGA, RMC, GSA, GSV)
-- UBX protocol for configuration
-- Haversine distance calculation
-
-### E32-433T30D (LoRa)
-- 433 MHz ISM band
-- 30dBm TX power (8km range LOS)
-- Transparent & fixed address modes
-
----
-
-## 👥 Team
-
-**Zenith Rocket Team** - Atılım University, Ankara, Turkey
-
----
-
-## 📜 License
-
-Educational project for IREC 2026 competition.
+- System Overview
+- Flight State Machine
+- Sensor Fusion (Kalman Filter)
+- Hardware Drivers
+- Telemetry Protocol
+- Data Logging

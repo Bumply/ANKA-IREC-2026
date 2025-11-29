@@ -1,10 +1,10 @@
-# 📋 ANKA Avionics - TODO
+# IREC-2026 - TODO
 
 > **Last Updated:** November 29, 2025
 
 ---
 
-## ✅ COMPLETED
+## COMPLETED
 
 ### Sensor Drivers
 - [x] MPU9250 IMU driver (I2C)
@@ -16,7 +16,7 @@
 
 ---
 
-## 🔴 HIGH PRIORITY
+## HIGH PRIORITY
 
 ### Firmware Core
 - [ ] Main flight state machine
@@ -34,7 +34,7 @@
 
 ---
 
-## 🟡 MEDIUM PRIORITY
+## MEDIUM PRIORITY
 
 ### Firmware Features
 - [ ] W25Q flash memory driver
@@ -53,7 +53,7 @@
 
 ---
 
-## 🟢 LOW PRIORITY
+## LOW PRIORITY
 
 ### Optimization
 - [ ] DMA for sensor reads
@@ -68,7 +68,7 @@
 
 ---
 
-## 📝 Notes
+## Notes
 
 - All drivers use STM32 HAL library
 - I2C sensors on same bus (different addresses)

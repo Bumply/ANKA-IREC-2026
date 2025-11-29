@@ -13,7 +13,7 @@
  * Baro 1 (BMP380):      I2C1 (shared with MPU9250)
  * Baro 2 (MS5611):      I2C1 (shared with MPU9250 and BMP380)
  * GPS (NEO-7M):         UART2 (PA2-TX, PA3-RX)
- * LoRa (E32-433T30D):   UART3 (PB10-TX, PB11-RX), M0=PC0, M1=PC1, AUX=PC2
+ * LoRa (E32-433T30D):   UART3 (PD8-TX, PD9-RX), M0=PC0, M1=PC1, AUX=PC2
  * Flash (W25Q40):       SPI1 (PA5-SCK, PA6-MISO, PA7-MOSI, PA4-CS)
  * Pyro 1 (Drogue):      PE0 (Fire), PE1 (Continuity ADC/Digital)
  * Pyro 2 (Main):        PE2 (Fire), PE3 (Continuity ADC/Digital)
