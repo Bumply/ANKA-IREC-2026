@@ -166,6 +166,17 @@ int main(void)
     /* Initialize pyro system */
     Pyro_Init(&pyro);
     
+    /* Configure pyro channels - CRITICAL for deployment! */
+    Pyro_ConfigureChannel(&pyro, PYRO_CHANNEL_DROGUE, PYRO1_FIRE_PORT, PYRO1_FIRE_PIN);
+    Pyro_ConfigureChannel(&pyro, PYRO_CHANNEL_MAIN, PYRO2_FIRE_PORT, PYRO2_FIRE_PIN);
+    
+    /* Configure continuity sensing */
+    Pyro_ConfigureContinuity(&pyro, PYRO_CHANNEL_DROGUE, PYRO1_CONT_PORT, PYRO1_CONT_PIN, NULL, 0);
+    Pyro_ConfigureContinuity(&pyro, PYRO_CHANNEL_MAIN, PYRO2_CONT_PORT, PYRO2_CONT_PIN, NULL, 0);
+    
+    /* Configure arm switch */
+    Pyro_ConfigureArmSwitch(&pyro, ARM_SWITCH_PORT, ARM_SWITCH_PIN, false);  /* Active low */
+    
     /*========================================================================
      * SELF TEST
      *========================================================================*/
@@ -286,9 +297,9 @@ static bool InitializeSensors(void)
     
     /* BMP380 (Primary Barometer) */
     if (BMP380_Init(&bmp380, &hi2c1, BMP380_DEFAULT_ADDR) == HAL_OK) {
-        BMP380_Configure(&bmp380, BMP380_OVERSAMPLING_2X, BMP380_OVERSAMPLING_8X,
+        BMP380_Configure(&bmp380, BMP380_OSR_x2, BMP380_OSR_x8,
                          BMP380_ODR_50_HZ, BMP380_IIR_COEF_3);
-        BMP380_SetMode(&bmp380, BMP380_MODE_NORMAL);
+        BMP380_SetMode(&bmp380, BMP380_MODE_NORMAL_E);
         status_flags |= TLM_FLAG_BARO1_OK;
     } else {
         all_ok = false;
@@ -303,7 +314,8 @@ static bool InitializeSensors(void)
     
     /* NEO-7M GPS */
     if (NEO7M_Init(&gps, &huart2) == HAL_OK) {
-        NEO7M_SetUpdateRate(&gps, 5);  /* 5 Hz */
+        NEO7M_StartReceiving(&gps);     /* Start UART interrupt reception */
+        NEO7M_SetUpdateRate(&gps, 5);   /* 5 Hz */
         status_flags |= TLM_FLAG_GPS_OK;
     } else {
         /* GPS failure is not critical */
@@ -312,6 +324,7 @@ static bool InitializeSensors(void)
     /* E32 LoRa */
     E32_Init(&lora, &huart3, LORA_M0_PORT, LORA_M0_PIN,
              LORA_M1_PORT, LORA_M1_PIN, LORA_AUX_PORT, LORA_AUX_PIN);
+    E32_StartReceiving(&lora);  /* Start UART interrupt reception for commands */
     
     return all_ok;
 }
@@ -543,16 +556,16 @@ static void TransmitTelemetry(void)
     Telemetry_SendStatus(&telemetry, &status);
     
     /* Send GPS packet if we have a fix */
-    if (gps.fix_valid) {
+    if (gps.fix_available) {
         TLM_GPS_Payload_t gps_tlm;
         gps_tlm.timestamp = HAL_GetTick();
         gps_tlm.latitude = (int32_t)(gps.latitude * 1e7);
         gps_tlm.longitude = (int32_t)(gps.longitude * 1e7);
-        gps_tlm.altitude_msl = (int32_t)(gps.altitude * 1000);
-        gps_tlm.ground_speed = (uint16_t)(gps.speed * 100);
+        gps_tlm.altitude_msl = (int32_t)(gps.altitude_msl * 1000);
+        gps_tlm.ground_speed = (uint16_t)(gps.speed_kmh * 100 / 3.6f);  /* km/h to cm/s */
         gps_tlm.heading = (int16_t)(gps.course * 100);
-        gps_tlm.satellites = gps.satellites;
-        gps_tlm.fix_type = gps.fix_valid ? 3 : 0;
+        gps_tlm.satellites = gps.satellites_used;
+        gps_tlm.fix_type = gps.fix_available ? 3 : 0;
         gps_tlm.hdop = (uint8_t)(gps.hdop * 10);
         gps_tlm.reserved = 0;
         
@@ -577,9 +590,9 @@ static void LogData(void)
         (int16_t)(data->roll * 10),
         (int16_t)(data->pitch * 10),
         (int16_t)(data->yaw * 10),
-        (int16_t)(mpu9250.accel_x * 1000 / 9.81f),
-        (int16_t)(mpu9250.accel_y * 1000 / 9.81f),
-        (int16_t)(mpu9250.accel_z * 1000 / 9.81f),
+        (int16_t)(mpu9250.accel.x * 1000 / 9.81f),
+        (int16_t)(mpu9250.accel.y * 1000 / 9.81f),
+        (int16_t)(mpu9250.accel.z * 1000 / 9.81f),
         (uint8_t)FlightState_GetState(&fsm),
         status_flags);
 }
@@ -903,6 +916,10 @@ static void MX_USART2_UART_Init(void)
     huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
     huart2.Init.OverSampling = UART_OVERSAMPLING_16;
     HAL_UART_Init(&huart2);
+    
+    /* Enable UART2 interrupt for GPS reception */
+    HAL_NVIC_SetPriority(USART2_IRQn, 5, 0);
+    HAL_NVIC_EnableIRQ(USART2_IRQn);
 }
 
 static void MX_USART3_UART_Init(void)
@@ -916,6 +933,10 @@ static void MX_USART3_UART_Init(void)
     huart3.Init.HwFlowCtl = UART_HWCONTROL_NONE;
     huart3.Init.OverSampling = UART_OVERSAMPLING_16;
     HAL_UART_Init(&huart3);
+    
+    /* Enable UART3 interrupt for LoRa reception */
+    HAL_NVIC_SetPriority(USART3_IRQn, 5, 0);
+    HAL_NVIC_EnableIRQ(USART3_IRQn);
 }
 
 static void MX_ADC1_Init(void)
@@ -1000,6 +1021,70 @@ void Error_Handler(void)
         HAL_GPIO_TogglePin(LED_STATUS_PORT, LED_STATUS_PIN);
         for (volatile int i = 0; i < 500000; i++);
     }
+}
+
+/*============================================================================
+ * UART INTERRUPT CALLBACKS - CRITICAL FOR GPS AND LORA RECEPTION
+ *============================================================================*/
+
+/* Single byte receive buffers */
+static uint8_t gps_rx_byte;
+static uint8_t lora_rx_byte;
+
+/**
+ * @brief UART Receive Complete Callback
+ * Called when a byte is received via interrupt
+ */
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+{
+    if (huart->Instance == USART2) {
+        /* GPS data received */
+        NEO7M_ProcessByte(&gps, gps_rx_byte);
+        /* Re-enable reception for next byte */
+        HAL_UART_Receive_IT(&huart2, &gps_rx_byte, 1);
+    }
+    else if (huart->Instance == USART3) {
+        /* LoRa data received */
+        E32_ProcessByte(&lora, lora_rx_byte);
+        /* Also feed to telemetry for command parsing */
+        Telemetry_ProcessByte(&telemetry, lora_rx_byte);
+        /* Re-enable reception for next byte */
+        HAL_UART_Receive_IT(&huart3, &lora_rx_byte, 1);
+    }
+}
+
+/**
+ * @brief UART Error Callback
+ */
+void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart)
+{
+    /* Clear error flags and restart reception */
+    if (huart->Instance == USART2) {
+        HAL_UART_Receive_IT(&huart2, &gps_rx_byte, 1);
+    }
+    else if (huart->Instance == USART3) {
+        HAL_UART_Receive_IT(&huart3, &lora_rx_byte, 1);
+    }
+}
+
+/*============================================================================
+ * UART IRQ HANDLERS - Route to HAL
+ *============================================================================*/
+
+/**
+ * @brief USART2 Interrupt Handler (GPS)
+ */
+void USART2_IRQHandler(void)
+{
+    HAL_UART_IRQHandler(&huart2);
+}
+
+/**
+ * @brief USART3 Interrupt Handler (LoRa)
+ */
+void USART3_IRQHandler(void)
+{
+    HAL_UART_IRQHandler(&huart3);
 }
 
 #ifdef USE_FULL_ASSERT
