@@ -55,7 +55,7 @@ static MS5611_Handle_t ms5611;
 static NEO7M_Handle_t gps;
 static E32_Handle_t lora;
 static W25Q_Handle_t flash;
-static PyroSystem_t pyro;
+static Pyro_Handle_t pyro;
 
 /* Core modules */
 static FlightStateMachine_t fsm;
@@ -270,16 +270,14 @@ static bool InitializeSensors(void)
     bool all_ok = true;
     
     /* MPU9250 (Primary IMU) */
-    if (MPU9250_Init(&mpu9250, &hi2c1) == HAL_OK) {
-        MPU9250_SetAccelRange(&mpu9250, MPU9250_ACCEL_RANGE_16G);
-        MPU9250_SetGyroRange(&mpu9250, MPU9250_GYRO_RANGE_2000DPS);
+    if (MPU9250_Init(&mpu9250, &hi2c1, MPU9250_ACCEL_FS_16G, MPU9250_GYRO_FS_2000DPS) == HAL_OK) {
         status_flags |= TLM_FLAG_IMU1_OK;
     } else {
         all_ok = false;
     }
     
     /* BNO055 (Backup IMU with fusion) */
-    if (BNO055_Init(&bno055, &hi2c2) == HAL_OK) {
+    if (BNO055_Init(&bno055, &hi2c2, BNO055_DEFAULT_ADDR) == HAL_OK) {
         BNO055_SetMode(&bno055, BNO055_MODE_NDOF);
         status_flags |= TLM_FLAG_IMU2_OK;
     } else {
@@ -287,18 +285,17 @@ static bool InitializeSensors(void)
     }
     
     /* BMP380 (Primary Barometer) */
-    if (BMP380_Init(&bmp380, &hi2c1) == HAL_OK) {
-        BMP380_SetOversamplingPressure(&bmp380, BMP380_OVERSAMPLING_8X);
-        BMP380_SetOversamplingTemp(&bmp380, BMP380_OVERSAMPLING_2X);
-        BMP380_SetIIRFilter(&bmp380, BMP380_IIR_COEF_3);
+    if (BMP380_Init(&bmp380, &hi2c1, BMP380_DEFAULT_ADDR) == HAL_OK) {
+        BMP380_Configure(&bmp380, BMP380_OVERSAMPLING_2X, BMP380_OVERSAMPLING_8X,
+                         BMP380_ODR_50_HZ, BMP380_IIR_COEF_3);
+        BMP380_SetMode(&bmp380, BMP380_MODE_NORMAL);
         status_flags |= TLM_FLAG_BARO1_OK;
     } else {
         all_ok = false;
     }
     
-    /* MS5611 (Backup Barometer) */
-    if (MS5611_Init(&ms5611, &hspi2, MS5611_CS_PORT, MS5611_CS_PIN) == HAL_OK) {
-        MS5611_SetOSR(&ms5611, MS5611_OSR_4096);
+    /* MS5611 (Backup Barometer) - Using I2C1 */
+    if (MS5611_Init(&ms5611, &hi2c1, MS5611_OSR_4096) == HAL_OK) {
         status_flags |= TLM_FLAG_BARO2_OK;
     } else {
         all_ok = false;
@@ -343,7 +340,7 @@ static bool SelfTest(void)
     
     /* Read ground reference */
     if (status_flags & TLM_FLAG_BARO1_OK) {
-        BMP380_Read(&bmp380);
+        BMP380_ReadData(&bmp380);
         float ground_pressure = bmp380.pressure;
         float ground_altitude = BMP380_GetAltitude(&bmp380);
         
@@ -369,12 +366,12 @@ static void ReadSensors(void)
     if (status_flags & TLM_FLAG_IMU1_OK) {
         if (MPU9250_ReadAccel(&mpu9250) == HAL_OK &&
             MPU9250_ReadGyro(&mpu9250) == HAL_OK) {
-            imu_reading.accel_x = mpu9250.accel_x;
-            imu_reading.accel_y = mpu9250.accel_y;
-            imu_reading.accel_z = mpu9250.accel_z;
-            imu_reading.gyro_x = mpu9250.gyro_x;
-            imu_reading.gyro_y = mpu9250.gyro_y;
-            imu_reading.gyro_z = mpu9250.gyro_z;
+            imu_reading.accel_x = mpu9250.accel.x;
+            imu_reading.accel_y = mpu9250.accel.y;
+            imu_reading.accel_z = mpu9250.accel.z;
+            imu_reading.gyro_x = mpu9250.gyro.x;
+            imu_reading.gyro_y = mpu9250.gyro.y;
+            imu_reading.gyro_z = mpu9250.gyro.z;
             imu_reading.valid = true;
             imu_reading.timestamp = HAL_GetTick();
             
@@ -384,32 +381,36 @@ static void ReadSensors(void)
     
     /* Read BNO055 */
     if (status_flags & TLM_FLAG_IMU2_OK) {
-        if (BNO055_ReadLinearAccel(&bno055) == HAL_OK &&
-            BNO055_ReadGyro(&bno055) == HAL_OK) {
-            imu_reading.accel_x = bno055.linear_accel_x;
-            imu_reading.accel_y = bno055.linear_accel_y;
-            imu_reading.accel_z = bno055.linear_accel_z;
-            imu_reading.gyro_x = bno055.gyro_x;
-            imu_reading.gyro_y = bno055.gyro_y;
-            imu_reading.gyro_z = bno055.gyro_z;
+        BNO055_Vector3_t lin_accel, gyro_vec;
+        BNO055_Euler_t euler;
+        BNO055_Quaternion_t quat;
+        
+        if (BNO055_ReadLinearAccel(&bno055, &lin_accel) == HAL_OK &&
+            BNO055_ReadGyro(&bno055, &gyro_vec) == HAL_OK) {
+            imu_reading.accel_x = lin_accel.x;
+            imu_reading.accel_y = lin_accel.y;
+            imu_reading.accel_z = lin_accel.z;
+            imu_reading.gyro_x = gyro_vec.x;
+            imu_reading.gyro_y = gyro_vec.y;
+            imu_reading.gyro_z = gyro_vec.z;
             imu_reading.valid = true;
             imu_reading.timestamp = HAL_GetTick();
             
             SensorFusion_UpdateIMU(&fusion, SENSOR_BACKUP, &imu_reading);
             
             /* Get orientation from BNO055 */
-            if (BNO055_ReadEuler(&bno055) == HAL_OK &&
-                BNO055_ReadQuaternion(&bno055) == HAL_OK) {
+            if (BNO055_ReadEuler(&bno055, &euler) == HAL_OK &&
+                BNO055_ReadQuaternion(&bno055, &quat) == HAL_OK) {
                 SensorFusion_UpdateOrientation(&fusion, 
-                    bno055.euler_roll, bno055.euler_pitch, bno055.euler_yaw,
-                    bno055.quat_w, bno055.quat_x, bno055.quat_y, bno055.quat_z);
+                    euler.roll, euler.pitch, euler.heading,
+                    quat.w, quat.x, quat.y, quat.z);
             }
         }
     }
     
     /* Read BMP380 */
     if (status_flags & TLM_FLAG_BARO1_OK) {
-        if (BMP380_Read(&bmp380) == HAL_OK) {
+        if (BMP380_ReadData(&bmp380) == HAL_OK) {
             baro_reading.pressure = bmp380.pressure;
             baro_reading.temperature = bmp380.temperature;
             baro_reading.altitude = BMP380_GetAltitude(&bmp380);
@@ -422,10 +423,10 @@ static void ReadSensors(void)
     
     /* Read MS5611 */
     if (status_flags & TLM_FLAG_BARO2_OK) {
-        if (MS5611_Read(&ms5611) == HAL_OK) {
-            baro_reading.pressure = ms5611.pressure;
-            baro_reading.temperature = ms5611.temperature;
-            baro_reading.altitude = MS5611_GetAltitude(&ms5611);
+        if (MS5611_ReadTemperatureAndPressure(&ms5611) == HAL_OK) {
+            baro_reading.pressure = ms5611.pressure_mbar * 100.0f;  /* Convert mbar to Pa */
+            baro_reading.temperature = ms5611.temperature_c;
+            baro_reading.altitude = ms5611.altitude_m;
             baro_reading.valid = true;
             baro_reading.timestamp = HAL_GetTick();
             
@@ -446,7 +447,7 @@ static void ProcessGPS(void)
     if (!(status_flags & TLM_FLAG_GPS_OK)) return;
     
     /* Process any incoming GPS data */
-    NEO7M_Process(&gps);
+    NEO7M_ParseBuffer(&gps);
 }
 
 /*============================================================================
@@ -529,8 +530,8 @@ static void TransmitTelemetry(void)
     
     /* Pyro status */
     status.pyro_status = 0;
-    if (pyro.channels[0].continuity_ok) status.pyro_status |= TLM_PYRO1_CONT;
-    if (pyro.channels[1].continuity_ok) status.pyro_status |= TLM_PYRO2_CONT;
+    if (pyro.channels[0].continuity) status.pyro_status |= TLM_PYRO1_CONT;
+    if (pyro.channels[1].continuity) status.pyro_status |= TLM_PYRO2_CONT;
     if (pyro.channels[0].state == PYRO_STATE_ARMED) status.pyro_status |= TLM_PYRO1_ARMED;
     if (pyro.channels[1].state == PYRO_STATE_ARMED) status.pyro_status |= TLM_PYRO2_ARMED;
     if (pyro.channels[0].state == PYRO_STATE_FIRED) status.pyro_status |= TLM_PYRO1_FIRED;
@@ -599,8 +600,7 @@ static void CheckArmSwitch(void)
         if (system_state == SYS_STATE_IDLE) {
             /* Arm the system */
             if (FlightState_Arm(&fsm) == HAL_OK) {
-                Pyro_Arm(&pyro, 0);
-                Pyro_Arm(&pyro, 1);
+                Pyro_Arm(&pyro);
                 
                 /* Prepare logger */
                 DataLogger_Erase(&logger);
@@ -621,8 +621,7 @@ static void CheckArmSwitch(void)
         if (system_state == SYS_STATE_ARMED) {
             /* Disarm the system */
             FlightState_Disarm(&fsm);
-            Pyro_Disarm(&pyro, 0);
-            Pyro_Disarm(&pyro, 1);
+            Pyro_Disarm(&pyro);
             
             /* Single long beep to confirm disarmed */
             HAL_GPIO_WritePin(BUZZER_PORT, BUZZER_PIN, GPIO_PIN_SET);
@@ -747,7 +746,7 @@ static void OnFireMain(void)
 
 static HAL_StatusTypeDef LoRaTransmit(uint8_t *data, uint16_t len)
 {
-    return E32_SendData(&lora, data, len);
+    return (E32_Send(&lora, data, (uint8_t)len) == E32_OK) ? HAL_OK : HAL_ERROR;
 }
 
 /*============================================================================
