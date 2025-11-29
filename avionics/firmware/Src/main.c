@@ -13,22 +13,20 @@
  */
 
 #include "main.h"
-
-/* Drivers */
-#include "Drivers/MPU9250/mpu9250.h"
-#include "Drivers/BNO055/bno055.h"
-#include "Drivers/BMP380/bmp380.h"
-#include "Drivers/MS5611/ms5611.h"
-#include "Drivers/NEO7M/neo7m.h"
-#include "Drivers/E32_LoRa/e32_lora.h"
-#include "Drivers/W25Q/w25q.h"
-#include "Drivers/Pyro/pyro.h"
-
-/* Core modules */
 #include "flight_state.h"
 #include "sensor_fusion.h"
 #include "telemetry.h"
 #include "data_logger.h"
+
+/* Drivers */
+#include "mpu9250.h"
+#include "bno055.h"
+#include "bmp380.h"
+#include "ms5611.h"
+#include "neo7m.h"
+#include "e32_lora.h"
+#include "w25q.h"
+#include "pyro.h"
 
 #include <string.h>
 #include <stdio.h>

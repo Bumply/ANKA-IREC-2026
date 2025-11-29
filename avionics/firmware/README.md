@@ -1,62 +1,63 @@
-# SRAD Flight Computer Firmware
+# Flight Computer Firmware
 
-## Hardware Configuration
+STM32F429ZIT6 Flight Computer for IREC 2026
 
-| Component | Model | Interface | Pins |
-|-----------|-------|-----------|------|
-| MCU | STM32F429ZIT6 | - | - |
-| Barometer | MS5611 | I2C / SPI | Configurable |
-| IMU | MPU-9250 | I2C / SPI | Configurable |
-| GPS | NEO-7M | UART | TX/RX |
-| LoRa | E32-433T30D | UART | TX/RX/M0/M1/AUX |
-| Flash | W25Q40 | SPI | CS/CLK/MOSI/MISO |
-
-## Firmware Structure
+## Project Structure
 
 ```
 firmware/
-├── Core/
-│   ├── Inc/
-│   │   └── main.h
-│   └── Src/
-│       └── main.c
-├── Drivers/
-│   ├── MS5611/          # Barometer driver
-│   ├── MPU9250/         # IMU driver
-│   ├── NEO7M/           # GPS driver
-│   ├── E32_LoRa/        # LoRa driver
-│   └── W25Qxx/          # Flash driver
-└── README.md
+├── Inc/                    # Header files
+│   ├── main.h              # Pin definitions, peripheral config
+│   ├── flight_state.h      # Flight state machine
+│   ├── sensor_fusion.h     # Kalman filter sensor fusion
+│   ├── telemetry.h         # LoRa telemetry protocol
+│   └── data_logger.h       # Flash data logging
+│
+├── Src/                    # Source files
+│   ├── main.c              # Main application loop
+│   ├── flight_state.c      # State machine implementation
+│   ├── sensor_fusion.c     # Dual-sensor fusion with failover
+│   ├── telemetry.c         # Packet TX/RX with CRC-16
+│   └── data_logger.c       # 50Hz flight data logging
+│
+├── Drivers/                # Peripheral drivers
+│   ├── MPU9250/            # Primary IMU (I2C)
+│   ├── BNO055/             # Backup IMU with onboard fusion (I2C)
+│   ├── BMP380/             # Primary barometer (I2C)
+│   ├── MS5611/             # Backup barometer (SPI)
+│   ├── NEO7M/              # GPS with NMEA parsing (UART)
+│   ├── E32_LoRa/           # 433MHz LoRa telemetry (UART)
+│   ├── W25Q/               # 512KB flash memory (SPI)
+│   └── Pyro/               # 2-channel pyrotechnic control
+│
+└── Startup/                # STM32 startup files (from CubeMX)
 ```
 
-## Build Instructions
+## Hardware
 
-1. Open project in STM32CubeIDE
-2. Configure pins in .ioc file
-3. Build and flash via ST-Link
+| Component | Model | Interface |
+|-----------|-------|-----------|
+| MCU | STM32F429ZIT6 | ARM Cortex-M4F @ 180MHz |
+| IMU 1 | MPU-9250 | I2C1 |
+| IMU 2 | BNO055 | I2C2 |
+| Baro 1 | BMP380 | I2C1 |
+| Baro 2 | MS5611 | SPI2 |
+| GPS | NEO-7M | UART2 |
+| LoRa | E32-433T30D | UART3 |
+| Flash | W25Q40 | SPI1 |
+| Pyro | 2x IRFU120 MOSFET | GPIO |
 
-## Pin Configuration (Example)
+## Flight States
 
-Configure these in STM32CubeMX:
+```
+IDLE → ARMED → BOOST → COAST → APOGEE → DESCENT → MAIN → LANDED
+         │                       │          │
+      Arm Switch              Drogue    Main @457m AGL
+```
 
-### I2C1 (Sensors)
-- PB6: I2C1_SCL
-- PB7: I2C1_SDA
+## Building
 
-### UART1 (GPS)
-- PA9: USART1_TX
-- PA10: USART1_RX
-
-### UART2 (LoRa)
-- PA2: USART2_TX
-- PA3: USART2_RX
-
-### SPI1 (Flash)
-- PA5: SPI1_SCK
-- PA6: SPI1_MISO
-- PA7: SPI1_MOSI
-- PA4: Flash_CS (GPIO)
-
-### Pyro Channels
-- PC0: PYRO1 (Drogue)
-- PC1: PYRO2 (Main)
+1. Generate STM32 HAL project with STM32CubeMX for STM32F429ZIT6
+2. Copy `Inc/`, `Src/`, and `Drivers/` into generated project
+3. Add driver include paths to your IDE
+4. Build with ARM GCC, Keil, or IAR

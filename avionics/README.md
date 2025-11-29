@@ -120,19 +120,12 @@ Triple-redundant avionics architecture for maximum flight safety and data integr
 
 ```
 avionics/
-├── flight-computer/     # SRAD FC documentation
-│   ├── requirements.md  # System requirements
-│   ├── architecture.md  # Detailed design
-│   └── testing.md       # Test procedures
-├── schematics/          # PCB designs
-│   ├── *.SchDoc         # Altium schematics
-│   └── *.PcbDoc         # Altium PCB layouts
-├── firmware/            # STM32 code
-│   ├── Core/
-│   ├── Drivers/
-│   └── Src/
-└── ground-station/      # GS software
-    └── src/
+├── firmware/               # STM32 flight computer code
+│   ├── Inc/                # Header files
+│   ├── Src/                # Source files  
+│   ├── Drivers/            # Peripheral drivers
+│   └── Startup/            # STM32 startup files
+└── README.md
 ```
 
 ## Testing Checklist
