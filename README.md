@@ -1,103 +1,99 @@
-# 🚀 ANKA - Zenith Rocket Team | IREC 2026
+# 🚀 ANKA Avionics - IREC 2026
 
 <p align="center">
   <img src="https://img.shields.io/badge/Competition-IREC%202026-red?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Category-10K%20COTS-blue?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Target-10,000%20ft%20AGL-green?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/University-Atılım%20University-orange?style=for-the-badge" />
-</p>
-
-<p align="center">
-  <strong>From Ashes to Zenith: The Rebirth of Power</strong>
+  <img src="https://img.shields.io/badge/MCU-STM32F429ZIT6-green?style=for-the-badge" />
 </p>
 
 ---
 
-## 📋 Quick Stats
+## 📋 SRAD Flight Computer
 
 | Parameter | Value |
 |-----------|-------|
-| **Rocket Name** | ANKA |
-| **Total Length** | 2.90 m |
-| **Airframe Diameter** | 154 mm |
-| **Liftoff Weight** | 27.51 kg |
-| **Payload Mass** | 3.0 kg |
-| **Motor** | AeroTech M2500T-PS |
-| **Total Impulse** | 9,573 Ns |
-| **Predicted Apogee** | 10,311 ft AGL |
-| **Max Velocity** | 309 m/s (Mach 0.9) |
+| **MCU** | STM32F429ZIT6 (ARM Cortex-M4F @ 180MHz) |
+| **IMU 1** | MPU-9250 (Accel/Gyro/Mag) |
+| **IMU 2** | BNO055 (9-DOF + Sensor Fusion) |
+| **Baro 1** | BMP380 (0.016 Pa resolution) |
+| **Baro 2** | MS5611 (±10 cm resolution) |
+| **GPS** | NEO-7M (5 Hz, NMEA/UBX) |
+| **Telemetry** | E32-433T30D LoRa (433 MHz, 30dBm) |
+| **Storage** | W25Q40CLSNIG Flash (512 KB) |
+| **Pyro Channels** | 2x IRFU120 MOSFET drivers |
 
 ---
 
 ## 🏗️ Project Structure
 
 ```
-irec/
-├── docs/                    # Documentation & reports
-│   ├── technical-report/    # IREC Technical Report
-│   ├── presentations/       # Poster & podium materials
-│   └── checklists/          # Pre-flight, arming, recovery checklists
-├── avionics/                # Avionics subsystem
-│   ├── flight-computer/     # SRAD flight computer
-│   ├── schematics/          # PCB designs & schematics
-│   ├── firmware/            # STM32 firmware code
-│   └── ground-station/      # Ground station software
-├── simulations/             # Flight simulations & analysis
-│   ├── openrocket/          # OpenRocket files
-│   ├── cfd/                 # ANSYS Fluent analysis
-│   ├── structural/          # ANSYS Structural analysis
-│   └── matlab/              # 6-DOF & trajectory analysis
-├── recovery/                # Recovery system
-│   ├── parachutes/          # Parachute designs & specs
-│   └── deployment/          # Deployment mechanism
-├── payload/                 # Payload subsystem
-├── manufacturing/           # Manufacturing docs & drawings
-└── tests/                   # Test reports & data
+avionics/
+├── firmware/
+│   ├── Drivers/
+│   │   ├── MPU9250/        # Primary IMU driver
+│   │   ├── BNO055/         # Backup IMU + fusion
+│   │   ├── BMP380/         # Primary barometer
+│   │   ├── MS5611/         # Backup barometer
+│   │   ├── NEO7M/          # GPS (NMEA parser)
+│   │   └── E32_LoRa/       # LoRa telemetry
+│   └── README.md
+└── README.md
 ```
 
 ---
 
-## 🎯 Subsystems Overview
+## 🎯 Sensor Redundancy
 
-### Avionics (Triple Redundancy)
-| Component | Type | Function |
-|-----------|------|----------|
-| RRC3 Sport Altimeter | COTS | Primary dual-deployment |
-| EasyMini Altimeter | COTS | Backup dual-deployment |
-| SRAD Flight Computer | SRAD | Tertiary deployment + logging |
-| Featherweight GPS | COTS | Position tracking (915 MHz) |
-| LoRa E32-433T30D | SRAD | Telemetry (433 MHz) |
-
-### SRAD Flight Computer Specs
-- **MCU:** STM32F429ZIT6 (ARM Cortex-M4F @ 180MHz)
-- **Altimeter:** MS5611 GY-63 (±10 cm, 100 Hz)
-- **IMU:** MPU-9250 (±16g, 1 kHz) + BNO080/085
-- **Storage:** W25Q40CLSNIG Flash (512 KB)
-- **Pyro Channels:** 2x IRFU120 MOSFET drivers
-
-### Recovery System
-- **Drogue:** 0.85m diameter (deploys at apogee)
-- **Main:** 3.0m diameter (deploys at 457m / 1,500 ft AGL)
-- **Shock Cords:** 10m total (15 kN Perlon flat)
+| Type | Primary | Backup | Purpose |
+|------|---------|--------|---------|
+| **IMU** | MPU9250 | BNO055 | Orientation, acceleration |
+| **Barometer** | BMP380 | MS5611 | Altitude, apogee detection |
+| **GPS** | NEO-7M | — | Position tracking |
+| **Radio** | E32-433T30D | — | Live telemetry |
 
 ---
 
-## 📅 Timeline
+## 🔧 Driver Features
 
-See [TODO.md](./TODO.md) for detailed task tracking.
+### MPU9250 (Primary IMU)
+- 9-DOF (Accel ±16g, Gyro ±2000°/s, Mag)
+- I2C interface, configurable sample rates
+- Gyroscope calibration routine
+
+### BNO055 (Backup IMU)
+- Built-in sensor fusion (Cortex-M0)
+- Euler angles, Quaternions output
+- Linear acceleration (gravity removed)
+- Calibration save/restore
+
+### BMP380 (Primary Barometer)
+- 0.016 Pa RMS noise
+- IIR filtering, up to 200 Hz ODR
+- Altitude calculation with sea-level calibration
+
+### MS5611 (Backup Barometer)
+- 24-bit ADC, ±10cm resolution
+- Second-order temperature compensation
+- Fast conversion (OSR selectable)
+
+### NEO-7M (GPS)
+- NMEA parsing (GGA, RMC, GSA, GSV)
+- UBX protocol for configuration
+- Haversine distance calculation
+
+### E32-433T30D (LoRa)
+- 433 MHz ISM band
+- 30dBm TX power (8km range LOS)
+- Transparent & fixed address modes
 
 ---
 
 ## 👥 Team
 
-**Zenith Rocket Team (ZRT)** - Atılım University, Ankara, Turkey
-
-- 🌐 [Website](https://zenithrocketry.weebly.com)
-- 📸 [Instagram](https://www.instagram.com/zenithrocket/)
+**Zenith Rocket Team** - Atılım University, Ankara, Turkey
 
 ---
 
 ## 📜 License
 
-This project is for educational purposes as part of IREC 2026 competition.
-
+Educational project for IREC 2026 competition.
