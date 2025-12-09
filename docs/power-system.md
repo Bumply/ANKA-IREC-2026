@@ -10,6 +10,185 @@ Complete battery and power distribution system for the IREC 2026 flight computer
 
 ---
 
+## Batteries Used in Recovery System
+
+Detailed specifications of all batteries in the flight electronics system:
+
+### Battery Inventory
+
+| Component | Battery Type | Chemistry | Cells | Size | Capacity | Protection | Voltage Range |
+|-----------|--------------|-----------|-------|------|----------|------------|---------------|
+| **Flight Computer** | LiPo Pack | Lithium Polymer | 4S | 70×35×30mm | 1300mAh 75C | **Protected** (built-in BMS) | 13.2V - 16.8V |
+| **Video Payload** | (Shared with FC) | Lithium Polymer | 4S | - | - | **Protected** | - |
+
+### Flight Computer Battery - Detailed Specifications
+
+```mermaid
+flowchart LR
+    subgraph PACK["4S LiPo Battery Pack"]
+        subgraph CELLS["Cell Configuration"]
+            C1["Cell 1<br/>3.7V nom"]
+            C2["Cell 2<br/>3.7V nom"]
+            C3["Cell 3<br/>3.7V nom"]
+            C4["Cell 4<br/>3.7V nom"]
+        end
+        
+        subgraph BMS["Built-in Protection"]
+            OV["Overcharge<br/>Protection"]
+            UV["Undervoltage<br/>Protection"]
+            OC["Overcurrent<br/>Protection"]
+            BAL["Cell<br/>Balancing"]
+        end
+    end
+
+    C1 --> C2 --> C3 --> C4
+    CELLS --> BMS
+```
+
+| Parameter | Specification |
+|-----------|---------------|
+| **Manufacturer** | Tattu / CNHL / GNB (75C rated hobby LiPo) |
+| **Chemistry** | Lithium Polymer (LiPo) |
+| **Configuration** | 4S1P (4 cells in series) |
+| **Nominal Voltage** | 14.8V (3.7V × 4) |
+| **Full Charge Voltage** | 16.8V (4.2V × 4) |
+| **Discharge Cutoff** | 13.2V (3.3V × 4) |
+| **Capacity** | 1300mAh |
+| **C Rating** | 75C continuous (97.5A max) |
+| **Physical Size** | ~70 × 35 × 30 mm |
+| **Weight** | ~140g |
+| **Main Connector** | XT30 (rated 30A continuous) |
+| **Balance Connector** | JST-XH 5-pin |
+| **Protection** | Built-in BMS with balance leads |
+
+### Protection Circuit Details
+
+The battery pack includes integrated protection:
+
+| Protection Type | Threshold | Action |
+|-----------------|-----------|--------|
+| **Overcharge** | >4.25V per cell | Cuts charging current |
+| **Overdischarge** | <3.0V per cell | Disconnects load |
+| **Overcurrent** | >100A | Current limiting |
+| **Short Circuit** | Instantaneous | Immediate disconnect |
+| **Cell Balancing** | Via balance connector | During charging only |
+
+> **Note:** External protection is also provided on the flight computer PCB via Schottky diode (reverse polarity) and 10Ω current-limiting resistor.
+
+---
+
+## Battery Management Practices
+
+### Charging Procedures
+
+```mermaid
+flowchart TB
+    subgraph CHARGE["Charging Protocol"]
+        START["Connect to<br/>Balance Charger"]
+        SET["Set Mode:<br/>LiPo 4S<br/>1.0A charge rate"]
+        BALANCE["Enable<br/>Balance Charging"]
+        MONITOR["Monitor:<br/>- Cell voltages<br/>- Temperature<br/>- Current"]
+        COMPLETE["Charge Complete<br/>when all cells = 4.2V"]
+    end
+
+    START --> SET --> BALANCE --> MONITOR --> COMPLETE
+```
+
+| Practice | Procedure |
+|----------|-----------|
+| **Charger Type** | Balance charger required (e.g., ISDT D2, SkyRC B6) |
+| **Charge Rate** | 1C maximum (1.3A for 1300mAh pack) |
+| **Charge Mode** | LiPo Balance mode ONLY |
+| **Cell Balance** | All cells within 0.02V at end of charge |
+| **Max Voltage** | 4.20V per cell (16.80V total) - NEVER exceed |
+| **Temperature** | Charge at 15-35°C ambient only |
+| **Supervision** | NEVER leave charging unattended |
+| **Fire Safety** | Charge in LiPo-safe bag on non-flammable surface |
+
+### Capacity Verification
+
+Before each flight campaign:
+
+```mermaid
+flowchart LR
+    FULL["Charge to<br/>100%<br/>(16.8V)"]
+    DISCHARGE["Discharge at<br/>1C to 13.2V"]
+    MEASURE["Record<br/>mAh delivered"]
+    EVALUATE["Capacity<br/>>80% nominal?"]
+    PASS["✓ Flight<br/>Ready"]
+    FAIL["✗ Retire<br/>Battery"]
+
+    FULL --> DISCHARGE --> MEASURE --> EVALUATE
+    EVALUATE -->|Yes| PASS
+    EVALUATE -->|No| FAIL
+```
+
+| Test | Acceptance Criteria |
+|------|---------------------|
+| **Full Capacity** | ≥80% of rated capacity (≥1040mAh) |
+| **Cell Balance** | All cells within 0.05V under load |
+| **Internal Resistance** | <10mΩ per cell (measured by charger) |
+| **Physical Inspection** | No swelling, damage, or deformation |
+
+### Storage Voltage Protocol
+
+```mermaid
+flowchart TB
+    subgraph STORAGE["Storage Protocol"]
+        CHARGE_ST["Charge/Discharge<br/>to Storage Voltage"]
+        VOLTAGE["Target: 3.85V/cell<br/>(15.4V total)"]
+        CONTAINER["Store in<br/>LiPo-safe bag"]
+        LOCATION["Cool, dry location<br/>15-25°C"]
+    end
+
+    CHARGE_ST --> VOLTAGE --> CONTAINER --> LOCATION
+```
+
+| Storage Practice | Specification |
+|------------------|---------------|
+| **Storage Voltage** | 3.80-3.85V per cell (15.2-15.4V total) |
+| **Storage Mode** | Use charger's "Storage" function |
+| **Temperature** | Store at 15-25°C (room temperature) |
+| **Humidity** | Low humidity, avoid condensation |
+| **Container** | LiPo-safe bag or ammo can |
+| **Duration** | Re-check voltage monthly if stored >30 days |
+| **Before Flight** | Charge to full within 24 hours of launch |
+
+### Battery Age Monitoring
+
+| Tracking Item | Method | Action Threshold |
+|---------------|--------|------------------|
+| **Purchase Date** | Label on battery | Retire after 2 years |
+| **Cycle Count** | Log in spreadsheet | Retire after 200 cycles |
+| **Capacity Fade** | Periodic capacity test | Retire if <80% capacity |
+| **Internal Resistance** | Charger measurement | Retire if >15mΩ/cell |
+| **Physical Condition** | Visual inspection | Retire if any swelling |
+| **Puff Test** | Check for gas buildup | Retire if puffy |
+
+### Pre-Flight Battery Checklist
+
+- [ ] Battery fully charged within last 24 hours
+- [ ] Voltage verified: 16.4V - 16.8V (>98% charge)
+- [ ] All cells balanced within 0.02V
+- [ ] Visual inspection: no swelling, damage, or puffing
+- [ ] Capacity verified within last 30 days (>80%)
+- [ ] Cycle count logged and within limits (<200)
+- [ ] Battery age within limits (<2 years)
+- [ ] Connectors clean and secure
+- [ ] Battery secured in rocket with padding
+
+### Emergency Procedures
+
+| Situation | Action |
+|-----------|--------|
+| **Overheating during charge** | Disconnect immediately, move to fireproof area |
+| **Swelling/Puffing** | Stop use, discharge to storage voltage, dispose properly |
+| **Physical damage** | Do not use, discharge safely, dispose at battery recycling |
+| **Fire** | Use sand or Class D extinguisher, evacuate area |
+| **Crash recovery** | Inspect battery before handling, assume damaged |
+
+---
+
 ## System Overview
 
 ### Power Distribution Architecture
