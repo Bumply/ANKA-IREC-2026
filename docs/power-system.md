@@ -306,31 +306,134 @@ flowchart LR
 
 ## Pyrotechnic Power Circuit
 
-### Safety Chain Architecture
+### 4-Inhibit Safety Chain (IREC Compliant)
+
+Per IREC DTEG requirements, pyrotechnic systems must have **multiple independent inhibits**. Our system uses a **4-key arming architecture** where ALL conditions must be TRUE before any pyro channel can fire.
 
 ```mermaid
 flowchart TB
-    subgraph SAFETY["Safety Chain (ALL must be TRUE)"]
-        HW["Hardware Arm<br/>Switch (PE4)"]
-        SW["Software Arm<br/>Flag"]
-        STATE["State Machine<br/>Correct State"]
+    subgraph INHIBIT1["INHIBIT 1: Main Power"]
+        PWR["Main Power Switch<br/>(External Toggle)"]
+    end
+
+    subgraph INHIBIT2["INHIBIT 2: Hardware Arm"]
+        ARM["Pull Pin Arm Switch<br/>(External - PE4)"]
+    end
+
+    subgraph INHIBIT3["INHIBIT 3: Software Arm"]
+        SW["Software Arm Flag<br/>(Ground Station Command)"]
+    end
+
+    subgraph INHIBIT4["INHIBIT 4: Flight State"]
+        STATE["State Machine<br/>(ARMED/DESCENT/etc)"]
+    end
+
+    subgraph VERIFY["Verification"]
+        CONT["Continuity Check<br/>(E-Match Connected)"]
     end
 
     subgraph FIRE["Fire Decision"]
-        AND["AND Gate<br/>(All conditions)"]
+        AND{{"AND Gate<br/>(ALL must be TRUE)"}}
     end
 
     subgraph PYRO["Pyro Channels"]
-        DRG["Drogue<br/>Channel"]
-        MAIN["Main<br/>Channel"]
+        DRG["Drogue Channel<br/>(Fires at Apogee)"]
+        MAIN["Main Channel<br/>(Fires at 500m AGL)"]
     end
 
-    HW --> AND
+    PWR --> AND
+    ARM --> AND
     SW --> AND
     STATE --> AND
+    CONT -.->|"Verified"| AND
     AND --> DRG
     AND --> MAIN
 ```
+
+### Inhibit Details
+
+| Inhibit | Type | Location | Arm Method | Safe State |
+|---------|------|----------|------------|------------|
+| **1. Main Power** | Hardware | External toggle switch | Flip ON at pad | OFF = No power to system |
+| **2. Pull Pin Arm** | Hardware | External pull pin (PE4 input) | Remove pin at pad | Pin IN = Pyro circuit disabled |
+| **3. Software Arm** | Software | Ground station via LoRa | Send ARM command | Default DISARMED on boot |
+| **4. Flight State** | Software | State machine logic | Auto-transitions in flight | IDLE/PAD = Cannot fire |
+
+### Arming Sequence
+
+```mermaid
+flowchart LR
+    subgraph GROUND["Ground Operations"]
+        G1["1. Power ON<br/>(Main Switch)"]
+        G2["2. System Boot<br/>(Self-test)"]
+        G3["3. Verify Continuity<br/>(Ground Station)"]
+    end
+
+    subgraph PAD["At Launch Pad"]
+        P1["4. Remove Pull Pin<br/>(Hardware Arm)"]
+        P2["5. Send ARM Command<br/>(Software Arm)"]
+        P3["6. Verify ARMED<br/>(Green LED)"]
+    end
+
+    subgraph FLIGHT["In Flight"]
+        F1["7. Detect Launch<br/>(Accel Trigger)"]
+        F2["8. Detect Apogee<br/>(State → DESCENT)"]
+        F3["9. FIRE Drogue<br/>(All 4 Keys TRUE)"]
+        F4["10. Altitude < 500m"]
+        F5["11. FIRE Main<br/>(All 4 Keys TRUE)"]
+    end
+
+    G1 --> G2 --> G3 --> P1 --> P2 --> P3 --> F1 --> F2 --> F3 --> F4 --> F5
+```
+
+### Fire Logic (C Code)
+
+```c
+// 4-Inhibit Arming Check
+bool can_fire_pyro(void) {
+    return (
+        main_power_on &&                    // Inhibit 1: Power switch ON
+        gpio_read(PULL_PIN_ARM) == HIGH &&  // Inhibit 2: Pull pin removed
+        software_arm_flag == true &&        // Inhibit 3: Ground station armed
+        (flight_state == DESCENT ||         // Inhibit 4: Correct flight state
+         flight_state == MAIN_DEPLOY)
+    );
+}
+
+// Drogue Fire Decision
+void check_drogue_fire(void) {
+    if (can_fire_pyro() && 
+        flight_state == DESCENT && 
+        drogue_continuity_ok &&
+        !drogue_fired) {
+        fire_drogue();
+        drogue_fired = true;
+    }
+}
+
+// Main Fire Decision  
+void check_main_fire(void) {
+    if (can_fire_pyro() && 
+        altitude_agl < 500 &&  // meters
+        main_continuity_ok &&
+        drogue_fired &&        // Drogue must fire first
+        !main_fired) {
+        fire_main();
+        main_fired = true;
+    }
+}
+```
+
+### Safety Features
+
+| Feature | Purpose |
+|---------|---------|
+| **Default DISARMED** | Software arm flag is FALSE on boot |
+| **Pull pin physical** | Cannot accidentally arm remotely |
+| **State machine required** | Won't fire on ground even if armed |
+| **Continuity check** | Warns if e-match disconnected |
+| **100ms auto-off** | MOSFET turns off after firing to prevent damage |
+| **Dual channels independent** | One failure doesn't affect other |
 
 ### Pyro Channel Circuit
 
