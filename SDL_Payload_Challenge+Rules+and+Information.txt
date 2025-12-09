@@ -1,0 +1,46 @@
+1
+SDL Payload Challenge Rules and Information
+SDL is excited to be involved with IREC and to sponsor the SDL Payload Challenge. After all,
+there’s no reason to launch a rocket unless there’s a payload! SDL is offering $2,250 in cash
+prizes to teams that produce meaningful payloads.
+Owned by Utah State University, Space Dynamics Laboratory (SDL) has been solving the
+technical challenges faced by the military, science community, and industry for over 65 years.
+With over 1400 employees, including 180+ university students, SDL provides multi-domain
+mission solutions (Space, Air, Land, Sea, and Cyber) with expertise in satellites, sensors and
+instruments, ground systems and data processing, and advanced autonomous systems.
+SDL’s mission includes inspiring and engaging tomorrow’s workforce through a variety of reallife hands-on experiences. ESRA’s International Rocket Engineering Competition (IREC) with
+the SDL Payload Challenge does exactly that – gives you a hand’s on, high level experience!
+To Enter the SDL Payload Challenge: Submit an SDL Payload Challenge Entry Form no later
+than May 31, 2026. SDL Payload Challenge Forms are available for download from the IREC
+Documents & Forms page on the ESRA website; email to: payloadchallenge@sdl.usu.edu
+To learn more about SDL, go to https://www.sdl.usu.edu/
+Awards:
+• 1st Place Payload Award: $1000
+• 2nd Place Payload Award: $750
+• 3rd Place Payload Award: $500
+• SDL Technology Relevance Award
+• Honorable mentions as warranted (Judge’s discretion)
+Judging Criteria (1000 points possible):
+• Scientific or Technical Objective(s) (400 points)
+⁻ How relevant and well-designed is your scientific or technical objective?
+• Payload Construction and Overall Professionalism (250 points)
+⁻ Includes make/buy decisions, craftsmanship, material usage, poster, handouts, reports,
+etc.
+• Readiness / Turnkey Operation (50 points)
+⁻ Will the payload interfere with launch operations? Will the payload operate after hours of
+launch preparation, rail time, heat, waiting for other launches, etc?
+• Execution of Objective(s) (300 points)
+⁻ Judges should be informed of results no later than Saturday at noon by email:
+payload@sdl.usu.edu or in person, or a zero in this category will be assessed.
+⁻ How well did it accomplish the objective(s)?
+⁻ Note: That rocket failure results in 150 points (half credit – don’t know if payload would
+have worked or not)
+SDL Payload Challenge Rules and Information
+2
+SDL Technology Relevance Award
+• This is a separate award for innovative ideas related to the three areas listed below and has
+no impact on the overall SDL Payload Challenge score. It is a recognition award in the form
+of a certificate that will be highlighted in the IREC Awards Ceremony.
+• This provides an opportunity for students to focus on and integrate technologies relevant to
+SDL's mission into their payload.
+• SDL Technology Areas: Robotics, Artificial Intelligence, and Infrared

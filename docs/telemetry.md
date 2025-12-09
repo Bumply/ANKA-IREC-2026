@@ -142,7 +142,7 @@ typedef struct __attribute__((packed)) {
 
 **Battery as uint8_t:**
 - Multiply by 10: 0-255 → 0-25.5V
-- Our battery is 2S LiPo (7.4V nominal), so plenty of range
+- Our battery is 4S Li-Ion (14.8V nominal), so plenty of range
 
 **Temperature as int8_t:**
 - ±127°C is enough for any flight condition

@@ -1,0 +1,2074 @@
+IREC 2026 ver. 1.0
+International Rocket Engineering Competition Rules & Requirements Effective Date: 10/05/2025
+This work is licensed under a Creative Commons 4.0 International License
+Attribute to the Experimental Sounding Rocket Association
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+International Rocket Engineering Competition
+Rules & Requirements Document
+IREC 2026 ver. 1.0
+International Rocket Engineering Competition Rules & Requirements Effective Date: 10/05/2025
+Page 2 of 43
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+Revision History
+REVISION DESRIPTION DATE
+2026
+Version
+1.0
+1. Baseline for 2026 – changes from the previous version below
+2. Updated all references from 2025 to 2026
+3. Updated website links for entire document to new ESRA Rocket
+website and removed all mention of HeroX.
+4. Section 2.0: Clarified teams’ ability to switch competition categories
+only downgrades are allowed and specified high altitude demo flights.
+5. Section 2.2.1: Clarified guidance on two teams from same institution
+competing to include non-competing demo category.
+6. Section 2.2.3: Updated guidance on Multi-School team.
+7. Section 2.3.3: Specified location of payload for two-stage category.
+8. Section 2.3.5: Added 5U&6U to Table 1 and reference to other
+CubeSat factors not accepted.
+9. Section 2.3.5.2: Updated the allowed boiler plate mass.
+10. Section 2.3.5.4: Clarifying teams who wish to change categories after
+technical report is submitted can only change to Demo Flight.
+11. Section 2.5: Set a time limit teams have with a Judge in Post-Flight
+Data inspection and point penalty for unpreparedness.
+12. Section 2.6: Removed late penalty and changed it to any late
+submission will result in disqualification from the competition.
+13. Section 2.6.1: Included amount of point penalty for incorrect naming
+convention.
+14. Section 2.6.2: Changed word count to page limit for technical reports.
+15. Section 2.6.2.1: Do Not Share is not an option for any submission.
+16. Section 2.6.2.3: Title changed from Abstract to Executive Summary
+and updated requirements for the summary.
+17. Section 2.6.2.4: Updated content and listed out required topics.
+18. Section 2.6.2.5: Updated content to provide clarity.
+19. Section 2.6.2.9: Changed from System Weights, Measurements, &
+Performance Data Appendix to Technical Report Appendices
+20. Section 2.6.2.9.1: Added Appendix A-System Weights,
+Measurements, & Performance Data and content.
+21. Section 2.6.2.9.2: Added Appendix B- Project Test Report and
+content.
+22. Section 2.6.2.9.3: Added Appendix C- Hazard Analyses and content.
+23. Section 2.6.2.9.3: Added Appendix D- Risk Assessment and content.
+24. Section 2.6.2.9.3: Added Appendix E- Checklists and content.
+25. Section 2.6.2.9.3: Added Appendix F- Engineering Drawings and
+content.
+26. Section 2.6.3:Included amount of point penalty for incorrect naming
+convention.
+27. Section 2.6.4: Included amount of point penalty for incorrect naming
+convention.
+28. Section 2.6.4.1: Included amount of point penalty for incorrect naming
+convention.
+29. Section 2.6.6.1: Included amount of point penalty for incorrect naming
+convention.
+30. Section 2.8.1: Clarifying teams who wish to change categories after
+technical report is submitted can only change to Demo Flight.
+10/05/2025
+IREC 2026 ver. 1.0
+International Rocket Engineering Competition Rules & Requirements Effective Date: 10/05/2025
+Page 3 of 43
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+REVISION DESRIPTION DATE
+31. Section 2.8.1.1: Removed late penalty and changed it to any late
+submission will result in disqualification from the competition.
+32. Section 2.8.1.2: Removed late penalty and changed it to any late
+submission will result in disqualification from the competition.
+33. Section 2.8.1.9: Added Poker Chips section and content.
+34. Section 2.8.4.1: Removed all mention of Sportsmanship points.
+35. Section 2.8.4.2: Corrected Team Sportsmanship to Team Spirit.
+36. Section 2.9: Clarified limit of point deduction to 3 instances or 60
+points in either safety or unsportsmanlike conduct.
+37. Section 3.1:Updates to release timeline, PDF format of final score
+sheet and additional penalties can occur.
+38. Section 3.5: Appendix B updated from word count to page limit.
+39. Section 3.4: Changed Appendix C from Point
+Violation/Sportsmanship Point Form to Team Violation Point
+Deduction Form, removed all Sportsmanship Points and added
+additional info.
+IREC 2026 ver. 1.0
+International Rocket Engineering Competition Rules & Requirements Effective Date: 10/05/2025
+Page 4 of 43
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+Table of Contents
+SECTION PAGE
+1.0 PURPOSE AND SCOPE .................................................................................. 6
+1.1 DOCUMENTATION ........................................................................................... 6
+2.0 INTERNATIONAL ROCKET ENGINEERING COMPETITION OVERVIEW ..... 8
+2.1 GENERAL GUIDELINES FOR DESIGN AND FLIGHT OPERATIONS.............. 8
+2.2 TEAM COMPOSITION AND ELIGIBILITY ......................................................... 9
+2.2.1 STUDENT TEAM MEMBERS........................................................................... 9
+2.2.2 TEAM ORGANIZATION AND SUBMISSION LIMITATIONS ............................ 9
+2.2.3 TEAM COMPOSITION AND MULTI-SCHOOL TEAMS.................................... 9
+2.3 PAYLOAD ........................................................................................................ 10
+2.3.1 PAYLOAD MASS............................................................................................ 10
+2.3.2 INDEPENDENT PAYLOAD FUNCTIONALITY............................................... 10
+2.3.3 PAYLOAD LOCATION AND INTERFACE...................................................... 11
+2.3.4 RESTRICTED PAYLOAD MATERIALS.......................................................... 11
+2.3.5 PAYLOAD FORM FACTOR............................................................................ 11
+2.4 GPS ROCKET TRACKING .............................................................................. 13
+2.5 OFFICIAL ALTITUDE LOGGING..................................................................... 13
+2.6 PROJECT DELIVERABLES............................................................................. 14
+2.6.1 ENTRY FORM AND PROGRESS UPDATES................................................. 14
+2.6.2 PROJECT TECHNICAL REPORT .................................................................. 16
+2.6.2.1 PUBLICATION ............................................................................................ 16
+2.6.2.2 AUTHORSHIP AND CONTACT INFORMATION ........................................ 16
+2.6.2.8 ACKNOWLEDGMENTS.............................................................................. 18
+2.6.3 POSTER SESSION MATERIALS................................................................... 22
+2.6.4 PODIUM SESSION MATERIALS ................................................................... 23
+2.6.4.1 EXTENDED ABSTRACT PRESENTATION SLIDES ........................................ 24
+2.6.5 INTEGRATED MASTER SCHEDULE MILESTONES..................................... 25
+2.6.6 ADMINISTRATIVE DOCUMENTS.................................................................. 25
+2.7 TEAM MEDIA OBLIGATIONS ........................................................................ 26
+IREC 2026 ver. 1.0
+International Rocket Engineering Competition Rules & Requirements Effective Date: 10/05/2025
+Page 5 of 43
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+2.7.1 EVENT NAME................................................................................................. 26
+2.7.2 EVENT LOGOS AND STYLE GUIDELINES................................................... 26
+2.7.3 LINKS TO EVENT WEBSITE.......................................................................... 26
+2.7.4 OBLIGATION TO RECOGNIZE EVENT SPONSORS.................................... 27
+2.7.5 MEDIA PERSONNEL BADGING .................................................................... 27
+2.7.6 TEAM RESPONSIBILITY FOR MEDIA CONDUCT........................................ 27
+2.7.7 DO NO HARM TO THE EVENT...................................................................... 27
+2.7.8 DIFFERENTIATE TEAM ACTIVITIES FROM ORGANIZER ACTIVITIES ...... 27
+2.7.9 TEAM RESPONSIBILITY FOR TEAM SPONSOR CONDUCT ...................... 27
+2.8 AWARDS AND SCORING ............................................................................... 27
+2.8.1 CATEGORY PLACE AWARDS ...................................................................... 27
+2.8.2 JUDGES CHOICE AND OVERALL WINNER AWARD................................... 31
+2.8.3 TECHNICAL ACHIEVEMENT AWARDS ........................................................ 32
+2.8.4 TEAM CONDUCT AWARDS .......................................................................... 33
+2.9 DISQUALIFICATION FROM CONSIDERATION FOR ANY AWARD .............. 34
+2.10 WITHDRAWAL FROM COMPETITION ........................................................... 34
+2.10.1 APPLICATION AND PROJECT AND ROCKETEER FEE REFUNDS ............ 34
+3.0 INTERNATIONAL TRAFFIC IN ARMS REGULATIONS................................. 34
+3.1 FINAL SCORE SHEET ................................................................................... 35
+3.2 APPENDIX A: ACRONYMS, ABBREVIATIONS, AND TERMS ....................... 36
+3.3 APPENDIX B: JUDGING RUBRICS ................................................................ 38
+3.4 APPENDIX C: TEAM VIOLATION POINT DEDUCTION FORM.................... 43
+IREC 2026 ver. 1.0
+International Rocket Engineering Competition Rules & Requirements Effective Date: 10/05/2025
+Page 6 of 43
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+1.0 PURPOSE AND SCOPE
+This document defines the rules and requirements governing participation in the International
+Rocket Engineering Competition (IREC). Additional guidance for collegiate teams entered in the
+IREC is contained in the IREC Design, Test, & Evaluation Guide (DTEG), maintained on the
+ESRA website. The DTEG provides teams with project development guidance ESRA uses to
+promote flight safety. Departures from this guidance may negatively impact an offending team's
+score and flight status depending on the degree of severity.
+Additional requirements for project deliverables can be found in the Integrated Master Schedule
+document, which is available on the ESRA website.
+If any IREC team is unclear about competition rules and requirements, the spirit and intent of the
+rules or has a situation not specifically addressed by this document, they should contact ESRA via
+the Experimental Sounding Rocket Association Discord Server.
+1.1 DOCUMENTATION
+The following documents include standards, guidelines, schedules, or required forms. The
+documents listed in this section are either applicable to the extent specified herein or contain
+reference information useful in the application of this document.
+DOCUMENT FILE LOCATION
+IREC Design, Test, &
+Evaluation Guide https://www.esrarocket.org/documents-and-forms
+IREC Integrated Master
+Schedule Document (IMS) https://www.esrarocket.org/documents-and-forms
+IREC Range Standard
+Operating Procedures https://www.esrarocket.org/documents-and-forms
+IREC Team Video Challenge https://www.esrarocket.org/team-video-challenge
+IREC Live Rocket Video
+Challenge
+https://www.esrarocket.org/live-rocket-videochallenge
+IREC Project Technical
+Report Template https://www.esrarocket.org/documents-and-forms
+IREC 2026 ver. 1.0
+International Rocket Engineering Competition Rules & Requirements Effective Date: 10/05/2025
+Page 7 of 43
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+IREC Extended Abstract
+Template https://www.esrarocket.org/documents-and-forms
+TRA Unified Safety Code https://www.tripoli.org/docs/Safety_Code
+14 CFR, Part 1, 1.1 General
+Definitions http://www.ecfr.gov/General_Definitions
+14 CFR, Part 101, Subpart C,
+101.22 Definitions http://www.ecfr.gov/Part101_SubpartC
+IREC 2026 ver. 1.0
+International Rocket Engineering Competition Rules & Requirements Effective Date: 10/05/2025
+Page 8 of 43
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+2.0 INTERNATIONAL ROCKET ENGINEERING COMPETITION OVERVIEW
+Student teams competing in the IREC must design, build, and launch a rocket carrying a payload
+of no less than 4.4 lbs. to a target apogee of either 10,000 ft, or 30,000 ft, or 45,000 ft above ground
+level (AGL). Team Projects will be divided into one of the following nine categories based on the
+type of project attempted. Teams are permitted to switch categories/ downgrade from their original
+accepted category if required, teams are not allowed to upgrade categories. Teams shall switch
+categories prior to submitting their final Project Technical Report. The team must email prior to
+the submission of the Project Technical Report an e-mail entitled "TEAM <Your Team ID>
+FORMALLY SWITCHES CATEGORIES from Competition Year IREC" to
+general.info@esrarocket.org and must receive approval to this request . For example, a team
+assigned the Team ID "100" would switch categories from the 2026 IREC by sending an e-mail
+entitled "TEAM 100 FORMALLY SWITCHES CATEGORIES FROM THE 2026 IREC".
+● 10,000 ft AGL apogee with commercial-off-the-shelf (COTS) solid or hybrid rocket
+propulsion system
+● 30,000 ft AGL apogee with COTS solid or hybrid propulsion system
+● 10,000 ft AGL apogee with student-researched and developed (SRAD) solid rocket
+propulsion system.
+● 30,000 ft AGL apogee with SRAD solid rocket propulsion system
+● 10,000 ft AGL apogee with SRAD hybrid or liquid rocket propulsion system
+● 30, 000 ft AGL apogee with SRAD hybrid or liquid rocket propulsion system
+● 30,000 ft AGL apogee Two Stage any propulsion type
+● 45,000 ft AGL apogee Two Stage any propulsion type
+● Non-competing demonstration flights (including high altitude demo flights (50k ft+)
+2.1 GENERAL GUIDELINES FOR DESIGN AND FLIGHT OPERATIONS
+SRAD propulsion systems are defined as those designed by and manufactured by students. Under
+no circumstances are the SRAD propellant components/energetic materials to be manufactured by
+a third party. This includes solid propellant grains.
+Multistage launch vehicles and all chemical propulsion disciplines (solid, liquid, and hybrid) are
+allowed.
+Note that all propellants used must be non-toxic. Ammonium perchlorate composite propellant
+(APCP), potassium nitrate and sugar (aka "rocket candy"), nitrous oxide, liquid oxygen (LOX),
+hydrogen peroxide, kerosene, propane, and similar substances, are all considered non-toxic. Toxic
+propellants are defined as those requiring breathing apparatus, special storage and transport
+infrastructure, extensive personal protective equipment, etc. (e.g., Hydrazine and N2O4).
+ESRA uses the DTEG to define and promote flight safety. The IREC utilizes national standards
+including NFPA 1127, FAA and other regulatory organizations. The requirements are specifically
+IREC 2026 ver. 1.0
+International Rocket Engineering Competition Rules & Requirements Effective Date: 10/05/2025
+Page 9 of 43
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+listed in the DTEG. Departures from the DTEG may negatively impact an offending team’s score
+and flight status, depending on the degree of severity.
+Competition Officials will evaluate competitors for Awards within each competition category
+based on the quality of required project documentation, a Poster Session held during the IREC
+Conference, the quality of their system’s overall design and construction, and finally the program’s
+overall operational efficiency and performance demonstrated at the IREC. Furthermore,
+Competition Officials will select no less than 24 teams to present a particular aspect of their work
+in a Podium Session held during the IREC Conference. These teams are eligible to receive certain
+Technical Achievement Awards.
+2.2 TEAM COMPOSITION AND ELIGIBILITY
+2.2.1 STUDENT TEAM MEMBERS
+IREC Teams shall consist of members who were matriculated undergraduate or graduate students
+(i.e., Masters or Doctoral students) during the previous academic year (e.g., former students who
+graduated shortly before the competition remain eligible). Two teams may be accepted from the
+same academic institution if they utilize two different forms of propulsion (e.g. COTS and SRAD
+Hybrid), including the non-competing demonstration category. A team who wishes to enter into
+high altitude demo flights may have the same form of propulsion as their competing team.
+There is no limit on the overall number of students per team, or the number of graduate students
+per team. Individual students may only compete on a single team.
+2.2.2 TEAM ORGANIZATION AND SUBMISSION LIMITATIONS
+Two teams may be accepted from the same academic institution if they are utilizing two different
+forms of propulsion (e.g. COTS and SRAD Hybrid). Furthermore, no project may be entered in
+more than one category at the IREC. However, as previously noted, teams are permitted to
+downgrade to 10k COTS, if necessary, before submitting their final Project Technical Report. The
+event organizers will track and evaluate each team separately. Each team has to be independent,
+no shared team members from each accepted team is allowed.
+Acceptance into the International Rocket Engineering Competition is highly selective. Teams are
+strongly encouraged to participate with local rocketry programs to gain high power rocketry flight
+experience prior to the competition launch days. Teams with SRAD, hybrid, or liquid projects
+should have experience relevant to their project (ex: minimum of a static, full-scale hot fire).
+Teams are also encouraged to have an experienced mentor and flyer of record. Competition
+officials will evaluate the overall quality of the team’s application, relevant experience team,
+outreach efforts, and previous competition experience to determine which teams will be accepted.
+2.2.3 TEAM COMPOSITION AND MULTI-SCHOOL TEAMS
+In general, the intent is that competing teams should represent one institution. However, when
+there are not enough capable students at a given institution to form a team, a team can be formed
+IREC 2026 ver. 1.0
+International Rocket Engineering Competition Rules & Requirements Effective Date: 10/05/2025
+Page 10 of 43
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+using students from more than one institution. The team must email general.info@esrarocket.org
+and must receive approval to this request prior to formation of the multi-school team is allowed to
+compete. If an institution fields a team, students from that institution cannot join another team.
+Teams will document their institutional affiliation(s) via the School Participation Letter(s)
+specified in 2.6.6.1
+2.3 PAYLOAD
+2.3.1 PAYLOAD MASS
+The launch vehicle shall carry no less than 4.4 lbs. of payload. Payload is defined as being
+replaceable with ballast of the same mass, with no change to the launch vehicle’s trajectory in
+reaching the target apogee, or its successful recovery. This payload may be assumed present when
+calculating the launch vehicle's stability. There is no requirement for launch vehicles to be stable
+without the required payload mass on board.
+Competition officials will “weigh” the launch vehicle’s payload(s) at the International Rocket
+Engineering Competition with a scale they provide. Understanding there may be discrepancies
+between a team’s scale and the official one used for weigh-in, competition officials will accept
+payload weigh-ins as much as 5% (~0.2 lb.) less than the specified minimum without penalty. For
+example, competition officials will not penalize a team whose payload measured 4.4 lbs. on the
+team’s scale but 4.2 lbs. on the officials’ scale. Any weight greater than the specified minimum is
+acceptable. Vehicle payloads must be mechanically robust and not be damaged or shifted in any
+phase of flight or during recovery. Poorly designed payload may cause a loss of payload score at
+judge’s discretion as described in section 2.8.1.6.
+2.3.2 INDEPENDENT PAYLOAD FUNCTIONALITY
+Although non-functional "boiler-plate" payloads are permitted, teams are highly encouraged to
+launch creative scientific experiments and technology demonstrations. However, launch vehicles
+shall be designed to deliver the payload to the target apogee and recover themselves independent
+of any active or passive payload function(s). For example, an active launch vehicle stability
+augmentation system is a launch vehicle subsystem – not a payload. Such launch vehicle
+subsystems will contribute to competition officials’ overall evaluation of a project and may be
+submitted to the IREC Conference Podium Session described in Section 2.6.4 of this document,
+but they are not payloads.
+Scientific experiments and technology demonstration payloads entered in the IREC may be
+evaluated for awards. Representatives from the Space Dynamics Laboratory (SDL) host the SDL
+Payload Challenge – an Intercollegiate Payload Engineering Competition hosted at International
+Rocket Engineering Competition. Teams wishing to enter their payload(s) into the SDL Payload
+Challenge should consult the SDL Payload Challenge Page on the ESRA website.
+(https://www.esrarocket.org/sdl-payload-challenge).
+IREC 2026 ver. 1.0
+International Rocket Engineering Competition Rules & Requirements Effective Date: 10/05/2025
+Page 11 of 43
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+2.3.3 PAYLOAD LOCATION AND INTERFACE
+Neither the payload's location in the launch vehicle of a single stage category nor is its method of
+integration and removal specified; however, for a two-stage category the payload must be in the
+sustainer. Competition officials will weigh payload(s) independent of all launch vehicle associated
+systems prior to flight; therefore, the payload(s) submitted for weigh-in shall not be inextricably
+connected to other launch vehicle associated components (e.g., the launch vehicle's recovery
+system, internal structure, or airframe) while being weighed. If the payload's design prevents it
+from being weighed completely independent of the launch vehicle or interface with the launch
+vehicle (e.g., an adapter to mate the payload to the rocket), competition officials will impose a
+point penalty on the team in accordance with Section 2.8.1.6 of this document. Judges will also
+verify the payload’s capability to withstand launch and recovery loads. Teams with payloads that
+are not properly secured may shift in flight and will be denied launch access until the payload is
+properly secured. All payloads must be weighed, measured, and checked in by Space Dynamics
+Laboratory (SDL) before launch no matter the functionality of the payload or whether or not the
+payload is entered into the SDL Payload Challenge.
+2.3.4 RESTRICTED PAYLOAD MATERIALS
+Payloads shall not contain significant quantities of lead or other heavy metals. Additionally,
+payload shall not contain any hazardous materials that impact the health and safety of team
+members, staff, the general public, the convention center, or the launch site itself. Similarly, any
+use of radioactive materials shall be permitted only if operationally necessary and approved by
+competition officials. If approved, any such materials shall be fully encapsulated and are limited
+to 1 µC or less of activity. Finally, payloads shall not contain any live, vertebrate animals.
+Approvals shall be gained prior to attending the event and will not be granted on site. If teams have
+any questions about payload materials, they should seek clarification on the ESRA discord or via
+e-mail as early as possible.
+2.3.5 PAYLOAD FORM FACTOR
+The following sections concern the required shape and dimensions of payload(s) submitted for
+weigh-in. These requirements are different if the payload is a non-functional “boiler-plate” (aka
+mass emulator) or if it is a functional scientific experiment/technology demonstration (i.e., those
+entered in the SDL Payload Challenge). Section 2.3.5.1 defines the requirements for nonfunctional payloads. Section 2.3.5.2 defines the requirements for functional payloads. ESRA’s
+“Payload Cube Unit” is defined in Table 1 below. This definition applies throughout this document.
+The definition is inspired by the CubeSat standard but is not identical to it. No other CubeSat factors
+outside Table 1 will be considered for Payload Bonus Points.
+IREC 2026 ver. 1.0
+International Rocket Engineering Competition Rules & Requirements Effective Date: 10/05/2025
+Page 12 of 43
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+Table 1: ESRA Payload Form Factor Definitions
+Note: To be compliant with Payload Cube Unit dimensions, the payload outer mold line must be
+completely inscribed by a rectangle at the minimum tolerance condition and circumscribed by a
+rectangle at the maximum tolerance condition. For example, a 100 mm diameter rod is not
+compliant, but a 100 mm cube is.
+2.3.5.1 NON-FUNCTIONAL PAYLOAD
+Any launch vehicle carrying strictly non-functional payload mass (ie. ballast weight), as it’s
+payload shall do so in the form of a 3U “Payload Cube Unit”, listed in table 1 of this document.
+2.3.5.2 SCIENTIFIC EXPERIMENT PAYLOAD
+Any functional scientific experiment or technology demonstration payload and its associated
+structure (i.e. those entered in the SDL Payload Challenge) may be constructed in any form factor,
+provided the experiment/technology and its associated structure remain in compliance with
+Sections 2.3.1, 2.3.2, 2.3.3, and 2.3.4 of this document. With special regard to compliance with
+Section 2.3.1, the required minimum payload mass should be achieved primarily by the
+experiment(s)/technology and associated support structure. The payload design may incorporate
+up to 1.15 lbs. of non-functional “boiler-plate” mass to meet the required mass minimum while
+remaining exempt from Section 2.3.5.1 above. This non-functional “boiler-plate mass must be
+weighed separately from the rest of the payload to ensure it does not exceed the allowed mass as
+specified above. Competition officials may impose a point penalty on any team believed to be
+violating the spirit and intent of this rule in accordance with Section 2.8.1.6 of this document.
+Finally, despite this exemption, ESRA highly encourages teams to adopt the Payload Cube Unit
+physical standard for their payload(s) whenever possible – either as the payload structure itself, or
+as an adapter which the payload is mated to prior to the combined assembly’s integration with the
+launch vehicle (such an adapter could be included in the official payload mass). To promote this
+Payload Cube
+Units
+Dimensions
+(Length x Width x Height)
+Length and
+Width
+Tolerance
+Height
+Tolerance
+1U 100 mm ×100 mm ×100 mm ± 2 mm ± 2 mm
+2U 100 mm ×100 mm ×200 mm ± 2 mm ± 2 mm
+3U 100 mm ×100 mm ×300 mm ± 2 mm ± 2 mm
+4U 100 mm ×100 mm ×400 mm ± 2 mm ± 2 mm
+5U 100 mm ×100 mm ×500 mm ± 2 mm ± 2 mm
+6U 100 mm ×100 mm ×600 mm ± 2 mm ± 2 mm
+IREC 2026 ver. 1.0
+International Rocket Engineering Competition Rules & Requirements Effective Date: 10/05/2025
+Page 13 of 43
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+encouragement, teams whose functional payloads do adopt the Payload Cube Unit physical
+standard will be awarded bonus points in the IREC in accordance with Section 2.8.1.7. To meet
+this requirement, a payload will have to fit completely in a Payload Cube Unit dispenser with
+nothing protruding or physically connecting outside as listed in the Table 1 of Section 2.3.5.
+2.3.5.3 DEPLOYABLE PAYLOADS
+Deployable Payloads that eject a payload out during the flight and or eject once they have landed
+with the rest of the rocket are allowed. GPS for tracking these deployable payloads is required by
+the DTEG .Teams are advised to evaluate their designs as deployable payloads will bring a
+significant project risk and high level of scrutiny to that team’s entry. Deployable UAS payloads
+are prohibited.
+2.3.5.4 NON-COMPETITING DEMONSTRATION FLIGHTS
+Any team entering a rocket as a high-altitude demonstration flight (that may require a Class 3
+waiver) shall coordinate with ESRA officials to ensure the team secures the needed airspace
+permissions. Teams who enter into the demonstration flight category are not eligible for podium
+sessions, category, or technical awards. They are still required to submit progress updates,
+technical report, school participation letter and insurance. Teams who submit the final technical
+report and wish to change their category can only switch to the non-competing demonstration
+category via ESRA permission.
+2.4 GPS ROCKET TRACKING
+All IREC launch vehicles shall carry a Global Position System (GPS) tracking system to expedite
+rocket recovery. GPS Tracking requirements are described in detail within the IREC Design, Test,
+and Evaluation Guide (DTEG), maintained on the ESRA website:
+(https://www.esrarocket.org/documents-and-forms).
+2.5 OFFICIAL ALTITUDE LOGGING
+Launch vehicles shall carry a COTS barometric pressure altimeter with on-board data storage,
+which will provide an official log of apogee for scoring. This may either be a standalone COTS
+product, or a feature of a COTS flight computer also used for launch vehicle recovery system
+deployment.
+While the on-board log is considered the primary data source for official altitude reporting,
+telemetry – if implemented – may be accepted under certain circumstances defined in Section
+2.8.1.4 of this document. If implemented, this telemetry data shall originate from the same sensor
+source as the official on-board data log.
+All rocket recovery teams must report directly to the Postflight Inspection tent once they return
+with their rocket, along with any required equipment (e.g., laptop, cables and tools) to read the
+altimeter data to the Postflight Inspection team. The Postflight Inspection team will first listen to
+the beeps from the altimeter and/or then verify using the altimeter readout of the flight data. The
+IREC 2026 ver. 1.0
+International Rocket Engineering Competition Rules & Requirements Effective Date: 10/05/2025
+Page 14 of 43
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+first COTS altimeter that students choose to connect to or listen to the beeps will be the official
+altitude data. The only exception is if the altimeter is damaged and data is unreadable. Altitude
+data is critical to providing a final score for your team. Teams will be required to open up/ take
+apart the electronics bays during this review. Teams are expected to come prepared with all the
+necessary tools and equipment for this and should expect not to have access to power or internet.
+Teams will have 45 minutes to complete this review with a Post Flight Data Inspection Judge.
+Once this time passes teams will incur a 20-point penalty for unpreparedness and holding up the
+line . The cutoff check-in time for teams with their rocket at Postflight Data Inspection during
+Wednesday-Friday is 20:00 local time. For Saturday, the cutoff check-in time for this inspection
+is 09:00 local time. Failure to report directly for the Postflight Inspection could cause your team
+to be penalized up to and including a zero-flight altitude score. Any team that has not received a
+recovery score by 10 am on Saturday will receive a zero-flight altitude score, no matter the
+circumstances. DO NOT WAIT UNIT THE FINAL DAY TO LAUNCH OR RECOVER!
+2.6 PROJECT DELIVERABLES
+The following sections define the deliverable materials (e.g., paperwork and presentation
+materials) competition officials require from teams competing in the IREC – including as
+appropriate each deliverable's format and minimum expected content. All deliverables will be
+submitted to ESRA per the instructions provided to the teams. Each relevant deliverable
+description will facilitate submission of that deliverable or will be communicated to teams as is
+determined by ESRA. Late submissions will disqualify the team from the competition. Incomplete,
+or incorrect submissions, including progress updates, will result in a loss of points in accordance
+with paragraph 2.8.1.1. Submissions are incorrect if data is incorrect, entered the wrong fields or
+not entered in accordance with submission guidance. This too includes entering units when only
+numerical data is requested.
+The scheduled due dates of all required deliverables are recorded in the Integrated Master
+Schedule Document, maintained on the ESRA website (https://www.esrarocket.org/documentsand-forms).
+2.6.1 ENTRY FORM AND PROGRESS UPDATES
+Each team shall inform ESRA of their desire to compete in the IREC by registering as a new
+team on the Experimental Sounding Rocket Association website: (esrarocket.org). Teams shall
+submit progress updates via the esrarocket.org site on three specific occasions prior to the
+competition. The third progress will include a live video review to be held online. These progress
+updates will record progression in the project's technical characteristics during development.
+Competition officials understand not all technical details will be known until later in the design
+process. Therefore, the Entry Form and all subsequent Progress Updates prior to the final
+submission will be evaluated based only on their timeliness and completeness. Timeliness and
+completeness are defined as follows:
+IREC 2026 ver. 1.0
+International Rocket Engineering Competition Rules & Requirements Effective Date: 10/05/2025
+Page 15 of 43
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+Total completeness of the entry form and subsequent updates is always required. Reasonable
+engineering estimates and approximations are expected during the application process but will be
+subject to progressive additional scrutiny in the subsequent Progress Updates. Teams should
+briefly mention their ongoing discussions and analysis in the comment fields for any numerical
+submissions that are known to be unreasonable or remain undecided. Teams may also respond to
+undecided criteria by demonstrating their understanding of any applicable event guidance or best
+practice governing the particular detail. In general, ESRA expects technical information to change,
+but information must always be provided. Only teams whose application meets this standard will
+be evaluated for entry into the competition. Accepted teams will be announced per the Master
+Schedule and each accepted team will receive a Team ID. Once assigned, any correspondence
+between a team and ESRA must contain that team's ID number to enable a timely and accurate
+response. All submissions for the following progress updates shall follow the naming
+convention TeamID_Formal University Name_Purpose. Example: Team100_ESRA
+University_ Progress Report 1. Any other naming convention used will incur a 5-point
+deduction from the corresponding submission.
+2.6.1.1 ONLINE PROGRESS UPDATE AND SAFETY REVIEW
+For the 3rd progress update, teams will submit information on esrarocket.org and discuss their
+rocket in an online session with safety reviewers. Specific instructions will be forthcoming, but
+teams should expect to create a short slide presentation reviewing their current progress and to
+discuss issues previously raised by the safety reviewers. Teams shall have their rocket available
+for review (realizing that the build should be mostly complete by this point in the competition).
+Teams are responsible for coordinating and providing a meeting link to this online safety
+review with their established Flight Safety Reviewer(s) (as they have been providing
+feedback to teams in Progress Report 1 &2) , Flyer of Record and Mentor all must be invited
+and present. Teams are responsible for recording this safety review and sending it to ESRA
+to be uploaded onto ESRA’s social media platforms.
+Note: Teams who have significant production work remaining by the 3rd progress update may be
+disqualified.
+2.6.1.2 INITIAL SAFETY REVIEWS
+Each progress update will be reviewed for safety, DTEG, and rules compliance. Safety reviewers
+will contact teams if necessary to resolve any issues or questions. Teams that are unable to
+satisfactorily resolve safety-related issues may be disqualified.
+Note: these online safety reviews are not a substitute for the “hands-on” safety review and RSO
+process conducted during the actual competition.
+IREC 2026 ver. 1.0
+International Rocket Engineering Competition Rules & Requirements Effective Date: 10/05/2025
+Page 16 of 43
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+2.6.2 PROJECT TECHNICAL REPORT
+Each team shall submit a Project Technical Report that describes its project for the judging panel
+and other competition officials. The Project Technical Report shall be formatted similarly to the
+template provided below and shall use the American Institute of Aeronautics and Astronautics
+(AIAA) style guide, found on the AIAA website.
+(https://www.aiaa.org/publications/journals/Journal-Author/punctuation-spelling-and-style)
+The Intercollegiate Rocket Engineering Competition Project Technical Report template is
+available for download on the ESRA website (https://www.esrarocket.org/documents-and-forms).
+Always check the template maintained on the ESRA website before drafting your Project
+Technical Report to ensure you are using the latest version.
+Teams are permitted to use other document preparation software, such as LaTeX, to prepare their
+Project Technical Report, but they must ensure that formatting is identical to the ESRA template.
+For COTS teams, the main body of the technical report is limited to 25 pages, inclusive of all tables
+and graphics. For SRAD and Hybrid/Liquid teams, the main body of the technical report is limited
+to 35 pages, inclusive of all tables and graphics. Appendices may be of any length.
+In accordance with the IMS dates, teams shall submit a single digital PDF copy of their Project
+Technical Report. Technical reports exceeding 50 Megabytes in size may need to be uploaded to
+a cloud server if the permissions allow the judges unrestricted access to the document. Teams shall
+submit their Project Technical reports using the esrarocket.org website
+(esrarocket.org). Teams should bring a limited number of hard copies to the International Rocket
+Engineering Competition so members of the judging panel and other competition officials may
+consult the contents at will during interactions with the team.
+The Project Technical Report's main title page is left to the team's discretion, however; the paper
+shall be subtitled “Team <Your Team ID> Project Technical Report to the <Year> IREC". For
+example, a team assigned the Team ID "100", competing in the 2026 IREC, would subtitle their
+Project Technical Report "Team 100 Project Technical Report to the 2026 IREC".
+2.6.2.1 PUBLICATION
+All reports will be publicly published after the event concludes. Petitions for confidentiality will
+not be accepted. DO NOT SHARE is not an option for any technical report or extended abstract
+submission.
+2.6.2.2 AUTHORSHIP AND CONTACT INFORMATION
+The Project Technical Report shall list every author who has made a significant contribution to the
+report and include the team’s academic advisor. Each individual’s academic affiliation shall be
+specified in the format [Institution, City, State, Postal Code, Country]. Vary the address format as
+required if your country’s address format is different. The corresponding author shall be identified,
+IREC 2026 ver. 1.0
+International Rocket Engineering Competition Rules & Requirements Effective Date: 10/05/2025
+Page 17 of 43
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+and email provided. The corresponding author shall be contactable at their provided email for at
+least two years after submission.
+2.6.2.3 EXECUTIVE SUMMARY
+The report shall contain an executive summary. This summary is limited to one page. This
+summary shall identify the competition category, identify the major rocket components, describe
+the payload mission (note: ballast is a mission!), describe any unique features of the design, and
+briefly summarize the testing required and the testing performed.
+2.6.2.4 INTRODUCTION
+The report shall contain an introduction. This introduction is limited to two pages and shall address
+the following topics:
+1. Category in which the team is competing
+2. Unique design characteristics of launch vehicle
+3. Payload mission (even if it is only dead weight)
+4. High-level project or program goals and objectives (this can be anything from “this is our
+first-year competing, so a nominal flight is the goal,” to “fix what went wrong last year”
+to, for example, developing active apogee control)
+5. Overview of the academic program (is this an extracurricular activity or part of a formal
+academic effort with credit given, etc.)
+6. Overview of contributors to the project outside the team and academic advisor (this
+would include university and commercial facilities used for construction and testing, and
+funding sources)
+7. The team structure presented as an organization chart (if the titles or position names are
+self-explanatory, no further description is needed)
+8. Overview of the team management strategies
+9. How the Project Technical Report was prepared (i.e., did one person do all the writing or
+did section leaders prepare their sections; was a single person in overall charge, how was
+the report edited, etc.)
+2.6.2.5 SYSTEM ARCHITECTURE OVERVIEW
+The Project Technical Report shall contain a System Architecture overview. This section shall
+begin with a top-level overview of the integrated system, including a cutaway figure depicting the
+fully integrated launch vehicle and its major subsystems – configured for the mission being flown
+in the competition. This description shall be followed by the following subsections. Each
+subsection shall include detailed descriptions of each subsystem, and reflect the technical analyses
+used to support design and manufacturing decisions. The Project Technical Report should not just
+discuss what the team did, but the reasoning for the choices. These may include, but are not
+limited to, design goals, limitations, potential trade-offs, anticipated component loads along with
+safety factors. Technical drawings of these subsystems shall be included in Appendix F.
+• Aero-structures Subsystems
+• Propulsion Subsystems
+IREC 2026 ver. 1.0
+International Rocket Engineering Competition Rules & Requirements Effective Date: 10/05/2025
+Page 18 of 43
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+• Avionics
+• Recovery Subsystems
+• Telemetry
+• Payload Subsystems
+• Any other subsystems that are flight critical and will aid in evaluating the overall project.
+If there are none, then state none.
+2.6.2.6 MISSION CONCEPT OF OPERATIONS OVERVIEW
+The Project Technical Report shall contain a Mission Concept of Operations (CONOPS)
+Overview. This section shall identify the mission phases, include a figure, and describe the nominal
+operation of all subsystems during each phase (e.g., a description of what is supposed to be
+occurring in each phase, and what subsystem[s] are responsible for accomplishing this).
+Furthermore, this section shall define what mission events signify a phase transition has occurred
+(e.g., "Ignition" may begin when a FIRE signal is sent to the igniter and conclude when the
+propulsion system comes up to chamber pressure. Similarly, "Liftoff" may begin at vehicle first
+motion, and conclude when the vehicle is free of the launch rail). Phases and phase transitions are
+expected to vary from system to system based on specific design implementations and mission
+goals & objectives. No matter how a team defines these mission phases and phase transitions, they
+will be used to help organize failure modes identified in a Risk Assessment Appendix – described
+in Section 2.6.2.9 of this document.
+2.6.2.7 CONCLUSIONS AND LESSONS LEARNED
+The Project Technical Report shall contain Conclusions and Lessons Learned. This section shall
+include the lessons learned during the design, manufacture, and testing of the project, both from a
+team management and technical development perspective. If you had failures, what did you learn
+from them? Furthermore, this section should include strategies for corporate knowledge transfer
+from senior student team members to the rising underclassmen who will soon take their place.
+2.6.2.8 ACKNOWLEDGMENTS
+The Project Technical Report shall contain an acknowledgment section for key individuals,
+institutions, and funding sources.
+2.6.2.9 TECHNICAL REPORT APPENDICES
+The Project Technical Report shall contain the following appendices in the order listed.
+2.6.2.9.1 APPENDIX A- SYSTEM WEIGHTS, MEASURES, AND PERFORMANCE DATA
+Information can be reported using either Imperial or Metric units (inches, feet, pounds, Newtons,
+etc.). Do not mix unit systems except where the manufacturer uses a system different from the
+report, in which case, provide the converted parameter in the unit system of the rest of the report.
+This information shall include:
+IREC 2026 ver. 1.0
+International Rocket Engineering Competition Rules & Requirements Effective Date: 10/05/2025
+Page 19 of 43
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+a. Basic rocket vehicle information
+1. Number of stages
+2. Length
+3. Airframe diameter
+4. Number of fins
+5. Fin semi-span
+6. Fin tip chord
+7. Fin root chord
+8. Fin thickness
+9. Weight on launch rail
+10. Propellant weight
+11. Empty motor case/structure weight
+12. Payload weight
+13. Liftoff weight
+14. Center of pressure
+15. Center of gravity
+16. Launch rail length
+b. Propulsion information
+1. Motor type
+2. Whether it is COTS or SRAD
+3. COTS manufacturer and designation
+4. Motor letter classification
+5. Average thrust (N)
+6. Total impulse (Ns) and
+7. Motor burn time
+c. Predicted flight data
+1. Liftoff thrust-weight ratio (X:1)
+2. Rail departure velocity
+3. Minimum static margin
+4. Maximum acceleration (G)
+5. Maximum velocity
+6. Fin flutter velocity
+7. Target apogee
+8. Predicted apogee (is this the same as the competition class)
+d. Flight profile graph. (what information must be included)
+e. Recovery information
+1. Altimeters used
+IREC 2026 ver. 1.0
+International Rocket Engineering Competition Rules & Requirements Effective Date: 10/05/2025
+Page 20 of 43
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+i. COTS
+ii. Redundant
+2. Drogue parachute information
+i. Primary deployment charge
+ii. Backup deployment charges
+iii. Deployment altitude
+iv. Descent rate
+3. Main parachute information
+i. Primary deployment charge
+ii. Backup deployment charges
+iii. Deployment altitude
+iv. Descent rate
+4. Parachute shock cords
+5. Mechanical links
+2.6.2.9.2 APPENDIX B- PROJECT TEST REPORT
+The second Project Technical Report appendix shall contain applicable Test Reports from the
+minimum tests prescribed in the IREC Design, Test, & Evaluation Guide
+(https://www.esrarocket.org/documents-and-forms). These reports shall appear in the following
+order. In the event any report is not applicable to the project in question, the team shall include a
+page marked "THIS PAGE INTENTIONALLY LEFT BLANK" in its place.
+a. Recovery system testing: In addition to descriptions of testing performed in
+accordance with the DTEG sections 6.13 - 6.16 and the results thereof. This
+appendix shall include a figure and supporting text describing the dual redundancy
+of recovery system electronics.
+1. Recovery System [DTEG 6.13]
+2. Ground Test Demonstration [DTEG 6.13.4]
+3. Flight Test Demonstration [DTEG 6.13.5]
+4. Dual Redundancy of Recovery Electronics [R&R 2.6.2.10.a.]
+5. Stored-Energy Devices – Energetic Device Safing and Arming [DTEG
+6.14]
+6. Arming Devices [DTEG 6.15]
+7. Arming Device Verification [DTEG 6.16]
+b. SRAD propulsion system testing (if applicable): In addition to descriptions of
+testing performed and the results thereof, teams developing SRAD hybrid or liquid
+propulsion systems shall include in this appendix a fluid circuit diagram. This figure
+IREC 2026 ver. 1.0
+International Rocket Engineering Competition Rules & Requirements Effective Date: 10/05/2025
+Page 21 of 43
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+shall identify nominal operating pressures at various key points in the system –
+including the fill system.
+c. SRAD pressure vessel testing (if applicable)
+d. SRAD GPS testing (if applicable)
+e. Payload recovery system testing (if applicable)
+2.6.2.9.3 APPENDIX C- HAZARD ANALYSES
+This appendix shall contain a hazard analysis that addresses, as applicable, hazardous material
+handling, transportation and storage procedures of propellants, and any other aspects of the design
+which pose potential hazards to operating personnel. A mitigation approach – by process and/or
+design – shall be defined for each hazard identified. An example of such a matrix is available on
+the ESRA website at (https://www.esrarocket.org/documents-and-forms).
+2.6.2.9.4 APPENDIX D- RISK ASSESSMENT
+This appendix shall contain a risk assessment that summarizes risk and reliability concepts
+associated with the project. All identified failure modes which pose a risk to mission success shall
+be recorded in a matrix, organized according to the mission phases identified by the CONOPS. A
+mitigation approach – by process and/or design – shall be defined for each risk identified. An
+example of such a matrix is available on the ESRA website at
+(https://www.esrarocket.org/documents-and-forms).
+2.6.2.9.5 APPENDIX E – CHECKLISTS
+This appendix shall contain the following checklists that include detailed step by step procedures
+for
+a. Final assembly
+b. Preflight
+c. Arming
+d. Launch
+e. Recovery
+f. Off-Nominal (these checklists shall include alternate process flows for
+disarming/safeing the system based on identified failure modes [e.g., off-nominal
+situations]. These off-nominal checklist procedures shall not conflict with the IREC
+Range Standard Operating Procedures.)
+g. Any other checklists required due to special design features such as payload
+Teams developing SRAD hybrid or liquid propulsion systems shall also include in this appendix
+a description of processes and procedures used for fill and vent procedures (including fault
+procedures) along with procedures for cleaning all propellent tanks and other fluid circuit
+components.
+Competition Range officials will verify teams are following their checklists during all operations
+for which checklists are provided. Therefore, teams shall maintain a complete, paper hardcopy of
+IREC 2026 ver. 1.0
+International Rocket Engineering Competition Rules & Requirements Effective Date: 10/05/2025
+Page 22 of 43
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+these checklist procedures with their flight hardware during all range activities. Insufficient detail,
+failure to bring paper hard copies, and failure to use your team’s detailed checklist will make your
+team ineligible for flight activities until conflicts are resolved.
+2.6.2.9.6 APPENDIX F – ENGINEERING DRAWINGS
+This appendix shall contain detailed engineering drawings including any revision-controlled
+technical drawings necessary to define significant subsystems and components. Drawings shall be
+provided for all SRAD subsystems or components. Each drawing shall include dimensions and
+any other specifications required to define the part.
+To reduce file size, please do not embed full CAD models – just use a picture.
+2.6.3 POSTER SESSION MATERIALS
+Each team shall bring to the International Rocket Engineering Competition a poster display which
+overviews their project for industry representatives, the general public, other students, and
+members of the judging panel. The information provided should encompass the overall project's
+design, testing, CONOPS, and purpose. The poster shall measure approximately 36 inches × 48
+inches and must be self-supporting on either an organizer provided table or team provided easel.
+No partitions or other structures for hanging posters will be provided. Finally, the poster shall
+prominently display the team’s Team ID in the top, right corner, in bold, black, size 72 or larger,
+Arial font (or similar), on a white field.
+These displays – as well as any practicable non-energetic project hardware – will be exhibited in
+a Poster Session held during the IREC Conference. One or more team members are expected to
+remain with the display throughout the day to answer questions and present their work to industry
+representatives, the general public, other students, and competition officials who will be coming
+to the individual tables to do the Design Build and Quality Judging. All teams shall participate in
+the Poster Session, regardless of whether or not they are additionally selected to participate in the
+Podium Session described in Section 2.6.4 of this document. Any team not present for Conference
+day will incur a 20-point unsportsmanlike conduct penalty.
+On the specified date per the IREC Integrated Master Schedule Document, teams shall submit a
+digital, PDF copy of their poster display to International Rocket Engineering Competition
+website (esrarocket.org). Teams that do not submit these materials or follow the submission
+requirements outlined above will incur a 20-point administrative penalty. The event organizers
+will post these files in an online archive of the conference proceedings. The submission location
+and method for the Poster Session Materials is to be determined and will be communicated to the
+teams on esrarocket.org.
+IREC 2026 ver. 1.0
+International Rocket Engineering Competition Rules & Requirements Effective Date: 10/05/2025
+Page 23 of 43
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+Note: All energetics including, but not limited to: initiators, fuel grains, ejection charges, and
+pressurized gas cylinders, are prohibited from entering the conference premises. Failure to
+follow this policy will incur a point penalty and possible disqualification.
+2.6.4 PODIUM SESSION MATERIALS
+Each team shall submit an Extended Abstract on a particular aspect of their work for competition
+officials and the judging panel to consider including in a Podium Session held during the IREC
+Conference. Teams whose topics are accepted into the Podium Session will be considered eligible
+for Technical Achievement Awards defined in Section 2.8.3 of this document. The Extended
+Abstract shall be formatted according to the style guide of the American Institute of Aeronautics
+and Astronautics (AIAA), using the provided Microsoft® Word document template.
+The Intercollegiate Rocket Engineering Competition Extended Abstract template is available for
+download on the ESRA website (https://www.esrarocket.org/documents-and-forms). Always
+check the template maintained on the ESRA website before drafting your Extended Abstract to
+ensure you are using the latest version.
+The Extended Abstract's main title is left to the team's discretion, however; the document shall be
+subtitled "Team Your Team ID Technical Presentation to the Year IREC". For example, a team
+assigned the Team ID "100", competing in the 2026 IREC, would subtitle their Extended Abstract
+"Team 100 Technical Presentation to the 2026 IREC".
+The Extended Abstract shall be no less than 500 words long and shall not exceed two pages, not
+including footnotes, sources, or source endnotes. The Extended abstract shall not contain any
+tables, figures, nomenclature lists, equations, appendices etc. The submission must include
+sufficient detail to demonstrate its purpose, the technical foundation for the topic discussed, any
+preliminary results to date, and the expected results of flight testing at the International Rocket
+Engineering Competition.
+The topic a team selects for their Podium Session submission should be an aspect of their launch
+vehicle development which they are particularly proud of, excited about, learned the most in the
+process of, creates new knowledge, advances the field's understanding of a particular area,
+presented a unique technical challenge they overcame, and/or otherwise best demonstrates the
+team's technical excellence and/or innovation in a particular aspect of their work. Note that podium
+sessions are limited to launch vehicle-related items (payloads are not eligible). A few examples of
+student work from past IRECs which would have made strong Podium Session submissions
+include the following. (This list is intended to be thought provoking only and is in no way intended
+to be either comprehensive, exclusive, or otherwise limiting.)
+● Design, analysis, and testing of additively manufactured plastic fins for transonic and
+supersonic flight.
+● Design, analysis, and testing of grid-fins
+● Design, analysis, and testing of plasma based electrodynamic roll control actuators.
+IREC 2026 ver. 1.0
+International Rocket Engineering Competition Rules & Requirements Effective Date: 10/05/2025
+Page 24 of 43
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+● Rigorous internal ballistics analysis of a large SRAD solid rocket propulsion system
+● Design, analysis, and testing of a drag reducing aerospike equipped nosecone.
+● Rigorous verification & validation testing of a SRAD ignition system for simultaneous
+activation of parallel rocket stages comprising multiple combustion cycles
+● Design, analysis, and flight demonstration of automated, active telemetry transmitter
+tracking by a steerable, ground-based antenna.
+● Rigorous verification & validation testing of a SRAD propulsion system, including
+propellant characterization and multiple hot fire tests
+● Design, analysis, and testing of "rollerons" implemented for passive roll stability
+augmentation.
+● Design, analysis, and testing of an additively manufactured liquid rocket engine
+combustion chamber.
+● Design, analysis, and testing of a method to greatly minimize the amount of black powder
+needed to parachute ejection.
+● Progress in a regimented iterative approach to developing and implementing an active
+stability augmentation system.
+● Rigorous post-test analysis and characterization of a previously undefined hybrid rocket
+motor failure mode.
+● Design, analysis, and testing of a regenerative cooling system.
+● Structural design based on exquisite aerodynamic/aerothermal loads analysis.
+● Exquisite trajectory analysis verified by flight demonstration.
+● Manufacturing capabilities enabled by SRAD fiber composite filament winding
+technology.
+● Structural analysis of fiber composite laminates using non-isentropic analytic techniques
+On or before a specified IMS date prior to the event, teams shall submit a digital, PDF copy of
+their Extended Abstract to the ESRA website (esrarocket.org). Teams that do not submit these
+materials or follow the submission requirements outlined above will incur a 20-point
+administrative penalty. The event organizers will post these files in an online archive of the
+conference day proceedings. The submission location and method for the Extended Abstract is to
+be determined and will be communicated to the teams.
+2.6.4.1 EXTENDED ABSTRACT PRESENTATION SLIDES
+At the same time, they submit their Extended Abstract, teams shall also submit a digital, PDF copy
+of any Extended Abstract slides they wish to use in their presentation to the ESRA website. These
+slides shall contain the team number and any information they want to present to the audience if
+selected for a podium session . Teams that do not submit these slides or follow the submission
+requirements outlined will incur a 20-point administrative penalty. The event organizers will post
+these files in an online archive of the conference proceedings. The submission location and method
+for the Presentation Slides is to be determined and will be communicated to the teams.
+IREC 2026 ver. 1.0
+International Rocket Engineering Competition Rules & Requirements Effective Date: 10/05/2025
+Page 25 of 43
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+No less than 24 teams will be accepted into the Podium Session. Each presentation will be allotted
+20 minutes, with an additional five minutes reserved for Q&A with judges and other audience
+members. The teams selected shall bring a laptop computer with their completed slides to present.
+Whether accepted into the Podium Session or not, all attending teams should be prepared to
+participate in this activity. On the day prior to the conference day itself, competition officials may
+ask teams whose Extended Abstracts were considered "runners up" to take the place of any selected
+teams who fail to attend the International Rocket Engineering Competition. Any team that is
+selected for podium sessions who miss their allotted time slot will not be able to present and will
+forfeit this opportunity. Teams who lobby for exceptions will incur a penalty for unsportsmanlike
+conduct per section 2.8.1.5.
+2.6.5 INTEGRATED MASTER SCHEDULE MILESTONES
+Each team is required to meet the timelines in the IREC Integrated Master Schedule. Failure to
+meet required timelines will result in either a point penalty outlined in section 2.6 and 2.7 of this
+document or may prevent teams from flying. The Integrated Master Schedule Document can be
+downloaded from the ESRA website (https://www.esrarocket.org/documents-and-forms). If there
+are any conflicts the deadline will be 5pm CT(Midland, TX time) on the date located in the
+Integrated Master Schedule.
+2.6.6 ADMINISTRATIVE DOCUMENTS
+2.6.6.1 SCHOOL PARTICIPATION LETTER
+Each team shall have the academic institution(s) in which its members are enrolled provide a
+signed letter to ESRA, acknowledging the team's participation in the IREC. The signature shall be
+that of a faculty member or other paid, non-student staff representative. This will affirm the team
+in question does in fact represent the academic institution(s) its members claim affiliation with.
+Each team has to be independent, no shared team members from each accepted team are allowed.
+Teams shall follow the format provided below, which includes official school letterhead and names
+of students that are attending from each team. Teams that do not submit this letter or follow the
+submission or template requirements or will incur a 20-point administrative penalty. Any teams
+not following this will be contacted and a resubmission will be required.
+An example IREC Participation Letter is available for download on the ESRA website
+(https://www.esrarocket.org/documents-and-forms).
+On or before a specified date prior to the event, teams shall submit digital, PDF copy(s) of their
+signed school participation letter(s) to the ESRA rocket website. For example, a team from
+Starfleet Academy would submit the digital copy of their signed school participation letter.
+Similarly, if this same team were formed jointly by students from Starfleet Academy and the
+Vulcan Science Academy, they would submit two files.
+IREC 2026 ver. 1.0
+International Rocket Engineering Competition Rules & Requirements Effective Date: 10/05/2025
+Page 26 of 43
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+2.6.6.2 INSURANCE
+The event’s insurance policy provides liability coverage for ESRA, and the host state. This liability
+coverage does not apply to the student team or the individual students. All student teams are
+required to obtain and provide proof of insurance coverage by the third progress report for all
+attending members prior to attending the International Rocket Engineering Competition
+While some teams may choose to be covered by their college or university, there is one eligible
+alternative source of insurance coverage. Insurance Coverage for solid and hybrid propulsion
+rocket teams can be provided by Tripoli Rocketry Association (www.tripoli.org) (i.e. 10k/30k/45k
+COTS, 10k/30k/45k SRAD solid and hybrid categories). The coverage under Tripoli Launch
+Insurance comes at no additional cost (except Tripoli membership fees, see below).
+If your team chooses insurance coverage through Tripoli Rocketry Association all team members
+present at the International Rocket Engineering Competition will be required to be registered as a
+dues paying Lvl 0 Member. Proof of membership will be requested at the registration desk on the
+first day of events and should be carried throughout the event in case participants lose their badge.
+All teams flying under Tripoli Launch insurance shall comply with the guidance in the DTEG,
+section 3.
+Liquid category flights are NOT COVERED by Tripoli Launch Insurance. These teams are
+required to provide their own insurance coverage and to provide documentation of coverage by
+the 3rd progress report. The required documentation is written proof, in English, of comprehensive
+general liability insurance, including advertising liability and premises liability, of no less than
+$1,000,000 US Dollars. Note: individual, personal, or travel insurance policies do not qualify
+under this position. Teams without documented insurance coverage will not be allowed to fly.
+ESRA is not responsible for and cannot assist in finding suitable insurance policies.
+Details for the Tripoli Insurance policy can be found at: http://www.tripoli.org/Insurance
+2.7 TEAM MEDIA OBLIGATIONS
+2.7.1 EVENT NAME
+The event’s name is the International Rocket Engineering Competition. Teams and their sponsors
+must use the correct event name whenever they refer to the event.
+2.7.2 EVENT LOGOS AND STYLE GUIDELINES
+• The event logos and required style guides are provided on the ESRA website:
+https://www.esrarocket.org/documents-and-forms
+2.7.3 LINKS TO EVENT WEBSITE
+Any team-controlled website shall contain a link to the event websites:
+• https://www.esrarocket.org/
+IREC 2026 ver. 1.0
+International Rocket Engineering Competition Rules & Requirements Effective Date: 10/05/2025
+Page 27 of 43
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+2.7.4 OBLIGATION TO RECOGNIZE EVENT SPONSORS
+Teams shall acknowledge the event’s Lead Sponsor in their own publicity. The sponsor list is
+maintained at https://www.esrarocket.org/rocketry-vendors
+2.7.5 MEDIA PERSONNEL BADGING
+Non-student personnel primarily concerned with media shall be badged as Media as described in
+the Range Standard Operating Procedure
+2.7.6 TEAM RESPONSIBILITY FOR MEDIA CONDUCT
+Teams are responsible for the conduct of media personnel dedicated to covering the team. Conduct
+penalties as described in 2.8.1.5 and disqualifications as described in 2.9 may be levied against
+teams for media personnel conduct.
+2.7.7 DO NO HARM TO THE EVENT
+Teams and team sponsors shall not engage in any activity that detracts from the standing of the
+event or event sponsors.
+2.7.8 DIFFERENTIATE TEAM ACTIVITIES FROM ORGANIZER ACTIVITIES
+Teams and team sponsors shall not imply they organize or sponsor the event as a whole.
+2.7.9 TEAM RESPONSIBILITY FOR TEAM SPONSOR CONDUCT
+Teams are responsible for the conduct of their sponsors. Conduct penalties as described in 2.8.1.5
+and disqualifications as described in 2.9 may be levied against teams for team sponsor conduct.
+2.8 AWARDS AND SCORING
+2.8.1 CATEGORY PLACE AWARDS
+A First Place Award will be granted to the highest scoring, eligible team in each of the eight scored
+categories defined in Section 2.0 of this document. A Second Place Award will be granted to the
+second highest scoring, eligible team in each scored category. A team is considered eligible for
+the place award(s) in its category after launching successfully to its 10,000 ft, or 30,000 ft or,
+45,000 ft target altitude – depending on category and recovering successfully. In categories with
+sufficient teams competing in the category there will be a Third Place Award given. In the event
+no teams meet this definition in a given category, competition officials may issue Category Place
+Awards at their discretion based on multiple factors – including points accrued, launches
+attempted, and flight performance.
+Teams are permitted to switch categories as necessary prior to submitting their final Project
+Technical Report. For example, if an SRAD propulsion system project encounters insurmountable
+difficulties at any point during the academic year, the student team is free to defer work on the
+SRAD system and opt for a near-term COTS solution without dropping out of the competition.
+For example, a single team may not compete in two categories in the same year by flying once
+using a COTS motor, then again using an SRAD motor. In the event such a possibility exists for
+IREC 2026 ver. 1.0
+International Rocket Engineering Competition Rules & Requirements Effective Date: 10/05/2025
+Page 28 of 43
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+any team, the organizers highly encourage that team to compete in an SRAD rather than a COTS
+category. Once a team submits their final technical report the team’s category is locked in, the only
+exception is if the team switches to the non-competing demonstration flight category. Teams still
+must receive ESRA approval to do this.
+Competition officials will award points based on their evaluation of each team’s required
+documentation (including the Entry Form, Progress Updates, and Project Technical Report),
+design implementation (observed through the team's poster display and a day in the field spent
+preparing for launch) and demonstrated flight performance (including reported altitude and
+successful recovery).
+2.8.1.1 SCORING ENTRY FORM AND PROGRESS UPDATE DELIVERIES
+The correct, complete, and timely delivery of a team's Entry Form and subsequent Progress
+Updates is awarded as many as 60 points – 6% of 1,000 total points possible. The Entry Form and
+subsequent updates are considered correct if they are submitted as specified in Section 2.6.1 of this
+Document. They will be considered complete if they are filled out in accordance with the online
+form on esrarocket.org. They will be considered timely if they are received by the deadline
+specified in the IREC Integrated Master Schedule Document.
+The 60 points are divided evenly among the four submissions (i.e. the Entry Form and three
+subsequent Project Updates), making each submission worth 15 points. The submission is awarded
+these points on a pass/fail basis and must meet all three criteria – correctness, completeness, and
+timeliness – in order to “pass.” Teams are highly recommended to submit their reports several days
+before the deadline to ensure there are no technical issues. There is no GRACE PERIOD for
+submissions, late submissions will disqualify the team from the competition
+2.8.1.2 SCORING PROJECT TECHNICAL REPORT
+Timely Project Technical Reports will be awarded as many as 200 points – 20% of 1,000 points
+possible – for their correctness, completeness, and analysis. Only timely Project Technical Reports
+will be evaluated and scored. A Project Technical Report is considered timely if it is received
+before the deadline specified in the IREC Integrated Master Schedule Document. Teams are highly
+recommended to submit their report several days before the deadline to ensure there are no
+technical issues. There is no GRACE PERIOD for submissions. Late submissions will disqualify
+the team from the competition. All submissions for the technical report shall follow the naming
+convention TeamID_Formal University Name_Purpose. Example: Team 100_ESRA
+University_Progress Report 1. Any other naming convention used will incur a 5-point
+deduction from the corresponding submission.
+Feedback on Technical Reports is not guaranteed. Students are encouraged to ask their judges for
+any feedback on improvements during the Convention Days. Judges will not share their final
+IREC 2026 ver. 1.0
+International Rocket Engineering Competition Rules & Requirements Effective Date: 10/05/2025
+Page 29 of 43
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+scores of the technical report at any time during the event. The final technical report score will be
+posted in the Final Score Sheet.
+Correctness is worth 20% (40 points) of the Project Technical Report's overall point value.
+Correctness is defined by its adherence to the format/style guide specified in Section 2.6.2 of this
+document and upholding of basic technical editing standards. The report's correctness will be rated
+using the Technical Report Rubric in Appendix B.
+Completeness is worth 10% (20 points) of the Project Technical Report's overall point value. The
+Project Technical Report is considered complete if it contains all minimally required content
+defined in Section 2.6.2 of this document. Points for completeness are awarded on a pass/fail basis,
+and only minor omissions or ambiguity of required information is tolerated in a passing evaluation.
+Analysis is worth 70% (140 points) of the Project Technical Report's overall point value. This
+constitutes a structured, qualitative assessment by the evaluating competition officials of the
+analytic rigor demonstrated by the team during the iterative down-selection, refinement, and
+acceptance of all project aspects. The report's analysis will be rated using the Technical Report
+Rubric in Appendix B. Teams should note this score may be amended at the IREC itself, based on
+the evaluators’ assessment of the team’s conceptual understanding during any interactions.
+2.8.1.3 SCORING DESIGN AND IMPLEMENTATION
+Teams will be awarded as many as 240 points – 24% of 1,000 points possible – for the overall
+design quality, strategic design decisions, and build quality exhibited by their work. Competition
+officials will evaluate these criteria through interactions with the teams and their systems,
+occurring throughout the IREC Conference Poster Session and all during the following day – spent
+making launch preparations in the field.
+Design quality is worth 50% (120 points) of the overall value assigned to Design and
+Implementation. This constitutes a structured, qualitative assessment by the competition officials
+of the team's relative competency in the physical principles governing their design (e.g., Did the
+team demonstrate they know what they're doing by designing something likely to work with a
+greater or lesser degree of success – provided it is sufficiently well constructed?). This also
+evaluates the team's due diligence in deciding how best to implement their design – in keeping
+with a strategic vision they can articulate clearly. In general, teams should set strategic goals for
+their project which extend beyond simply excelling in a particular category. ESRA places special
+significance on projects which leverage SRAD in a particular aspect, either to enhance the team’s
+understanding of that subject, or to develop technology necessary for achieving a longer-term
+performance goal. The project's design quality and strategic design decisions will be rated using
+the Design Implementation Rubric in Appendix B.
+Build quality is worth 50% (120 points) of the overall value assigned to Design and
+Implementation. This constitutes a structured qualitative assessment by the competition officials
+IREC 2026 ver. 1.0
+International Rocket Engineering Competition Rules & Requirements Effective Date: 10/05/2025
+Page 30 of 43
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+of the team's quality with which that design was constructed (e.g., Is the finished product
+sufficiently well-constructed to meet the needs of the underlying design and reasonably expected
+variation in launch conditions). The project's build quality will be rated using the Design
+Implementation Rubric in Appendix B.
+2.8.1.4 SCORING FLIGHT PERFORMANCE
+Teams will be awarded as many as 500 points – 50% of 1,000 points possible – for their project's
+flight performance during launches at the International Rocket Engineering Competition,
+demonstrated by altitude achieved relative to the target apogee and successful recovery.
+The accuracy of the launch vehicle's actual apogee achieved relative to the target apogee is worth
+70% (350 points) of the overall value assigned to flight performance. Precise Trajectory planning
+is important. Points will be awarded for apogees within ±30% of the 10,000 ft AGL, or, 30,000 ft
+AGL, or 45,000 ft AGL target apogee according to the following formula.
+𝑃𝑜𝑖𝑛𝑡𝑠 = 350 − (
+350
+0.3 × 𝐴𝑝𝑜𝑔𝑒𝑒𝑇𝑎𝑟𝑔𝑒𝑡) × |𝐴𝑝𝑜𝑔𝑒𝑒𝑇𝑎𝑟𝑔𝑒𝑡 − 𝐴𝑝𝑜𝑔𝑒𝑒𝐴𝑐𝑡𝑢𝑎𝑙|
+where Apogee Target may equal either 10,000 ft AGL, or 30,000 ft AGL, or 45,000 ft AGL
+Teams shall report in person to Post Flight Data Recovery officials immediately after recovery of
+their rocket to report the official altitude in accordance with Section 2.5 of this document.
+If telemetry data from the COTS altitude logging system is not immediately available, teams may
+report the apogee revealed in this telemetry to competition officials if and when a confirmation of
+nominal ascent and recovery system deployment events is possible. This information will be used
+for scoring only in the event the launch vehicle is not recovered prior to the end of eligible launch
+operations on the final scheduled launch day.
+The successful recovery of the launch vehicle is worth 30% (150 points) of the overall value
+assigned to flight performance. A recovery operation is considered successful if it does not result
+in excessive damage to the launch vehicle. Excessive damage is defined as any damage to the point
+that, if the system’s intended consumables (e.g., propellants, pressurized gases, energetic devices)
+were replenished, it could not be launched again safely. Zippers with a total length greater than
+one (1) caliber, crushed body tubes, significant damage to the avionics bay, significant damage to
+bulkheads or motor retention hardware, or damage such as crushing or fracturing of the nose cone
+all present significant safety concerns and therefore are considered excessive damage. At
+competition officials’ discretion, replacement of damaged fins or boat tails specifically designed
+for easy, rapid replacement is allowed if such components are on hand and can reasonably be
+replaced within 30 minutes. Post Flight Data Recovery officials will visually inspect the launch
+vehicle upon its return to the designated basecamp area and award these points on a pass/fail basis.
+IREC 2026 ver. 1.0
+International Rocket Engineering Competition Rules & Requirements Effective Date: 10/05/2025
+Page 31 of 43
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+2.8.1.5 PENALTIES FOR UNSAFE OR UNSPORTSMAN LIKE CONDUCT
+Teams will be penalized 20 points off their total earned score for every instance of unsafe or
+unsportsmanlike conduct recorded by competition officials (e.g., judges, volunteers, or staff
+members). Unsafe conduct includes, but is not limited to, violating the IREC Range Standard
+Operating Procedures, failure to use printed checklists during operations, violating ESRA/local
+motor vehicle safety rules while on the range, and failure to use appropriate personal protective
+equipment. Unsportsmanlike conduct includes, but is not limited to, hostility or extreme frustration
+shown towards any IREC Participant, ESRA or other event staff, intentional misrepresentation of
+facts to any competition official, and intentional failure to comply with any reasonable instruction
+given by a competition official. See Appendix C for Point Violation sheet that will be used.
+2.8.1.6 PENALTIES FOR VIOLATING PAYLOAD REQUIREMENTS
+Teams will be penalized 100 points off their total earned score for any of the five payload
+requirements described in Section 2.2.3 of this document in spirit or intent. These include Mass,
+Independent Function, Location & Interface, Restricted Materials, and Form Factor. With regards
+to mass, due to the allowance made for differences in measuring devices, teams will not be
+permitted to modify their payloads with additional mass to avoid penalty at the event.
+2.8.1.7 BONUSES FOR PAYLOAD CUBE UNIT BASED PAYLOADS
+Teams whose functional payload(s) qualify for the form factor exemption described in Section
+2.3.5.2 of this document, yet still adopt the Payload Cube Unit form factor, will be awarded 50
+bonus points in addition to their total earned score. This promotes ESRA’s encouragement that
+teams adopt the Payload Cube Unit for their payload(s) whenever possible – either as the payload
+structure itself, or as an adapter which the payload is mated to prior to the combined assembly’s
+integration with the launch vehicle (such an adapter could be included in the official payload mass).
+2.8.1.8 BONUSES FOR EFFICIENT LAUNCH PREPARATIONS
+DELETED
+2.8.1.9 POKER CHIPS
+Poker Chips may be received by teams during the week of competition, these chips do not equate
+to any points towards the teams overall score, they are on the spot recognition by competition
+officials.
+2.8.2 JUDGES CHOICE AND OVERALL WINNER AWARD
+One team among the First Place Award winners in the eight categories defined in Section 2.0 of
+this document will be named the overall winner of the International Rocket Engineering
+Competition and will receive their own New Horizons trophy! The recipient of this prestigious
+award is determined by quantitative and qualitative assessments of the competition officials made
+throughout the entire event.
+IREC 2026 ver. 1.0
+International Rocket Engineering Competition Rules & Requirements Effective Date: 10/05/2025
+Page 32 of 43
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+2.8.3 TECHNICAL ACHIEVEMENT AWARDS
+ESRA presents four awards recognizing technical achievement to deserving teams competing in
+the IREC. Three of these are awarded based on the competition officials’ qualitative assessments
+made during the Podium Session held during the IREC Conference, and interactions the following
+day – spent making launch preparations in the field. The final award is awarded to any IREC team
+based on flight performance.
+2.8.3.1 JIM FURFARO AWARD FOR TECHNICAL EXCELLENCE
+The Jim Furfaro Award for Technical Excellence recognizes a team which demonstrates
+exceptional overall engineering discipline and technical skill through their analyses and
+conclusions, project or program planning and execution, operational procedure, manufacturing
+processes, iterative improvement, systems engineering methodology, robust design, etc. A team is
+considered eligible for the Jim Furfaro Award if they are accepted into – and participate in – the
+Podium Session held during the conference day at the International Rocket Engineering
+Competition. Deference is given to eligible teams which complete a successful launch at the IREC.
+A launch attempt is minimally defined as an attempted ignition of the launch vehicle propulsion
+system with the intent of executing the launch vehicle's designed mission CONOPS.
+2.8.3.2 DR. GIL MOORE AWARD FOR INNOVATION
+The Dr. Gil Moore Award for Innovation recognizes a team whose project includes one or more
+features (including analytic or operational processes as well as components or assemblies) the
+judging panel finds genuinely "novel", "inventive", or solving a unique problem identified by the
+team. A team is considered eligible for the Dr. Gil Moore Award if they are accepted into – and
+participate in – the Podium Session held during the conference day at the International Rocket
+Engineering Competition. Deference is given to eligible teams which complete at least one launch
+attempt at the IREC. A launch attempt is minimally defined as an attempted ignition of the launch
+vehicle propulsion system with the intent of executing the launch vehicle's designed mission
+CONOPS.
+2.8.3.3 CHARLES HOULT AWARD FOR MODELING & SIMULATION
+The Charles Hoult Award for Modeling & Simulation recognizes a team demonstrating excellence
+in math modeling and computational analyses. A team is considered eligible for the Charles Hoult
+Award if they are accepted into – and participate in – the Podium Session held during the
+conference day at the International Rocket Engineering Competition. Deference is given to eligible
+teams which complete at least one launch attempt at the IREC. A launch attempt is minimally
+defined as an attempted ignition of the launch vehicle propulsion system with the intent of
+executing the launch vehicle's designed mission CONOPS.
+IREC 2026 ver. 1.0
+International Rocket Engineering Competition Rules & Requirements Effective Date: 10/05/2025
+Page 33 of 43
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+2.8.3.4 JAMES BARROWMAN AWARD FOR FLIGHT DYNAMICS
+The James Barrowman Award for Flight Dynamics recognizes a team demonstrating exquisite
+trajectory analysis. This will be evaluated by comparing the percent error between each team's
+actual and predicted apogee – the predicted apogee being a value declared prior to launch, based
+on a team’s trajectory analysis. The award is given to the team with the smallest percent error. All
+teams with successful launch attempts that provide apogee data will be eligible for this award.
+2.8.4 TEAM CONDUCT AWARDS
+ESRA presents two awards recognizing teams competing in the IREC whose conduct throughout
+the International Rocket Engineering Competition exemplifies the goals and ideals of the event
+organizers. The International Rocket Engineering Competition should be an event where
+academia, industry, and the public may come together to preserve, popularize, and advance the
+science of rocketry in a collaborative environment energized by friendly competition.
+2.8.4.1 TEAM SPORTSMANSHIP AWARD
+The Team Sportsmanship Award recognizes a team which goes above and beyond to assist their
+fellow teams, and the event organizers assure the International Rocket Engineering Competition
+is a productive, safe, and enjoyable experience for all involved. They may do this in many ways,
+such as making themselves available to lend-a-hand whenever and however they can (whether they
+are asked to or not), being positive role models for their fellow teams, and generally being a "force
+for good" in every activity in which they involve themselves. A team is considered eligible for the
+Team Sportsmanship Award by being present at the IREC. Teams may earn Sportsmanship points
+throughout the event by following these guidelines outlined in this section.
+2.8.4.2 NANCY SQUIRES TEAM SPIRIT AWARD
+The Team Spirit Award recognizes a team which arrives at the International Rocket Engineering
+Competition with proverbial (or literal) smiles on their face, a school flag in their hand, and never
+lets either waver throughout the event. They show great pride in their work, learn from their
+mistakes, remain positive when things don't go their way, engage members of the general public
+with respect and enthusiasm, and show respect for invited guests by attending and participating
+guest speaker presentations whenever possible. A team is considered eligible for the Team Spirit
+Award by being present at the IREC.
+2.8.4.3 TEAM VIDEO CHALLENGE AWARDS
+The team video challenge award recognizes teams who do an exceptional job of communicating
+their team’s culture, excitement, and achievements in video form. Teams use a combination of preprepared footage and launch footage to assemble their submission. The winner is chosen based on
+their narrative and production quality. All entries are eligible to be played throughout the awards
+ceremony. The submission method and deadline are outlined in the IMS.
+IREC 2026 ver. 1.0
+International Rocket Engineering Competition Rules & Requirements Effective Date: 10/05/2025
+Page 34 of 43
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+2.8.4.4 LIVE ROCKET VIDEO CHALLENGE AWARDS
+The live rocket video challenge recognizes teams who accept the technical challenge of providing
+live streamed video from rocket cameras or rocket telemetry. These teams provided never-beforeseen views to showcase new aspects of rocket launches. The winner is chosen based on their
+technical and communication effectiveness. All entries are eligible to be played throughout the
+awards ceremony and on the livestream. The submission method and deadline are outlined by
+Section 2.6.5 of this document. The submission method and deadline are outlined in the IMS.
+2.9 DISQUALIFICATION FROM CONSIDERATION FOR ANY AWARD
+A limited number of criteria constitute grounds for disqualification from consideration for any
+award. These can include a failure to meet the defining IREC mission requirements recorded in
+Sections 2.0 through 2.5 of this document, failure to submit a Project Technical Report or
+third/final progress update at any time prior to the International Rocket Engineering Competition
+(or otherwise failing to provide adequate project details in required deliverables), and failure to
+send eligible team member representatives to the International Rocket Engineering Competition.
+Finally, any Team found to have accrued 3 instances or a total of 60 points in safety or
+unsportsmanlike conduct infractions at any time during the International Rocket Engineering
+Competition will be disqualified. Any individual observed committing a single, severe safety or
+unsportsmanlike conduct infraction may be summarily removed and barred from participation in
+the remainder of the IREC.
+2.10 WITHDRAWAL FROM COMPETITION
+Teams which decide to formally withdraw from the IREC at any time prior to the event must send
+an e-mail entitled "TEAM <Your Team ID> FORMALLY WITHDRAWS FROM THE
+Competition Year IREC" to general.info@esrarocket.org. For example, a team assigned the Team
+ID "100" would withdraw from the 2026 IREC by sending an e-mail entitled "TEAM 100
+FORMALLY WITHDRAWS FROM THE 2026 IREC" to general.info@esrarocket.org.
+2.10.1 APPLICATION AND PROJECT AND ROCKETEER FEE REFUNDS
+Team application Fees are non-refundable. Team Project and Rocketeer Fees are refundable until
+the deadline listed in the Integrated Master Schedule. Teams who are late paying any fee may have
+points deducted or may be removed from the competition. Fee deadlines are in the IMS and will
+be announced on esrarocket.org.
+3.0 INTERNATIONAL TRAFFIC IN ARMS REGULATIONS
+Speakers and attendees of the International Rocket Engineering Competition are reminded that
+some topics discussed at conferences could be controlled by the International Traffic in Arms
+Regulations (ITAR). The International Rocket Engineering Competition is an ITAR-free event.
+U.S. persons (e.g. U.S. citizens and permanent residents) are responsible for ensuring all
+submissions and presented content are free of export restrictions. U.S. persons are likewise
+IREC 2026 ver. 1.0
+International Rocket Engineering Competition Rules & Requirements Effective Date: 10/05/2025
+Page 35 of 43
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+responsible for ensuring that they do not discuss ITAR export-restricted information with nonU.S. nationals in attendance. Similarly, US person authors of IREC Project Technical Reports as
+well as Podium Session submissions and associated slide decks are responsible for ensuring the
+content of their materials does not exceed the interpretation of "fundamental research" and the
+ITAR established by their affiliated academic institution(s). More information in regard to ITAR
+can be found on (https://www.pmddtc.state.gov/ddtc_public)
+3.1 FINAL SCORE SHEET
+Competition officials will release the Final Score sheet no earlier than three weeks after the closing
+ceremonies. This score sheet will be located at https://www.esrarocket.org/2026irec in a PDF
+format. All inquiries regarding the final score sheet shall be emailed to
+general.info@esrarocket.org and comprules@esrarocket.org with "TEAM <Your Team ID>
+FINAL SCORE SHEET INQUIRES Competition Year IREC", for any considerations /changes or
+answers to be made, this includes inquiries from mentors, FORs, volunteers and any university
+officials. Any inquiries made outside these emails and not properly titled will not be considered.
+Teams have seven days after the score sheet is released to submit these inquiries; this is not the
+time the Director of Competition Operations has to respond to the inquiries . Any team who is rude
+or unprofessional with their inquiries or responses will incur a 20-point penalty for
+unsportsmanlike conduct to their final score and Section 2.9 will apply. After this time no changes
+will be made and the scores reflected will be the final scoring record.
+IREC 2026 ver. 1.0
+International Rocket Engineering Competition Rules & Requirements Effective Date: 10/05/2025
+Page 36 of 43
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+3.2 APPENDIX A: ACRONYMS, ABBREVIATIONS, AND TERMS
+ACRONYMS & ABBREVIATIONS
+AGL Above Ground Level
+AIAA American Institute of Aeronautics and Astronautics
+APCP Ammonium Perchlorate Composite Propellant
+APRS Automatic Packet Reporting System
+CFR Code of Federal Regulations
+CONOPS Concept of Operations
+COTS Commercial Off-the-Shelf
+ESRA Experimental Sounding Rocket Association
+FAA Federal Aviation Administration
+GPS Global Positioning System
+HPR High Power Rocket or Rocketry
+IREC
+IMS
+Intercollegiate Rocket Engineering Competition
+Integrated Master Schedule
+ITAR International Traffic in Arms Regulations
+LOX Liquid Oxygen
+NAR National Association of Rocketry
+SDL Space Dynamics Laboratory
+SRAD Student Researched & Developed
+STEM Science, Technology, Engineering, and Mathematics
+TBD To Be Determined
+TBR To Be Resolved
+TRA Tripoli Rocketry Association
+IREC 2026 ver. 1.0
+International Rocket Engineering Competition Rules & Requirements Effective Date: 10/05/2025
+Page 37 of 43
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+TERMS
+Amateur Rocket
+14 CFR, Part 1, 1.1 defines an amateur rocket as an
+unmanned rocket that is "propelled by a motor, or motors
+having a combined total impulse of 889,600 Newtonseconds (200,000 pound-seconds) or less and cannot
+reach an altitude greater than 150 kilometers (93.2 statute
+miles) above the earth's surface".
+Excessive Damage
+Excessive damage is defined as any damage to the point
+that, if the system’s intended consumables were
+replenished, it could not be launched again safely.
+Intended Consumables refers to those items which are -
+within reason - expected to be serviced/replaced following
+a nominal mission (e.g. propellants, pressurizing gasses,
+energetic devices), and may be extended to include
+replacement of damaged fins or boat tails specifically
+designed for easy, rapid replacement if such components
+are on hand and can reasonably be replaced within 30
+minutes.
+FAA Class 2 Amateur
+Rocket
+14 CFR, Part 101, Subpart C, 101.22 defines a Class 2
+Amateur Rocket (aka High Power Rocket) as "an amateur
+rocket other than a model rocket that is propelled by a
+motor or motors having a combined total impulse of 40,960
+Newton-seconds (9,208 pound-seconds) or less."
+Non-toxic Propellants
+For the purposes of the IREC, the event organizers
+consider ammonium perchlorate composite propellant
+(APCP), potassium nitrate and sugar (aka "rocket candy"),
+nitrous oxide, liquid oxygen (LOX), hydrogen peroxide,
+kerosene, propane, and similar, as non-toxic propellants.
+Toxic propellants are defined as requiring breathing
+apparatus, special storage and transport infrastructure,
+extensive personal protective equipment, etc.
+IREC 2026 ver. 1.0
+International Rocket Engineering Competition Rules & Requirements Effective Date: 10/05/2025
+Page 38 of 43
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+3.3 APPENDIX B: JUDGING RUBRICS
+Technical Report Rubric
+Criteria Ratings
+Outstanding Excellent Satisfactory Unsatisfactory Score
+Completeness
+(20 pts)
+20 pts
+All required items
+present
+Pass/fail only Pass/fail only
+0 pts
+One or more required
+items missing
+ /20
+Style and Format
+(40 pts)
+36-40 pts 30-35 pts 20-29 pts < 20 pts
+Style
+(20 pts)
+18-20 pts
+Writing was
+exceptionally clear,
+understandable, and
+concise.
+Sentence and
+paragraph organization
+is exceptional.
+Writing is free of
+digressions or
+irrelevant information.
+15-17 pts
+Writing was clear,
+understandable, and
+concise.
+Overall paragraph and
+sentence organization
+were very good.
+Digressions or
+irrelevant information
+do not significantly
+detract from the report.
+10-14 pts
+Writing was generally
+clear and
+understandable.
+Paragraph and sentence
+organization were
+generally good.
+Digressions or
+irrelevant information
+detract from the
+report’s analysis.
+<10 pts
+Writing was repeatedly
+unclear, difficult to
+understand or wordy.
+Overall paragraph
+and/or sentence
+organization were
+ineffective or
+nonexistent.
+Digressions and/or
+irrelevant information
+consistently detract
+from the analysis.
+ /20
+Mechanics
+(10 pts)
+9-10 pts
+No grammar, spelling,
+or mechanics errors.
+Scientific terms
+correctly used, units
+and dimensions
+consistent and correct.
+7-8 pts
+No more than a few
+grammar, spelling, or
+usage errors.
+Only a few minor
+errors with use of
+scientific terms or
+dimensions.
+5-7 pts
+Significant spelling,
+usage, and grammar
+errors that did not
+detract from
+readability.
+Significant errors with
+use of scientific terms
+or dimensions.
+< 5 pts
+Repeated grammar or
+spelling errors
+detracted from
+readability.
+Errors with use of
+scientific terms or
+dimensions detracted
+from report.
+ /10
+Format
+(10 pts)
+9-10 pts
+Completely follows
+required template.
+Meets word count
+limits.
+7-8 pts
+Minor deviations from
+required template.
+Meets word limits.
+5-7 pts
+Major deviations from
+required template.
+< 10% over page
+limits.
+<5 pts
+No attempt at cohesive
+format or use of
+required template.
+More than 10% over
+page limits.
+ /10
+Style and Format Total Total
+(Rubric continues next page)
+ /40
+IREC 2026 ver. 1.0
+International Rocket Engineering Competition Rules & Requirements Effective Date: 10/05/2025
+Page 39 of 43
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+Analysis
+(140 pts)
+126-140 pts 105-125 pts 70-104 pts < 70 pts
+Depth of Analysis
+(50 pts)
+45-50 pts
+Very complete and
+thorough analysis.
+All key design
+decisions are discussed
+and based on design
+targets, constraints,
+and appropriate
+tradeoffs.
+38-45 pts
+Adequate analysis with
+minor weaknesses.
+Most key design
+decisions are discussed
+and based on design
+targets, constraints,
+and appropriate
+tradeoffs.
+25-37 pts
+Adequate analysis with
+significant gaps or
+weaknesses.
+Some key design
+decisions are discussed
+and based on design
+targets, constraints,
+and appropriate
+tradeoffs.
+Some minor incorrect
+statements.
+< 25 pts
+Inadequate analysis.
+Few, if any key design
+decisions were
+discussed.
+No discussion of
+tradeoffs.
+Parts of analysis
+conflict with general
+scientific knowledge.
+ /50
+Assumptions and
+Sensitivity Analysis
+(30 pts)
+27-30 pts
+All assumptions are
+clearly stated.
+Sensitivity analysis is
+performed to quantify
+uncertainty in
+variables and
+assumptions.
+23-26 pts
+Most assumptions
+were addressed.
+Some sensitivity
+analysis.
+15-22 pts
+Unstated assumptions.
+No sensitivity analysis.
+<15 pts
+No stated assumptions
+or assumptions were
+unreasonable.
+No sensitivity analysis.
+ /30
+Verification and
+Validation tests
+(40 pts)
+36-40 pts
+All verification and
+validation tests were
+discussed, both for the
+final design and key
+iterations leading to
+that design. Complete
+and valid conclusions
+were drawn from the
+results.
+30-35 pts
+Most verification and
+validation tests are
+adequately discussed.
+Appropriate
+conclusions were
+drawn from the results,
+but key iterations prior
+to final design were
+not discussed.
+20-29 pts
+Some verification and
+validation tests are
+discussed but
+consistent.
+Unclear that
+conclusions and
+decisions were drawn
+from testing results
+and analysis.
+< 20 pts
+Unclear whether
+verification and
+validation tests were
+performed.
+Decisions and
+conclusions were not
+drawn from the
+analysis.
+ /40
+Use of Charts and
+Figures
+(20 pts)
+18-20 pts
+Tables, figures, and
+appendices all
+effectively organize
+and communicate
+information.
+15-17 pts
+Use of tables, figures,
+and appendices is
+mostly effective.
+10-14 pts
+Use of tables, figures,
+and appendices is
+somewhat effective
+with significant issues.
+< 10 pts
+Tables, figures, and
+appendices were
+incorrect or
+misleading.
+ /20
+Analysis Total (140)
+
+Total
+ /140
+Completeness +
+Style & Format
++
+Analysis Total
+(200 pts)
+ /200
+IREC 2026 ver. 1.0
+International Rocket Engineering Competition Rules & Requirements Effective Date: 10/05/2025
+Page 40 of 43
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+Design Implementation Rubric
+Criteria Ratings
+Outstanding Excellent Satisfactory Unsatisfactory Score
+Design Quality &
+Decisions
+(120 pts)
+108-120 pts 90-107 pts 60-89 pts < 60 pts
+Team Design
+Vision, Goals and
+System Engineering
+(50 pts)
+45-50 pts
+Clearly understood and
+achievable design vision
+for the rocket along with
+a coherent and wellunderstood set of design
+goals.
+All key elements of the
+project address clearly
+defined strategic goals
+for the team.
+Strong evidence of clear
+systems engineering
+discipline throughout all
+parts of design team.
+37-49 pts
+Design vision is
+generally understood
+and mostly achievable
+with a generally
+coherent set of goals.
+Key elements of the
+project generally
+address strategic goals
+for the team.
+Generally good
+systems engineering
+discipline throughout
+development.
+Most of the design
+team works to support
+a generally coherent
+and understood set of
+goals.
+25-36 pts
+Design vision is
+incompletely defined
+or questionably
+achievable.
+Unclear how elements
+of the project address
+team strategic goals.
+Some lapses in
+systems engineering
+discipline throughout
+development.
+Unclear that parts of
+the design support
+team goals.
+Some evidence of
+different parts of the
+design team working
+at cross-purposes.
+< 25 pts
+Questionable or
+unachievable design
+vision for the rocket.
+Most elements of the
+project do not address
+team goals.
+Major lapses in
+systems engineering
+discipline.
+No team design goals,
+or parts of the team
+clearly ignore stated
+goals.
+Clear evidence of
+different parts of the
+design team working at
+cross-purposes.
+ /50
+SRAD components
+(50 pts)
+45-50 pts
+High use of SRAD
+components, which are
+clearly chosen to achieve
+design or strategic goals.
+38-45 pts
+Significant use of
+SRAD components.
+Mostly chosen to
+achieve design or
+strategic goals.
+25-37 pts
+Some use of SRAD
+components.
+Sometimes chosen to
+achieve design or
+strategic goals.
+< 25 pts
+Minimal use of SRAD
+components.
+No clear idea how
+these achieve design or
+strategic goals.
+ /50
+Team Knowledge
+(20 pts)
+(Rubric continues
+next page)
+18-20
+Strong team
+understanding of the
+physical principles
+governing design and
+reasoning behind the
+design.
+All members of team can
+clearly articulate
+reasoning for choices.
+15-17
+Generally good team
+understanding of the
+physical principles
+governing design and
+reasoning behind the
+design.
+Team members defer
+to a few team
+“experts” during
+discussion.
+10-14
+Some team
+understanding of the
+physical principles
+governing design and
+reasoning behind the
+design.
+Team members defer
+to one or two team
+“experts” during
+discussion.
+< 10 pts
+Inadequate team
+understanding of the
+principles governing
+design and reasoning
+behind the design.
+Team members defer
+to their Mentor or
+Flyer of Record during
+discussion.
+ /20
+Design Quality and
+Decisions Total Total /120
+IREC 2026 ver. 1.0
+International Rocket Engineering Competition Rules & Requirements Effective Date: 10/05/2025
+Page 41 of 43
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+Build Quality
+(120 pts)
+108-120 pts
+.
+90-107 pts 60-89 pts < 60 pts
+
+Design Quality and
+Robustness
+(30 pts)
+27-30 pts
+Design and build quality
+are robust and more than
+sufficient to operate as
+intended under
+reasonably expected
+conditions.
+23-26 pts
+Design and build
+quality are somewhat
+robust and sufficient to
+operate as intended
+under reasonably
+expected conditions.
+15-22 pts
+Design and build
+quality are sufficient to
+operate as intended
+under specific
+conditions but are not
+robust to reasonably
+expected variations.
+< 15 pts
+Design and build
+quality insufficient to
+operate as intended
+under expected
+conditions.
+No attempts at robust
+design.
+ /30
+Manufacturing and
+Construction
+Methods
+(30 pts)
+27-30 pts
+Construction methods
+completely understood
+and correctly applied.
+Manufacturing methods
+for SRAD elements are
+both appropriate and
+completely understood
+by the team, including
+cost, time, and
+performance.
+23-26 pts
+Construction methods
+generally well
+understood and
+correctly applied.
+Manufacturing
+methods for SRAD
+elements are both
+appropriate and
+reasonably understood
+by the team, including
+cost, time, and
+performance.
+15-22 pts
+Construction methods
+are appropriate, but not
+completely
+understood.
+Manufacturing
+methods for SRAD
+elements are
+appropriate, but not
+fully understood by the
+team.
+< 15 pts
+Construction methods
+inappropriate or not
+understood.
+Manufacturing
+methods for SRAD
+elements are
+impractical or not well
+understood by the
+team.
+ /30
+Consistent Design
+(30 pts)
+27-30 pts
+Clearly consistent with
+team’s vision. No
+evidence of key systems
+added as an afterthought.
+23-26 pts
+Generally aligned with
+team’s vision.
+No evidence of key
+systems added as an
+afterthought.
+15-22 pts
+Somewhat aligned
+with team’s vision.
+Some key systems
+were added as
+afterthoughts.
+< 15 pts
+No apparent
+organizing vision.
+Key systems added as
+field modifications or
+afterthoughts.
+ /30
+Compliance with
+DTEG
+(30 pts)
+27-30 pts
+Completely complies
+with guidance in the
+DTEG
+23-26 pts
+Complies with
+guidance in the DTEG
+with a few minor
+issues.
+15-22 pts
+Minimally complies
+with guidance in the
+DTEG.
+< 15 pts
+Does not comply with
+guidance in the DTEG.
+NOTE: A team that
+does not comply with
+the DTEG can score
+no higher than 60
+points for Build
+Quality.
+ /30
+Build Quality Total
+(120 pts) Total /120
+Design & Build
+Quality (240 pts)
+ /240
+IREC 2026 ver. 1.0
+International Rocket Engineering Competition Rules & Requirements Effective Date: 10/05/2025
+Page 42 of 43
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+ Podium Session Rubric
+Note: Judges should also review the Project Technical Report for additional detail, but the award must be based
+on the material covered in the Podium Session (e.g., if the Podium Session does not cover Modeling &
+Simulation, then the team is not eligible for the Hoult Award even if that is covered in the Technical Report).
+Note 2: The rubric will be used as a guide to focus the discussion during the Judges’ scoring deliberations and
+isn’t the final word.
+Rating Area Rating Criteria Specific Highlight Award Score:
+Technical
+Excellence
+(Furfaro Award)
+Overall engineering discipline and
+technical skill through analyses
+and conclusions, project or
+program planning and execution,
+operational procedure,
+manufacturing processes, iterative
+improvement, systems
+engineering methodology, robust
+design, etc.
+(Y/N) (0-30)
+Innovation
+(Moore Award)
+Project includes one or more
+features (including analytic or
+operational processes as well as
+components or assemblies) the
+judging panel finds genuinely
+"novel," "inventive," or solves a
+unique problem identified by the
+team.
+(Y/N) (0-30)
+Modeling
+& Simulation
+(Hoult Award)
+Mathematical modeling and
+computational analyses.
+(Y/N) (0-30)
+Presentation
+Quality
+Slides are professional and easy to
+read. Graphics add value and are
+not misleading. Presenter is easy
+to understand and did not just read
+the slides. Good responses to
+audience questions.
+(0-10)
+IREC 2026 ver. 1.0
+International Rocket Engineering Competition Rules & Requirements Effective Date: 10/05/2025
+Page 43 of 43
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+3.4 APPENDIX C: TEAM VIOLATION POINT DEDUCTION FORM
+Date: 06/ /2026 Time: ________ Team #: ________
+VIOLATIONS
+(-20 PTS. For each box selected, if Team is found with 3 instances or 60 points in violations team is disqualified )
+Unsafe Conduct:
+☐Violating IREC Range Standard Operating Procedures.
+☐Losing student badge and not having required TRA info to get a new badge.
+☐Failure to use printed checklists during operations.
+☐Violating ESRA / local motor vehicle traffic safety rules at launch site.
+☐Failure to use appropriate personal protective equipment.
+☐Failure to wait until DaVinci releases team to recover.
+☐Failure to return directly to DaVinci tent to check in and return equipment.
+☐Other:_________________________________________
+Unsportsmanlike Conduct:
+☐Hostility/ threats shown towards any IREC Participant or competition official.
+☐Intentional misrepresentation of facts to any competition official.
+☐Intentional failure to comply with any reasonable instruction given by a competition official.
+☐Switching Teams Assigned Conference Table without ESRA permission, or having team member present on
+Conference Day
+☐Team not attending Conference Day
+☐Other: ________________________________________
+Unpreparedness
+☐Taking longer that 45 minutes in Post Flight Data Recovery with Judge failure to bring tools and needed equipment
+even after warnings.
+Competition Official Observing Violation:
+☐ESRA Judge ☐ESRA Range Safety ☐ESRA Postflight
+☐Awards ☐ SDL☐ESRA Registration ☐ESRA
+Livestream
+☐ ESRA Leadership ☐ DaVinci
+Print Name:
+________________________________
+Initals of Signoff In score sheet & Date: Total pts. Deducted:

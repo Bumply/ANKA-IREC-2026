@@ -16,28 +16,30 @@ Detailed specifications of all batteries in the flight electronics system:
 
 ### Battery Inventory
 
+> **⚠️ IREC Compliance Note:** Per DTEG Section 6.17.1.1, **LiPo batteries are PROHIBITED** due to fire hazard. We use **Li-Ion 18650 cells in cylindrical metallic casing** which is explicitly allowed per DTEG 6.17.2.1.
+
 | Component | Battery Type | Chemistry | Cells | Size | Capacity | Protection | Voltage Range |
 |-----------|--------------|-----------|-------|------|----------|------------|---------------|
-| **Flight Computer** | LiPo Pack | Lithium Polymer | 4S | 70×35×30mm | 1300mAh 75C | **Protected** (built-in BMS) | 13.2V - 16.8V |
-| **Video Payload** | (Shared with FC) | Lithium Polymer | 4S | - | - | **Protected** | - |
+| **Flight Computer** | 18650 Li-Ion Pack | Lithium Ion | 4S | 18mm×65mm×4 | 2600mAh | **Protected** (PCB + cell-level) | 12.0V - 16.8V |
+| **Video Payload** | (Shared with FC) | Lithium Ion | 4S | - | - | **Protected** | - |
 
 ### Flight Computer Battery - Detailed Specifications
 
 ```mermaid
 flowchart LR
-    subgraph PACK["4S LiPo Battery Pack"]
-        subgraph CELLS["Cell Configuration"]
-            C1["Cell 1<br/>3.7V nom"]
-            C2["Cell 2<br/>3.7V nom"]
-            C3["Cell 3<br/>3.7V nom"]
-            C4["Cell 4<br/>3.7V nom"]
+    subgraph PACK["4S Li-Ion 18650 Battery Pack"]
+        subgraph CELLS["Cylindrical Cells (IREC Compliant)"]
+            C1["18650 Cell 1<br/>3.7V nom"]
+            C2["18650 Cell 2<br/>3.7V nom"]
+            C3["18650 Cell 3<br/>3.7V nom"]
+            C4["18650 Cell 4<br/>3.7V nom"]
         end
         
-        subgraph BMS["Built-in Protection"]
-            OV["Overcharge<br/>Protection"]
-            UV["Undervoltage<br/>Protection"]
+        subgraph BMS["Protection PCB"]
+            OV["Overcharge<br/>4.2V/cell"]
+            UV["Undervoltage<br/>3.0V/cell"]
             OC["Overcurrent<br/>Protection"]
-            BAL["Cell<br/>Balancing"]
+            SC["Short Circuit<br/>Protection"]
         end
     end
 
@@ -47,19 +49,21 @@ flowchart LR
 
 | Parameter | Specification |
 |-----------|---------------|
-| **Manufacturer** | Tattu / CNHL / GNB (75C rated hobby LiPo) |
-| **Chemistry** | Lithium Polymer (LiPo) |
+| **Cell Type** | 18650 Lithium Ion (cylindrical metallic casing) |
+| **Recommended Cells** | Samsung 25R, Sony VTC6, LG HG2, Panasonic NCR18650B |
+| **Chemistry** | Lithium Ion (Li-Ion) |
 | **Configuration** | 4S1P (4 cells in series) |
 | **Nominal Voltage** | 14.8V (3.7V × 4) |
 | **Full Charge Voltage** | 16.8V (4.2V × 4) |
-| **Discharge Cutoff** | 13.2V (3.3V × 4) |
-| **Capacity** | 1300mAh |
-| **C Rating** | 75C continuous (97.5A max) |
-| **Physical Size** | ~70 × 35 × 30 mm |
-| **Weight** | ~140g |
+| **Discharge Cutoff** | 12.0V (3.0V × 4) |
+| **Capacity** | 2500-3000mAh (depending on cell) |
+| **Max Discharge** | 20A continuous (Samsung 25R) |
+| **Physical Size** | ~75 × 40 × 20 mm (4S holder) |
+| **Weight** | ~200g (4 × 50g cells) |
 | **Main Connector** | XT30 (rated 30A continuous) |
 | **Balance Connector** | JST-XH 5-pin |
-| **Protection** | Built-in BMS with balance leads |
+| **Protection** | PCB with balance leads + cell-level protection |
+| **IREC Compliance** | ✅ DTEG 6.17.2.1 - Cylindrical metallic casing allowed |
 
 ### Protection Circuit Details
 
@@ -68,10 +72,21 @@ The battery pack includes integrated protection:
 | Protection Type | Threshold | Action |
 |-----------------|-----------|--------|
 | **Overcharge** | >4.25V per cell | Cuts charging current |
-| **Overdischarge** | <3.0V per cell | Disconnects load |
-| **Overcurrent** | >100A | Current limiting |
+| **Overdischarge** | <2.8V per cell | Disconnects load |
+| **Overcurrent** | >25A | Current limiting |
 | **Short Circuit** | Instantaneous | Immediate disconnect |
 | **Cell Balancing** | Via balance connector | During charging only |
+
+### Why 18650 Li-Ion? (IREC Compliant & Affordable)
+
+| Feature | 18650 Li-Ion | LiPo (prohibited) | LiFePO4 |
+|---------|--------------|-------------------|---------|
+| **IREC Allowed** | ✅ Yes (metallic casing) | ❌ **BANNED** | ✅ Yes |
+| **Cost** | **~$5/cell** | ~$15/pack | ~$30/pack |
+| **Availability** | Everywhere | - | Specialty |
+| **Energy Density** | High | Highest | Lower |
+| **Safety** | Good (metal case) | Poor (pouch) | Excellent |
+| **Cycle Life** | 500+ cycles | 300 cycles | 2000+ cycles |
 
 > **Note:** External protection is also provided on the flight computer PCB via Schottky diode (reverse polarity) and 10Ω current-limiting resistor.
 
@@ -85,7 +100,7 @@ The battery pack includes integrated protection:
 flowchart TB
     subgraph CHARGE["Charging Protocol"]
         START["Connect to<br/>Balance Charger"]
-        SET["Set Mode:<br/>LiPo 4S<br/>1.0A charge rate"]
+        SET["Set Mode:<br/>Li-Ion 4S<br/>1.0A charge rate"]
         BALANCE["Enable<br/>Balance Charging"]
         MONITOR["Monitor:<br/>- Cell voltages<br/>- Temperature<br/>- Current"]
         COMPLETE["Charge Complete<br/>when all cells = 4.2V"]
@@ -96,14 +111,14 @@ flowchart TB
 
 | Practice | Procedure |
 |----------|-----------|
-| **Charger Type** | Balance charger required (e.g., ISDT D2, SkyRC B6) |
-| **Charge Rate** | 1C maximum (1.3A for 1300mAh pack) |
-| **Charge Mode** | LiPo Balance mode ONLY |
+| **Charger Type** | Balance charger with Li-Ion mode (e.g., ISDT D2, SkyRC B6, Nitecore) |
+| **Charge Rate** | 0.5C recommended, 1C maximum (2.5A for 2500mAh pack) |
+| **Charge Mode** | **Li-Ion Balance mode** (4.2V/cell cutoff) |
 | **Cell Balance** | All cells within 0.02V at end of charge |
-| **Max Voltage** | 4.20V per cell (16.80V total) - NEVER exceed |
-| **Temperature** | Charge at 15-35°C ambient only |
-| **Supervision** | NEVER leave charging unattended |
-| **Fire Safety** | Charge in LiPo-safe bag on non-flammable surface |
+| **Max Voltage** | 4.20V per cell (16.8V total) - NEVER exceed |
+| **Temperature** | Charge at 10-40°C ambient only |
+| **Supervision** | Monitor during charging |
+| **Fire Safety** | Charge on fireproof surface, away from flammables |
 
 ### Capacity Verification
 
@@ -112,7 +127,7 @@ Before each flight campaign:
 ```mermaid
 flowchart LR
     FULL["Charge to<br/>100%<br/>(16.8V)"]
-    DISCHARGE["Discharge at<br/>1C to 13.2V"]
+    DISCHARGE["Discharge at<br/>0.5C to 12.0V"]
     MEASURE["Record<br/>mAh delivered"]
     EVALUATE["Capacity<br/>>80% nominal?"]
     PASS["✓ Flight<br/>Ready"]
@@ -125,10 +140,10 @@ flowchart LR
 
 | Test | Acceptance Criteria |
 |------|---------------------|
-| **Full Capacity** | ≥80% of rated capacity (≥1040mAh) |
+| **Full Capacity** | ≥80% of rated capacity (≥2000mAh for 2500mAh cells) |
 | **Cell Balance** | All cells within 0.05V under load |
-| **Internal Resistance** | <10mΩ per cell (measured by charger) |
-| **Physical Inspection** | No swelling, damage, or deformation |
+| **Internal Resistance** | <80mΩ per cell (measured by charger) |
+| **Physical Inspection** | No dents, rust, or damage to metallic casing |
 
 ### Storage Voltage Protocol
 
@@ -136,9 +151,9 @@ flowchart LR
 flowchart TB
     subgraph STORAGE["Storage Protocol"]
         CHARGE_ST["Charge/Discharge<br/>to Storage Voltage"]
-        VOLTAGE["Target: 3.85V/cell<br/>(15.4V total)"]
-        CONTAINER["Store in<br/>LiPo-safe bag"]
-        LOCATION["Cool, dry location<br/>15-25°C"]
+        VOLTAGE["Target: 3.7V/cell<br/>(14.8V total)"]
+        CONTAINER["Store in<br/>cool, dry location"]
+        LOCATION["Room temperature<br/>15-25°C"]
     end
 
     CHARGE_ST --> VOLTAGE --> CONTAINER --> LOCATION
@@ -146,46 +161,47 @@ flowchart TB
 
 | Storage Practice | Specification |
 |------------------|---------------|
-| **Storage Voltage** | 3.80-3.85V per cell (15.2-15.4V total) |
+| **Storage Voltage** | 3.6-3.8V per cell (14.4-15.2V total) - ~40-60% SOC |
 | **Storage Mode** | Use charger's "Storage" function |
 | **Temperature** | Store at 15-25°C (room temperature) |
 | **Humidity** | Low humidity, avoid condensation |
-| **Container** | LiPo-safe bag or ammo can |
-| **Duration** | Re-check voltage monthly if stored >30 days |
+| **Container** | Any safe container |
+| **Duration** | Re-check voltage every 2-3 months |
 | **Before Flight** | Charge to full within 24 hours of launch |
 
 ### Battery Age Monitoring
 
 | Tracking Item | Method | Action Threshold |
 |---------------|--------|------------------|
-| **Purchase Date** | Label on battery | Retire after 2 years |
-| **Cycle Count** | Log in spreadsheet | Retire after 200 cycles |
+| **Purchase Date** | Label on battery | Retire after 3 years |
+| **Cycle Count** | Log in spreadsheet | Retire after 300 cycles |
 | **Capacity Fade** | Periodic capacity test | Retire if <80% capacity |
-| **Internal Resistance** | Charger measurement | Retire if >15mΩ/cell |
-| **Physical Condition** | Visual inspection | Retire if any swelling |
-| **Puff Test** | Check for gas buildup | Retire if puffy |
+| **Internal Resistance** | Charger measurement | Retire if >100mΩ/cell |
+| **Physical Condition** | Visual inspection | Retire if dented/damaged |
 
 ### Pre-Flight Battery Checklist
 
 - [ ] Battery fully charged within last 24 hours
 - [ ] Voltage verified: 16.4V - 16.8V (>98% charge)
 - [ ] All cells balanced within 0.02V
-- [ ] Visual inspection: no swelling, damage, or puffing
+- [ ] Visual inspection: metallic casing intact, no dents
 - [ ] Capacity verified within last 30 days (>80%)
-- [ ] Cycle count logged and within limits (<200)
-- [ ] Battery age within limits (<2 years)
+- [ ] Cycle count logged and within limits (<300)
+- [ ] Battery age within limits (<3 years)
 - [ ] Connectors clean and secure
 - [ ] Battery secured in rocket with padding
+- [ ] **IREC compliance: 18650 cylindrical metallic casing confirmed** ✅
 
 ### Emergency Procedures
 
 | Situation | Action |
 |-----------|--------|
 | **Overheating during charge** | Disconnect immediately, move to fireproof area |
-| **Swelling/Puffing** | Stop use, discharge to storage voltage, dispose properly |
 | **Physical damage** | Do not use, discharge safely, dispose at battery recycling |
-| **Fire** | Use sand or Class D extinguisher, evacuate area |
-| **Crash recovery** | Inspect battery before handling, assume damaged |
+| **Cell venting** | Evacuate area, do not inhale fumes, allow to cool |
+| **Crash recovery** | Inspect cells for dents before handling |
+
+> **Note:** 18650 Li-Ion cells with metallic casing are safer than pouch LiPo cells - the metal case provides structural protection and contains any potential failure.
 
 ---
 
@@ -195,8 +211,8 @@ flowchart TB
 
 ```mermaid
 flowchart TB
-    subgraph BATT["4S LiPo Battery"]
-        CELL["4S 14.8V<br/>1300mAh 75C"]
+    subgraph BATT["4S Li-Ion 18650 Battery"]
+        CELL["4S1P 14.8V<br/>2500mAh"]
         XT30["XT30<br/>Connector"]
     end
 
@@ -427,38 +443,39 @@ flowchart LR
 
 ## Battery Selection
 
-### Recommended: 4S 1300mAh 75C LiPo
+### 4S Li-Ion 18650 Pack (2500mAh)
 
-> **Note:** With video payload, we upgraded from 650mAh to 1300mAh for adequate runtime.
+> **Note:** Li-Ion 18650 cells with cylindrical metallic casing are IREC-compliant per DTEG 6.17.2.1.
 
 | Parameter | Value |
 |-----------|-------|
-| **Chemistry** | Lithium Polymer (LiPo) |
-| **Configuration** | 4S (4 cells in series) |
-| **Nominal Voltage** | 14.8V |
-| **Full Charge** | 16.8V |
-| **Empty (safe)** | 13.2V (3.3V/cell) |
-| **Capacity** | 1300mAh |
-| **C Rating** | 75C continuous |
-| **Max Discharge** | 97.5A (way more than needed) |
-| **Weight** | ~140g |
+| **Chemistry** | Lithium-Ion (Li-Ion) |
+| **Cell Type** | 18650 Cylindrical (Samsung 25R / Sony VTC6) |
+| **Configuration** | 4S1P (4 cells in series) |
+| **Nominal Voltage** | 14.8V (3.7V/cell) |
+| **Full Charge** | 16.8V (4.2V/cell) |
+| **Cutoff (safe)** | 12.0V (3.0V/cell) |
+| **Capacity** | 2500mAh |
+| **Max Continuous** | 20A (Samsung 25R) / 30A (Sony VTC6) |
+| **Weight** | ~200g (50g × 4 cells) |
 | **Connector** | XT30 (main) + JST-XH (balance) |
+| **IREC Compliance** | ✅ DTEG 6.17.2.1 - Cylindrical metallic casing |
 
 ### Flight Duration Calculation
 
 ```
-Battery Capacity:     1300mAh
+Battery Capacity:     2500mAh
 Average Draw:         ~1200mA (flight computer + video streaming)
-Theoretical Runtime:  1300 / 1200 = 1.08 hours = 65 minutes
+Theoretical Runtime:  2500 / 1200 = 2.08 hours = 125 minutes
 
 Actual Flight Time:   ~3 minutes (boost to landing)
 Ground Ops:           ~30 minutes (power on to launch)
 Total Mission:        ~35 minutes
 
-Safety Margin:        65 / 35 = 1.86x margin ✓
+Safety Margin:        125 / 35 = 3.57x margin ✓ (EXCELLENT)
 
 Note: For longer ground ops, keep video in standby until T-5 minutes
-      Standby draw: ~400mA → 3.25 hour runtime
+      Standby draw: ~400mA → 6.25 hour runtime
 ```
 
 ---
@@ -492,11 +509,11 @@ flowchart LR
 
 | Battery Voltage | ADC Voltage | Status | Action |
 |-----------------|-------------|--------|--------|
-| > 16.0V | > 2.67V | Overcharged | Warning |
-| 14.8V - 16.0V | 2.47V - 2.67V | **Normal** | OK |
-| 13.6V - 14.8V | 2.27V - 2.47V | Low | Warning LED |
-| 13.2V - 13.6V | 2.20V - 2.27V | Critical | Abort launch |
-| < 13.2V | < 2.20V | Dead | Shutdown |
+| > 16.4V | > 2.73V | Full | OK (just charged) |
+| 14.8V - 16.4V | 2.47V - 2.73V | **Normal** | OK |
+| 13.0V - 14.8V | 2.17V - 2.47V | Low | Warning LED |
+| 12.0V - 13.0V | 2.00V - 2.17V | Critical | Abort launch |
+| < 12.0V | < 2.00V | Cutoff | Shutdown |
 
 ---
 
@@ -565,7 +582,7 @@ flowchart LR
 
 | Component | Part Number | Qty | Notes |
 |-----------|-------------|-----|-------|
-| LiPo Battery | 4S 1300mAh 75C | 1 | Main power (upgraded for video) |
+| Li-Ion Battery | 4S1P 18650 (Samsung 25R) | 1 | Main power - IREC compliant |
 | Buck Converter | MP1584EN module | 1 | 5V output (FC) |
 | LDO Regulator | AMS1117-3.3 | 1 | 3.3V output |
 | Schottky Diode | SS34 | 1 | Reverse protection |
@@ -580,6 +597,8 @@ flowchart LR
 | Connector | XT30 | 1 pair | Power |
 | Connector | JST-XH 5P | 1 | Balance |
 | Switch | SPST Toggle | 1 | Main arm |
+| 18650 Holder | 4-cell series | 1 | Battery enclosure |
+| BMS | 4S 20A | 1 | Protection circuit |
 
 ### Video Payload Power
 
@@ -595,7 +614,8 @@ flowchart LR
 ## Pre-Flight Checklist
 
 ### Power System
-- [ ] Battery voltage > 15.5V (freshly charged)
+- [ ] Battery voltage > 16.0V (freshly charged)
+- [ ] Cell balance within 0.02V
 - [ ] Main arm switch OFF
 - [ ] Pyro arm switch OFF
 - [ ] Video power switch OFF
@@ -612,6 +632,7 @@ flowchart LR
 
 ### Final
 - [ ] All systems GO
+- [ ] **IREC battery compliance verified (Li-Ion 18650)** ✅
 - [ ] Arm pyro switch (at pad)
 - [ ] Clear area
 - [ ] Launch!

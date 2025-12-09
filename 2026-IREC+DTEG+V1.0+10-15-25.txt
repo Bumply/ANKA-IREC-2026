@@ -1,0 +1,2124 @@
+This work is licensed under a Creative Commons 4.0 International License
+Attribute to the Experimental Sounding Rocket Association
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+InternationalRocket Engineering Competition
+Design, Test, & Evaluation Guide
+Revision: 2026 V1.0
+October 15, 2025
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 2 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+This page intentionally left blank.
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 3 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+Contents
+1.0 Introduction 6
+1.1 Background 6
+1.2 Purpose and Scope 6
+1.3 Convention and Notation 7
+1.4 Flight Status 7
+1.5 Launch Vehicle versus Payload 8
+1.6 Revisions 8
+2.0 Reference Documentation 9
+3.0 High Power Certified Flyer of Record 10
+3.1 Tripoli Flight Requirements for Solid and Hybrid Categories 10
+3.2 Team Members 10
+4.0 GPS Tracking Requirements for all IREC Rocket Flights 11
+4.1 Tracking Solutions 11
+4.2 Frequency Management 11
+4.3 SRAD GPS Tracking systems 13
+4.4 FCC Amateur radio Licensing 14
+4.5 GPS Tracking Solution Safety Inspections 14
+4.6 Recovery Team Training and recovery GPS System Review at Team Registration 14
+4.7 MCC Coordination During Recovery 14
+5.0 Propulsion Systems 15
+5.1 Motor Categories 15
+5.2 Propulsion Types 15
+5.3 Rail Exit Velocity 16
+5.4 Igniters 16
+5.5 Non-Toxic Propellants 16
+5.6 Sugar Motor Propellants 17
+5.7 Allowable materials for Case Components for SRAD Motors 17
+5.8 Propulsion System Safing and Arming 17
+5.9 Propellant Offloading After Launch Abort 17
+5.10 Ground-Start Ignition Circuit Arming 18
+5.11 Air-Start/Staged Ignition Circuit Arming 18
+5.12 Air-Start/Staged Ignition Circuit Electronics 18
+5.13 Air-Start/Staged Flight Computer Requirements 18
+5.14 Air-Start/Staged Flights – Arming Procedures 19
+5.15 Air-Start/Staged Flights – Additional Information Requirements 19
+5.16 SRAD Propulsion System Testing 20
+5.17 SRAD Hybrid/Liquid Pad Operations Design Requirements 20
+6.0 Recovery Systems and Avionics 21
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 4 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+6.1 Dual-Event Parachute and Parafoil Recovery 21
+6.2 Recovery Area 21
+6.3 Initial Deployment Event 22
+6.4 Main Deployment Event 22
+6.5 Ejection Gas Protection 22
+6.6 Parachute Swivel Links 22
+6.7 Parachute Coloration and markings 22
+6.8 Non-Parachute/Parafoil Recovery Systems 22
+6.9 Redundant Electronics 22
+6.10 Redundant COTS Recovery Electronics 23
+6.11 SRAD Recovery Electronics 23
+6.12 Safety Critical Wiring for Recovery Systems and Air-Start Motors 23
+6.13 Recovery System Testing 24
+6.14 Stored-Energy Devices – Energetic Device Safing and Arming 25
+6.15 Arming Devices 26
+6.16 Arming Device Verification 26
+6.17 Batteries Contained In The Rocket 26
+6.18 SRAD Pressure Vessels 27
+7.0 Active Flight Control Systems 29
+7.1 Restricted Control Functionality 29
+7.2 Unnecessary For Stable Flight 29
+7.3 Designed To Fail Safe 29
+7.4 Boost Phase Dormancy 29
+7.5 Active Flight Control System Electronics 30
+7.6 Active Flight Control System Energetics 30
+8.0 Airframe Structures 31
+8.1 Adequate Venting 31
+8.2 Overall Structural Integrity 31
+8.3 Material Prohibitions 31
+8.4 Load Bearing Eye Bolts And U-Bolts 31
+8.5 Joints Implementing Coupling Tubes 32
+8.6 Rail Buttons 32
+8.7 Shear Pins 32
+8.8 Identifying Markings 33
+8.9 Other Markings 33
+9.0 Payload 34
+9.1 Payload Recovery 34
+9.2 Payload Recovery Systems 34
+9.3 Payload Energetic Devices 34
+9.4 Payload Identifying Markings 34
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 5 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+9.5 Payload Location 34
+10.0Launch and Ascent Trajectory Requirements 35
+10.1 Launch Azimuth and Elevation 35
+10.2 Ascent Stability 35
+10.3 Over-Stability 35
+11.0ESRA Provided Launch Support Equipment 36
+11.1 ESRA-provided Launch Rails 36
+11.2 ESRA-Provided Launch Control System 36
+11.3 Team-Provided Launch Support Equipment 36
+11.4 Operational Range 37
+11.5 Fault Tolerance and Arming 37
+11.6 Safety Critical Switches 37
+Appendix A: Acronyms, Abbreviations and Terms 38
+Appendix B: Safety Critical Wiring Guidelines 40
+Appendix C: Fire Control System Design Guidelines 46
+Appendix D: Air Start Ignition Wiring Diagram 51
+Appendix E: ESRA & Tripoli Rocket Association Partnership 52
+Appendix F: Example Booster Airframe Markings 54
+Appendix G: Standard Weather Conditions 55
+Appendix H: Document Revisions 56
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 6 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+1.0 INTRODUCTION
+The Experimental Sounding Rocket Association (ESRA) hosts and supports the International
+Rocketry Engineering Competition (IREC), a week-long series of events which will set the
+background and provide structure for the world’s largest university rocket engineering
+competition. This new host event continues the IREC legacy of inspiring student design
+teams from across the country and around the world.
+1.1 BACKGROUND
+The smoke and fire, noise, high speeds, and sleek aerodynamics of rocketry encourage
+students to pursue science, technology, and mathematics-based careers. They have Rocket
+Fever! and competition motivates them to extend themselves beyond the classroom to design
+and build the rockets themselves. These students also learn to work as a team, solving real
+world problems under the same pressures they’ll experience in their future careers.
+ESRA held the first annual IREC in 2006. The competition achieved international status in
+2011 when Canadian and Brazilian universities arrived. These schools have since been joined
+by others from every continent except Antarctica. The competition has increased in size
+every year since 2013, becoming the largest known collegiate level rocket engineering
+competition in the world. Attendance in 2016 included as many as 600 participants –
+including faculty, family, and friends of students from over 50 colleges and universities. The
+next year marked the start of a new era with the inaugural Spaceport America Cup. Over
+1,100 students and representatives from 22 industry partners participated in an academic
+conference, rocket and payload engineering competitions, and non-competing demonstration
+flight tests. IREC continues to grow with nearly 200 teams applying for admission to the
+competition in 2023 with 121 teams and over 2,000 students from around the world making
+the trip to Spaceport America in June of 2023 for the competition.
+In 2025, the competition transitioned to Midland, Texas with the strategic objective of
+inspiring students to elevate their engineering capabilities. This included the introduction of a
+45,000-foot two-stage rocket category and a 100,000-foot waiver to push the boundaries of
+altitude achievement. The 2025 IREC marked a record-breaking year, drawing over 1,200
+students to the event and engaging more than 7,500 participants across team rocketry
+programs, culminating in over 130 successful launches.
+1.2 PURPOSE AND SCOPE
+1.2.1 This document defines the minimum design, test, and evaluation criteria the event
+organizers expect teams to meet before launching at the IREC. The event organizers
+use these criteria to promote flight safety. Departures from the guidance this document
+provides may negatively impact an offending team’s score and flight status, depending
+on the degree of severity. The foundational, qualifying criteria for the IREC are
+contained in the IREC Rules & Requirement document.
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 7 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+1.2.2 This document builds upon:
+1.2.2.1 Tripoli Rocketry Association (TRA) Unified Safety Code (USC)
+1.2.2.2 National Fire Protection Association (NFPA) Code for High Power Rocketry
+(NFPA 1127). While NFPA 1127, Section 1.3.3, exempts colleges and
+universities from its contents, these documents remain excellent supplemental
+resources for student researchers to learn more about best practices adopted
+by the amateur high-power rocketry community.
+1.2.2.3 ESRA’s observations on student launch initiatives.
+1.2.2.4 Feedback received from student teams.
+1.2.3 If any IREC team is unclear about competition rules and/or requirements, or has a
+situation not specifically addressed by the rules, they should contact ESRA by posting
+a message in the “dteg-questions” channel on Discord. Teams are encouraged to ask
+about both requirement interpretation and the spirit and intent of the rules and DTEG.
+1.3 CONVENTION AND NOTATION
+The following definitions differentiate between requirements and other statements. The
+degree to which a team satisfies the spirit and intent of these statements will guide the
+competition officials’ decisions on a project’s flight status and overall score at the IREC.
+Shall: This is the only verb used to denote mandatory requirements. Failure to satisfy
+the spirit and intent of a mandatory requirement will always affect a project’s
+score and flight status.
+May: This verb signifies that teams are allowed, but not required, to exercise the
+associated action.
+Should: This verb is used for stating non-mandatory goals. Failure to satisfy the spirit
+and intent of a non-mandatory goal may affect a project’s score and flight
+status, depending on design implementation and the team’s ability to provide
+thorough documentary evidence of their due diligence on-demand.
+Will: This verb is used for stating facts and declarations of purpose. The authors use
+these statements to clarify the spirit and intent of requirements and goals.
+1.4 FLIGHT STATUS
+Flight status refers to the granting of permission to attempt flight, and the provisions under
+which that permission remains valid. A project’s flight status may be either nominal,
+provisional, or denied.
+Nominal: A project assigned nominal flight status meets or exceeds the minimum
+expectations of this document and reveals no obvious flight safety concerns
+during flight safety review at the IREC.
+Provisional: A project assigned provisional flight status generally meets the minimum
+expectations of this document but reveals flight safety concerns during flight
+safety review at the IREC which may be mitigated by field modification or by
+adjusting launch environment constraints. Launch may occur only when the
+prescribed provisions are met.
+Denied: Competition officials reserve the right to deny flight status to any project which
+fails to meet the minimum expectations of this document or reveals unmitigatable flight safety concerns during flight safety review at the IREC.
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 8 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+1.5 LAUNCH VEHICLE VERSUS PAYLOAD
+An effort is made throughout this document to differentiate between launch vehicle and
+payload associated systems. Unless otherwise stated, requirements referring only to the
+launch vehicle do not apply to payloads and vice versa.
+1.6 REVISIONS
+The IREC DTEG may require revision from one competition to the next, based on the
+lessons learned by both host organizations and the participants.
+1.6.1 Major revisions will be accomplished by complete document reissue.
+1.6.2 “Real world events” may require smaller revisions to this document in the months
+leading up to a competition.
+1.6.3 Revisions will be reflected in updates to the document’s effective date.
+1.6.4 The authority to approve and issue revised versions of this document rests with ESRA.
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 9 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+2.0 REFERENCE DOCUMENTATION
+The following documents include standards, guidelines, schedules, or required standard forms.
+The documents listed in this section are either applicable to the extent specified in this document
+or contain reference information useful in the application of this document.
+1 At the present time, an updated 2026 version of the IREC Range Standard Operating Procedures is not available.
+DOCUMENT FILE LOCATION
+Location of current IREC documents https://www.esrarocket.org/documents-and-forms
+IREC Rules & Requirements Document https://www.esrarocket.org/s/IREC-Rules-and-RequirementsDocument-2026-v10.pdf
+IREC Integrated Master Schedule Document https://www.esrarocket.org/s/irec_ims-20250719.pdf
+IREC Range Standard Operating Procedures1 https://www.esrarocket.org/s/irec_range_standard_operating_p
+rocedures_2025-a.pdf
+IREC Entry Form & Progress Report 2026 Team Application Form
+TRA Unified Safety Code https://www.tripoli.org/content.aspx?page_id=22&club_id=79
+5696&module_id=520420
+NFPA 1127: Code for High-Power Rocketry
+https://www.nfpa.org/codes-and-standards/all-codes-andstandards/list-of-codes-and-standards/detail?code=1127
+14 CFR, Part 1, 1.1 General Definitions
+http://www.ecfr.gov/cgi-bin/textidx?SID=795aaa37494b6c99641135267af8161e&mc=true&no
+de=se14.1.1_11&rgn=div8
+14 CFR, Part 101, Subpart C, 101.22 Definitions
+http://www.ecfr.gov/cgi-bin/textidx?SID=795aaa37494b6c99641135267af8161e&mc=true&no
+de=se14.2.101_122&rgn=div8
+47 CFR, Part 97, Amateur Radio Service https://www.ecfr.gov/current/title-47/chapter-I/subchapterD/part-97
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 10 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+3.0 HIGH POWER CERTIFIED FLYER OF RECORD
+3.1 TRIPOLI FLIGHT REQUIREMENTS FOR SOLID AND HYBRID CATEGORIES2
+3.1.1 Every team shall engage a TRA-certified Level 3 (L3) Flyer of Record (FoR). Any one
+of the following options shall satisfy this FoR requirement.
+3.1.1.1 Recruit a TRA-certified L3 mentor with significant rocketry experience to
+work closely with the team and then attend the Competition as FoR. Student
+teams should pay the travel expenses of their FoR/Mentor to attend the
+event.
+3.1.1.2 Include as a member of the team a TRA-certified L3 student. In this case, the
+student L3 member shall be the Flyer of Record.
+3.1.1.3 Teams who have no access to local or regional Tripoli prefectures should first
+attempt a search using social media, forums and other web-based sites
+(Facebook, Discord, etc.) to find a suitable Flyer of Record. If that search
+does not find a FoR, teams should contact the Tripoli Rocketry Association's
+Outreach Committee for assistance. (https://www.tripoli.org/outreach)
+3.1.2 The Flyer of Record shall be present for:
+3.1.2.1 Fight Readiness Review (Horseshoe Pavilion),
+3.1.2.2 Launch preparations,
+3.1.2.3 Final RSO Check (immediately prior to entering queue), and
+3.1.2.4 Pad loading.
+3.1.3 It is recommended that motors or energetic materials only be possessed or handled by
+TRA members with appropriate high power rocketry certification.
+3.2 TEAM MEMBERS
+3.2.1 Teams flying in the Solid or Hybrid categories, or the Demonstration category if using
+solid or hybrid motors, shall meet all TRA launch safety requirements as codified in
+the then-current Tripoli Rocketry Association Unified Safety Code.
+3.2.2 All team members who will be onsite at the launch site shall hold a current TRA
+membership.
+3.2.2.1 TRA Student membership shall satisfy requirement 3.2.2.
+3.2.3 A maximum of 5 student team members may be on the pad loading team, although pad
+loading teams in the two-stage and hybrids area may be larger at the discretion of the
+pad manager.
+3.2.3.1 The team Mentor may be present at the pads and does not count in the team
+limit in 3.2.3.
+3.2.3.2 The FoR shall be present at the pads and does not count in the team limit in
+3.2.3.
+3.2.4 The recovery team shall contain a minimum of 2 and a maximum of 4 team members
+per 100 lbs. of recovery equipment, including the dry weight of the rocket. The Mentor
+and/or FoR may accompany the recovery team and are not included in the team
+member count.
+2 A Tripoli L3-certified FoR is required for any category, including the demonstration category, that is allowed
+under Tripoli Rules. This excludes liquids.
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 11 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+4.0 GPS TRACKING REQUIREMENTS FOR ALL IREC ROCKET FLIGHTS
+4.1 TRACKING SOLUTIONS
+4.1.1 All independently recovered bodies shall include a COTS GPS tracking solution.
+IREC Recommended COTS GPS trackers include the following:
+Vendor Product Website
+ESRA recommends the use of the 400 MHz (70 cm) band wherever possible
+Altus Metrum TeleGPS, TeleMega, etc. 70 cm https://altusmetrum.org/
+Big Red Bee Beeline GPS 70 cm http://www.bigredbee.com/
+Featherweight Featherweight GPS 33 cm https://www.featherweightaltimet
+ers.com/featherweight-gpstracker.html
+4.1.2 COTS GPS systems from other suppliers may be used if they meet the requirements of
+this section. Qualified COTS GPS systems must have a selectable center frequency (no
+hopping), a forward RF power of no more than 200mW, a transmission bandwidth of
+25kHz (FWHM) or less, no spurious transmissions, and no harmonics of more than -20
+dBc of the fundamental peak.
+4.1.2.1 Note that MCC may not be able to track the GPS units from other suppliers
+unless they use the APRS protocol listed in Section 4.3.2.
+4.1.2.2 A limited exception is provided for the use of the Multitronix “Kate” unit for
+two-stage rockets, if the device is being used to control staging or
+deployment functions, and on Demonstration category flights above 45K feet.
+4.1.3 Tracking solutions shall be switched and powered independently of any flight
+computer.
+4.1.3.1 COTS flight computers with integrated GPS tracking satisfy the requirements
+of both GPS Tracking and Recovery Electronics and are exempt from (4.1.3)
+independent switch and power requirements.
+4.1.4 GPS Tracker Frequency Bands
+4.1.4.1 144 MHz (2 m) – Requires US Amateur Radio license or operating authority.
+4.1.4.2 440 MHz (70 cm) – Requires US Amateur Radio license or operating
+authority.
+4.1.4.3 900 MHz (33 cm) – Does not require an Amateur Radio license.
+4.1.4.3.1 MCC has a limited number of 900 MHz receivers which may result in
+launch delays.
+4.2 FREQUENCY MANAGEMENT
+4.2.1 The Mission Control Center (MCC) will be responsible for frequency management
+during the IREC.
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 12 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+4.2.1.1 MCC will designate a specific range of frequencies (i.e., COTS frequencies)
+within the 900 MHz (33 cm) band and within the 400 MHz (70 cm) band for
+the exclusive use of COTS GPS trackers.
+4.2.1.2 COTS GPS trackers used within the COTS frequency ranges must meet the
+requirements of Section 4.1.2. Frequency “hopping” is not allowed within the
+COTS frequency ranges (or on any frequency in any band).
+4.2.1.3 All RF sources must be registered in the MCC Portal before the launch.
+4.2.2 For 2026, teams will be assigned specific frequencies for COTS GPS transmitters as
+follows:
+4.2.2.1 Foreign teams from countries without reciprocal HAM license agreements
+will be assigned one or more COTS tracker frequencies within the 900 MHz
+(33 cm) band. Frequencies will be assigned via the MCC Portal prior to the
+competition. Teams will surrender the use of these frequencies after
+completing the Post Flight Data Recovery process.
+4.2.2.2 US teams, and teams from countries with reciprocal HAM license
+agreements, can elect to use COTS GPS trackers within the COTS GPS
+tracker range of the 400 MHz (70 cm) band. Teams selecting this frequency
+band will be assigned one or more COTS tracker frequencies via the MCC
+Portal prior to the competition.
+4.2.2.3 US teams, and teams from countries with reciprocal HAM license
+agreements, can elect to use COTS GPS trackers within the COTS GPS range
+of the 900 MHz (33 cm) band. Teams selecting this frequency band will be
+assigned one or more COTS tracker frequencies at the time of the Final
+Flight Safety Review. Note that teams will not be able to conduct their Final
+Flight Safety Review, nor test their GPS equipment, until the frequency or
+frequencies they need become available. Teams will surrender the use of
+these frequencies after completing the Post Flight Data Recovery process.
+4.2.2.4 Teams using SRAD GPS systems or other SRAD transmitters shall use
+frequencies outside of the COTS tracker ranges in the 400 MHz (70 cm) and
+900 MHz (33 cm) bands. These transmitters shall meet the requirements of
+Section 4.1.2 with the exception of the bandwidth requirement.
+4.2.2.5 Teams will not receive a frequency assignment for SRAD transmitters.
+However, the Portal will automatically provide the number of conflicts
+associated with any SRAD frequency (allowing teams to select a different
+frequency at their option).
+4.2.3 Teams with multiple independently recovered bodies can request separate frequencies
+for the COTS GPS device in each body or use time slotting (the preferred option).
+Multiple COTS GPS devices within a given body shall use time slotting.
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 13 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+4.2.4 Teams shall not power any transmitting electronics while in the pit area without first
+checking with the MCC. This applies to transmitters both within and outside of the
+COTS frequency ranges within each band. Procedures for obtaining permission to test
+electronics will be developed prior to the competition.
+4.2.5 Teams shall have the ability to quickly change frequencies on their COTS and SRAD
+transmitting and receiving equipment.
+4.2.6 Teams shall not transmit on a COTS frequency that is not assigned to them, or on any
+frequency that is not registered and approved by MCC. Competition officials may
+assess penalties for teams that violate this requirement.
+4.2.7 Teams shall minimize usage of tracking transmitters during range operations to only
+testing and actual flight operations. Transmitters shall be powered off when not in use.
+4.2.8 Trackers that allow custom names to be assigned to the tracker shall include the Team
+ID number and rocket section number as follows. Team 999’s Section 1 tracker name
+would be “<T999S1>” (without the quotes). This is to aid in automatic parsing.
+4.2.9 Should an SRAD tracking frequency conflict develop between teams waiting in the
+queue or at the pads, it shall be the responsibility of the affected teams to resolve the
+conflict:
+4.2.9.1 One team changing their tracking system to a different (unused) frequency, or
+4.2.9.2 One team delaying their launch to a subsequent salvo.
+4.2.10 Ground support equipment for Hybrids and Liquids shall operate on the 1.2, 2.4 or
+5.8GHz frequencies with no external RF amplifiers. 1.2GHz is recommended for video
+feeds only (no data).
+4.3 SRAD GPS TRACKING SYSTEMS
+4.3.1 SRAD GPS solutions may be used, at the option of the team, subject to the following:
+4.3.1.1 Transmissions must be outside of the ranges designated for COTS GPS
+tracking and meet the requirements in Section 4.1.2 with the exception of the
+bandwidth requirement.
+4.3.1.2 Additional documentation detailing the design, fabrication, operation, and
+testing of SRAD GPS tracking systems shall be included in progress reports.
+4.3.2 APRS protocol via 1200 baud AFSK is recommended for SRAD GPS Tracking on the
+2m, 70cm and 33cm bands, see http://www.aprs.org/doc/APRS101.PDF.
+4.3.3 It is recommended to flight-test SRAD GPS systems.
+4.3.4 Neither COTS GPS trackers nor SRAD GPS trackers will be used for official Post
+Flight Data Recovery altitude determination. Currently, altitude determinations are
+performed using barometric altitude as outlined in the Rules and Requirements
+document.
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 14 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+4.4 FCC AMATEUR RADIO LICENSING
+4.4.1 Teams are recommended to get an Amateur Radio Operator’s license for their country.
+4.4.2 70cm and 2m APRS GPS Tracking solutions require a minimum of the control
+operator to be licensed at the Technician level or higher.
+4.4.3 The control operator’s call sign shall be used by the transmitter.
+4.4.4 The control operator’s call sign and team number shall be registered with MCC
+through the Portal.
+4.4.5 Teams utilizing Amateur Radio frequencies and based outside of the US shall secure
+US operating authority or use a solution transmitting at 900 MHz if a reciprocal
+licensing agreement cannot be obtained or cannot be used. US operating authority is
+most commonly accomplished via reciprocal licensing agreements.
+4.4.6 International teams shall bring documentation in English (translated if necessary) of
+their US operating authority if using frequencies outside of 900 MHz.
+4.5 GPS TRACKING SOLUTION SAFETY INSPECTIONS
+4.5.1 IREC personnel at the pads shall verify at least one of the following:
+4.5.1.1 The teams are able to communicate with their receiving station and confirm
+that COTS GPS signals are acquired and functioning properly, or
+4.5.1.2 MCC is receiving COTS GPS telemetry successfully.
+4.5.2 Launch operations will not be delayed because of COTS GPS inoperability. Teams
+which cannot confirm a COTS GPS Tracking signal either through their team
+receiver(s) or through the MCC shall not be allowed to launch.
+4.5.3 The inoperability of an SRAD GPS will not be a reason to delay launch operations.
+4.6 RECOVERY TEAM TRAINING AND RECOVERY GPS SYSTEM REVIEW AT TEAM
+REGISTRATION
+4.6.1 Prior to arrival in the host city on Monday of the week of the IREC, all members of the
+recovery team shall have completed video training on utilization of the recovery
+backpack systems.
+4.6.2 Although training verification is done through the Portal, Teams may need to verify
+completion of training during the check-in process in Midland.
+4.7 MCC COORDINATION DURING RECOVERY
+4.7.1 Teams shall acquire recovery information for their rocket from information sources in
+the rocket tracker verification tent, the recovery tent or on the Portal.
+4.7.2 Teams must have a recovery plan before deployment. Teams that do not have good
+GPS information, or the location is not known, must develop range and direction
+estimates in their recovery plan to avoid excessive wandering.
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 15 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+5.0 PROPULSION SYSTEMS
+5.1 MOTOR CATEGORIES
+5.1.1 COTS Motors
+5.1.1.1 A Commercial Off the Shelf (COTS) motor is defined as a motor which has
+been certified by the Canadian Association of Rocketry, Tripoli, or NAR, and
+appears on the then current combined Certified Rocket Motors List.
+5.1.1.2 A list of all approved motors can be found on the TRA website:
+NAR-TMT Combined Motor List - Tripoli Rocketry Association
+5.1.2 SRAD Motors
+5.1.2.1 Student Research and Developed Motors (SRAD) are defined as
+5.1.2.1.1 Any motor built in part or whole by students.
+5.1.2.1.2 Any COTS solid motors modified in such a way as to conceivably
+affect operation or performance of the motor.3
+5.1.2.2 Commercial solid propellant grains shall not be used in SRAD motors.
+5.1.2.3 SRAD motors shall be static fired, and the propellant characterized prior to
+the submission of the Technical Report.
+5.1.2.4 Static fire test results and propellant characterization data shall be presented
+during the Video Flight Readiness Review.
+5.1.2.5 No second party motors (i.e., not built by the team) shall be permitted.
+5.2 PROPULSION TYPES
+5.2.1 Solid Motor
+5.2.1.1 Any motor utilizing exclusively a solid propellant.
+5.2.1.2 Solid propellants shall consist of non-toxic ingredients per Section 5.5.
+5.2.1.3 SRAD solid motors shall be static fired, well characterized and tested per
+section 5.16.
+5.2.1.4 All SRAD solid motors shall comply with the TRA Unified Safety code.
+5.2.2 Hybrid Motor
+5.2.2.1 Any motor utilizing a combination of solid and liquid or gaseous propellants.
+5.2.2.2 Hybrid propellants must be non-toxic as defined in Section 5.5.
+5.2.2.3 SRAD hybrid motors shall be static fired, well characterized and tested per
+section 5.16.
+5.2.2.4 SRAD hybrid motors shall comply with the TRA Unified Safety code.
+5.2.2.5 Nitrous oxide is the only allowable oxidizer.
+5.2.3 Liquid Engine
+5.2.3.1 A liquid engine is an engine designed with stored fuel and stored oxidizer in
+the liquid state.
+5.2.3.2 All liquid propellants must be non-toxic as defined in Section 5.5.
+5.2.3.3 Liquid engines shall be static fired, well characterized, and tested as per
+Section 5.16.
+5.2.3.4 Nitrous oxide is the only allowable oxidizer. ESRA may consider the use of
+other oxidizers on a case-by-case basis.
+3 For example, modification of the forward closure of a motor to support head end ignition would result in the motor
+being classified as SRAD, as would any modification related to the threads used on the closures.
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 16 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+5.3 RAIL EXIT VELOCITY
+5.3.1 Teams shall design their rockets to attain a rail departure velocity of at least 25 m/s (82
+ft/s) based on the “effective” length of the rail. “Actual” rail lengths are currently 17
+feet for single-stage rockets and 21 feet for two-stage rockets.
+5.3.2 The “effective” rail length is defined as the distance (altitude) that the rocket has
+traveled at the instant that the launch vehicle first becomes free to move about the
+pitch, yaw, or roll axis.4
+5.3.3 For tower launchers, the required rail departure velocity must be reached by the time
+that the center of pressure of the rocket has cleared the tower.
+5.3.4 Cluster rockets shall meet the minimum rail exit velocity requirement on any single
+motor in the cluster.
+5.4 IGNITERS
+5.4.1 Teams shall supply the appropriate means of ignition for their motor.
+5.4.2 Hybrid/Liquid teams shall discuss their igniter approach with ESRA safety personnel
+as soon as practicable.
+5.4.3 For solid motors:
+5.4.3.1 Ground-started motors shall be fired with dual-headed or dual-bridged
+igniters.
+5.4.3.1.1 The use of two high-current igniters should be avoided due to excessive
+current requirements.
+5.4.3.2 Motors may be started using either a COTS igniter or a SRAD igniter.
+5.4.3.2.1 Teams shall specify the igniter(s) to be used during the Video Flight
+Readiness Review.
+5.4.3.2.2 Teams using an SRAD igniter shall specify the design and composition
+of the igniter during the Video Flight Readiness Review.
+5.4.3.3 COTS igniters that are modified shall be considered SRAD igniters and
+subject to the requirements of this section.
+5.5 NON-TOXIC PROPELLANTS
+5.5.1 Launch vehicles entered in the IREC shall use non-toxic propellants.
+5.5.2 Ammonium perchlorate composite propellant (APCP), potassium nitrate and sugar
+(aka rocket candy), nitrous oxide, liquid oxygen (LOX), kerosene, propane, alcohol,
+and similar substances, are considered non-toxic.
+5.5.3 Toxic propellants are defined as those requiring breathing apparatus, unique storage
+and transport infrastructure, or extensive personal protective equipment (PPE).
+Hydrogen peroxide is considered a toxic propellant.
+4 As an example, if a single-stage rocket has two rail buttons located 1foot and 4 feet from the bottom of the rocket,
+the effective rail length is 17 - 4 = 13 feet. The rail exit velocity is then the velocity of the rocket when the “altitude”
+of the rocket has reached 13 feet.
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 17 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+5.6 SUGAR MOTOR PROPELLANTS
+5.6.1 Sugar propellants shall use potassium nitrate as oxidizer.
+5.6.2 The following sugars or sugar alcohols are allowable as fuel.
+5.6.2.1 Dextrose
+5.6.2.2 Erythritol
+5.6.2.3 Sorbitol
+5.6.3 Other chemicals may be used if the fuel includes more than 50% by weight of the
+sugars or sugar alcohols listed in 5.6.2.
+5.7 ALLOWABLE MATERIALS FOR CASE COMPONENTS FOR SRAD MOTORS
+5.7.1 Metallic cases shall be made of non-ferrous ductile metals such as 6061 aluminum
+alloy.
+5.7.2 Non-metallic cases shall not be made of brittle materials which may rupture into sharp
+shards, such as PVC or other low-temperature polymers.
+5.7.3 Forward closures shall not be made of ferrous materials.
+5.7.4 Minor components such as snap rings, nozzle washers, rear closures, and seal disks
+may be made of ferrous metals.
+5.7.5 Nozzles for Sugar Motors may be made of steel as long as the throat of the nozzle is
+recessed within the case.
+5.7.6 Combustion chambers for hybrid motors shall not be made from any alloy of steel.
+5.8 PROPULSION SYSTEM SAFING AND ARMING
+5.8.1 A propulsion system shall be deemed armed if only one action (e.g., an ignition signal)
+must occur for the propellant(s) to ignite.
+5.8.2 The “arming action” is any action enabling an ignition signal to ignite the
+propellant(s).
+5.8.3 The IREC provided launch control system described in Section 11.2 will be used for all
+solid and two-stage launches.
+5.8.4 Hybrid or liquid teams shall provide launch control systems that ensure their rocket is
+properly made safe, i.e., not armed until commanded. Additional requirements for
+team-provided launch control systems are defined in Section 11.3 of this document.
+5.9 PROPELLANT OFFLOADING AFTER LAUNCH ABORT
+5.9.1 Hybrid and liquid propulsion systems shall implement a means for remotely controlled
+venting or offloading of all liquid and gaseous propellants.
+5.9.2 Normally open purge valves shall be used.
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 18 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+5.10 GROUND-START IGNITION CIRCUIT ARMING
+5.10.1 All personnel shall be at least 15 m (50 ft) away from the launch vehicle prior to
+ground-started propulsion system ignition circuits/sequences being armed.
+5.10.2 The IREC provided launch control system satisfies this requirement.
+5.11 AIR-START/STAGED IGNITION CIRCUIT ARMING
+5.11.1 All upper-stage (i.e., air-starts) propulsion systems shall be designed to:
+5.11.1.1 Prevent motor ignition during arming on the ground.
+5.11.1.2 Inhibit motor ignition, as defined in Section 5.13, in the event of a nonnominal flight.
+5.11.1.3 Provide the capability of being disarmed in the event the rocket is not
+launched.
+5.12 AIR-START/STAGED IGNITION CIRCUIT ELECTRONICS
+5.12.1 All upper-stage ignition systems shall comply with the same requirements for Safety
+Critical Wiring as recovery systems as defined in 6.12.
+5.13 AIR-START/STAGED FLIGHT COMPUTER REQUIREMENTS
+5.13.1 Ignition of air-start motors shall be accomplished using a COTS flight computer
+configured to inhibit ignition of the air-start motor(s) unless all the following
+conditions have been met:
+5.13.1.1 Booster burnout has been detected.
+5.13.1.2 The rocket has reached an altitude of at least 70% of the simulated altitude at
+the time when initiator firing is desired (the simulation shall be at a 0° launch
+angle with no wind).
+5.13.1.3 The sustainer flight angle is within 20° of vertical.
+5.13.2 The flight computer shall be configured to prevent the air-start motor from firing at a
+later time if the altitude threshold is not achieved.
+5.13.3 Currently available flight computers that satisfy the requirements of this section
+include, but are not limited to:
+5.13.3.1 Featherweight Blue Raven and Blue Jay Plus
+5.13.3.2 Aim Xtra
+5.13.3.3 Multitronix Kate
+5.13.3.4 Altus Metrum Telemega and EasyMega
+5.13.3.5 MARSA Systems Marsa33 and Marsa54 flight computers with Tilt Module
+& Interface.
+5.13.4 SRAD flight computers shall not be used for the purpose of igniting air-start motors.
+5.13.5 Simple timers shall not be used for igniting air-start motors unless in combination with
+altitude and tilt lockout.
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 19 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+5.14 AIR-START/STAGED FLIGHTS – ARMING PROCEDURES
+5.14.1 All projects shall include the capability of preventing air-start motor ignition on the
+ground.
+5.14.2 All projects shall include a provision to open the circuit between the flight computer
+and the air-start motor igniter, and to shunt the igniter, prior to and during power-up of
+the flight computer.
+5.14.2.1 The requirements in 5.14.2 can be accomplished using one or more than one
+physical switch.
+5.14.2.2 Examples of recommended switch designs are provided in Appendix D.
+5.14.2.3 The Multitronix Kate flight computer meets the requirements of 5.14.2.
+5.14.2.4 The use of SRAD electronics for the purpose of remotely accomplishing the
+switching functions (isolation and shunt) in this section can be considered;
+however, under no circumstances can such electronics cause a current to flow
+to the igniter.
+5.14.3 Flight computers shall not be powered up until the rocket is in a vertical position.5
+5.14.4 The electronics configuration shall be designed such that the provisions used to open
+and to shunt the circuit to the igniter can be used to safe the igniter if the rocket is not
+launched.
+5.15 AIR-START/STAGED FLIGHTS – ADDITIONAL INFORMATION REQUIREMENTS
+5.15.1 Teams shall provide additional information in the second progress report specifically
+related to air-start/staged flights.
+5.15.2 Updated information, including a response to ESRA comments as applicable, shall be
+included in the third progress report and discussed during the Video Flight Safety
+Review.
+5.15.3 The required additional information includes:
+5.15.3.1 Schematic diagram of the electronics configuration to be used for air-start
+motor ignition and recovery.
+5.15.3.2 A graph illustrating flight simulation profile, to include altitude, velocity, and
+acceleration as a function of time to the expected apogee time.
+5.15.3.3 An explanation of the strategy for the flight based on the above flight profile
+(i.e., what is the rationale behind the selection of staging times, coast times,
+etc.)
+5.15.3.4 A description of the specific procedures that will be used to prevent air-start
+motor ignition on the ground.
+5.15.3.5 A description of the specific procedures that will be used to inhibit air-start
+motor ignition in the event of a non-nominal flight.
+5.15.3.6 Drawing & description of the interstage coupler.
+5.15.3.7 Drawing and description of the wiring design between the flight computer
+and the igniter, including any break wires employed on this wiring.
+5 Teams are encouraged to develop processes that allow the arming procedures in this section to be conducted from
+the ground rather than from a ladder.
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 20 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+5.16 SRAD PROPULSION SYSTEM TESTING
+5.16.1 Teams shall comply with all rules, regulations, and best practices imposed by the
+authorities at their chosen test location(s).
+5.16.2 Teams shall complete required testing of SRAD and modified COTS propulsion
+systems prior to submitting their Technical Report. Teams unable to make this deadline
+may switch to COTS but must do so prior to submitting their Technical Report.
+5.16.3 Combustion Chamber Pressure Testing
+5.16.3.1 SRAD and modified COTS propulsion system combustion chambers shall be
+designed and tested according to the SRAD pressure vessel requirements
+defined in Section 6.2 of this document.
+5.16.3.2 Combustion chambers are exempted from the requirement for a relief device.
+5.16.4 Hybrid and Liquid Propulsion System Tanking Testing
+5.16.4.1 SRAD and modified COTS propulsion systems using liquid or hybrid
+propellant(s) shall successfully complete a propellant loading and off-loading
+test in “launch-configuration”.
+5.16.4.2 This test may be conducted using either actual propellant(s) or suitable proxy
+fluids.
+5.16.4.3 The loading and off-loading test shall demonstrate meeting the fill-to-fire
+time and detanking time requirements of 5.17.
+5.16.4.4 Links to videos and testing data shall be included with, or linked to, in the
+third progress report and final report.
+5.16.5 Static Hot-Fire Testing
+5.16.5.1 SRAD propulsion systems shall successfully complete an instrumented
+(chamber pressure and thrust), full scale (including system working time)
+static hot-fire test prior to the IREC.
+5.16.5.2 SRAD Solid teams shall provide a BurnSim or openMotor file of their
+intended motor.
+5.16.5.3 SRAD Solid teams shall provide static test data including at least a graph of
+the pressure and thrust versus time.
+5.16.5.4 SRAD static test results shall be provided in the Comma Separated Values
+(CSV) file format and include Time (sec), Pressure (pascals) and Thrust
+(newtons) data.
+5.16.5.5 Video of successful testing shall be included with, or linked to, in the third
+progress report and final report.
+5.16.5.6 The flight motor shall represent the static test motor in all respects.
+5.16.5.7 Any changes to the SRAD flight motor shall be tested and resubmitted.
+5.17 SRAD HYBRID/LIQUID PAD OPERATIONS DESIGN REQUIREMENTS
+5.17.1 Fill to fire time shall be ≤30 minutes. The filling time is defined as the time from
+filling start to launch ignition.
+5.17.2 Pad managers may, using their discretion, permit an additional 15 minutes of fill time.
+5.17.3 Rockets shall vent/detank in ≤30 minutes, including in fault and failsafe conditions.
+5.17.4 Rockets shall be able to hold fully filled for ≥10 minutes before launching.
+5.17.5 Teams will be told to abort if they do not meet these times.
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 21 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+6.0 RECOVERY SYSTEMS AND AVIONICS
+6.1 DUAL-EVENT PARACHUTE AND PARAFOIL RECOVERY
+6.1.1 Each independently recovered launch vehicle body, including payloads, anticipated to
+reach an apogee above 457 m (1,500 ft) above ground level (AGL) shall follow a
+“dual-event” recovery operations concept (CONOPS) defined to include the following:
+6.1.1.1 A drogue deployment event of a drogue parachute (or a reefed main
+parachute) at or near apogee.
+6.1.1.2 A main deployment event of a main parachute, or unreefing of a main
+parachute, at an altitude no higher than 457 m (1,500 ft).
+6.1.2 Independently recovered bodies (payloads) released at an altitude below 1,500 ft (457
+m) AGL, are exempted from dual deployment and may feature only a single/main
+deployment event.
+6.1.3 Boosters from two-stage rockets are subject to the dual-event provisions of this section.
+6.1.4 A single commercially available release device appropriately rated for large
+parachutes, e.g., Tinder Rocketry Tender Descender L1, L2, L3, and TD-2, the
+Rattworks AARD, etc., are permitted subject to the following:
+6.1.4.1 Dual initiators shall be used.
+6.1.4.2 Redundant energetics (powder charges) are not required.
+6.1.4.3 Initiators shall be activated by independent flight computers.
+6.1.4.4 The device shall be successfully ground tested under a load approximating
+the load anticipated during flight.
+6.1.4.5 The Jolly Logic Chute Release (JLCR) is not permitted for any recovery
+purpose.
+6.1.5 Commercially available line/cable cutters, e.g., Tinder Rocketry Piranha and Mako,
+Archetype Cable Cutter, etc., are permitted subject to the following:
+6.1.5.1 Redundant devices, activated by independent flight computers, shall be used.
+6.1.5.2 The use of dual initiators in a single device does not satisfy 6.1.5.1.
+6.1.6 SRAD release devices and line/cable cutter devices are permitted subject to the
+following:
+6.1.6.1 Redundant devices shall be used (for both release and cable cutter devices).
+6.1.6.2 Activation of redundant devices shall be controlled by independent flight
+computers.
+6.1.6.3 The SRAD device shall be successfully ground tested under a load
+approximating the load anticipated during flight.
+6.2 RECOVERY AREA
+6.2.1 Any hardware drifting outside the safe recovery area or onto properties with restricted
+access will either be abandoned or recovered at the team’s own expense.
+6.2.2 Range Safety personnel may deem a recovery design as unsafe if it is determined that
+there is a reasonable probability the recovery could depart the safe recovery area.
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 22 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+6.3 INITIAL DEPLOYMENT EVENT
+6.3.1 The initial deployment event shall occur at or near apogee.
+6.3.2 Descent rate calculations shall be based on a launch site elevation of 890 m (2,920 ft)
+MSL.
+6.3.3 The descent rate under drogue shall be between 20-40 m/s (65-131 ft/s).
+6.4 MAIN DEPLOYMENT EVENT
+6.4.1 The main deployment event for any recovery method shall occur at an altitude no
+higher than 457 m (1,500 ft) AGL.
+6.4.2 Descent rate calculations shall be based on a launch site elevation of 890 m (2,920 ft)
+MSL.
+6.4.3 The vehicle’s descent rate at landing shall be <11 m/s (36 ft/s).
+6.5 EJECTION GAS PROTECTION
+6.5.1 The recovery system shall implement adequate protection (e.g., fire resistant material,
+pistons, baffles, etc.) to prevent ejection energetics from damaging recovery
+components including, but not limited to, shock cords and parachutes.
+6.6 PARACHUTE SWIVEL LINKS
+6.6.1 The recovery system rigging (e.g., parachute lines, risers, shock cords, etc.) may
+implement appropriately rated swivel links at connections to relieve twist/torsion as the
+specific design demands.
+6.7 PARACHUTE COLORATION AND MARKINGS
+6.7.1 When separate parachutes are used for the initial and main deployment events, these
+parachutes shall be contrasting colors: from each other, blue sky, and clouds.
+6.7.2 Through the use of visually distinct parachute colors and/or patterns, teams should be
+able to visually determine if a main was deployed at apogee, or was not deployed at the
+expected deployment altitude during descent (drogue only recovery).
+6.8 NON-PARACHUTE/PARAFOIL RECOVERY SYSTEMS
+6.8.1 Teams utilizing non parachute or parafoil-based recovery methods shall notify ESRA
+of their intentions at the earliest possible opportunity and keep ESRA apprised of their
+progress.
+6.8.2 ESRA reserves the right to impose additional requests for information and draft unique
+requirements depending on the team’s specific design.
+6.9 REDUNDANT ELECTRONICS
+6.9.1 Launch Vehicles shall implement completely independent and redundant recovery
+systems to include arming switches, sensors/flight computers, power supplies,
+redundant energetics (except as noted in Section 6.1.4), and electric initiators. A dual
+pole switch does not satisfy this requirement.
+6.9.2 A dual pole switch does not satisfy the requirement for redundant arming switches.
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 23 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+6.10 REDUNDANT COTS RECOVERY ELECTRONICS
+6.10.1 At least one of the redundant recovery subsystems in each independently recovered
+section of the rocket shall implement a COTS flight computer (e.g., StratoLogger,
+AIM, Kate, EasyMini, TeleMetrum, RRC3, Raven, etc.).
+6.10.2 A COTS flight computer shall serve as the official altitude logging system as specified
+in Section 2.5 of the IREC Rules & Requirements Document.
+6.10.2.1 This function may be provided by one of the flight computers satisfying 6.9.1
+or a separate flight computer.
+6.10.2.1.1 A separate flight computer may be armed and powered by the same
+switch and power supply as one of the flight computers satisfying 6.9.1.
+6.10.3 A COTS flight computer shall fire either the primary or redundant energetic system.
+6.10.4 To be considered COTS, the flight computer (including flight software) shall have
+been developed and validated by a commercial third party.
+6.10.5 Commercially designed flight computer kits (e.g., the Eggtimer or similar) are not
+permitted as COTS.
+6.11 SRAD RECOVERY ELECTRONICS
+6.11.1 Flight computer kits may be used as SRAD electronics.
+6.11.2 Any SRAD flight computer assembled from separate COTS components shall be
+considered an SRAD system.
+6.11.3 A COTS microcontroller running SRAD flight software shall be considered an SRAD
+system.
+6.11.4 A COTS flight controller containing any student modifications to the base software or
+hardware shall be considered an SRAD system.
+6.11.5 SRAD flight computers shall be documented in the progress reports.
+6.11.6 Teams shall provide proof of function of SRAD flight computers, including ground
+testing and flight testing before the competition.
+6.11.7 SRAD recovery electronics shall take appropriate recognition of effects of noise and
+sensor error. Use of appropriate sensor filtering with testing is required.
+6.12 SAFETY CRITICAL WIRING FOR RECOVERY SYSTEMS AND AIR-START MOTORS
+6.12.1 Definition
+6.12.1.1 Safety critical wiring is any electrical wiring associated with recovery system
+deployment events, air start motors, location beacons (e.g., GPS), and
+systems that can affect the rocket trajectory or stability.
+6.12.1.2 All safety critical wiring shall meet the requirements in this section and the
+safety critical wiring guidelines described in Appendix B of this document.
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 24 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+6.12.2 Cable Management
+6.12.2.1 All safety critical wiring shall implement a cable management solution (e.g.,
+wire ties, wiring, harnesses, cable raceways) which will prevent tangling and
+excessive free movement of significant wiring/cable lengths due to expected
+launch loads.
+6.12.2.2 Wiring shall be labeled or color-coded to allow easy determination of the
+subsystem to which it is attached.
+6.12.2.3 Wiring shall incorporate strain relief at all connections/terminals to prevent
+unintentional de-mating/disconnection.
+6.12.3 Secure Wiring Connections
+6.12.3.1 All safety critical wiring/cable/terminal connections shall be sufficiently
+secure as to prevent disconnection during handling, transport, launch
+preparation and flight.
+6.12.3.2 Electrical connectors shall not be used as structural elements, e.g., the
+mounting of daughterboards on a mainboard.
+6.12.3.3 Structural supports (e.g., screws and standoffs), are required for
+daughterboard mounting.
+6.12.3.4 The use of twisted wires, even with the use of wire nuts or similar devices, to
+make or break flight essential connections is prohibited.
+6.13 RECOVERY SYSTEM TESTING
+6.13.1 Teams shall comply with all rules, regulations, and best practices imposed by the
+authorities at their chosen test location(s).
+6.13.2 The following requirements concern verification testing of all recovery systems.
+6.13.3 All recovery system ground tests should be completed by the Video Flight Readiness
+Review and shall be completed prior to flight.
+6.13.4 Ground test demonstration
+6.13.4.1 All recovery system mechanisms shall be successfully tested, without
+significant anomalies, prior to the IREC through one or more ground tests of
+key subsystems.
+6.13.4.2 Sensor electronics shall be functionally included in ground test
+demonstrations by simulating the environmental conditions under which their
+deployment functions are triggered (i.e., expected ambient atmospheric
+conditions).
+6.13.4.3 Video(s) of ground test demonstrations shall be included, or linked to, in the
+third progress report. Note, however, that “pop” testing is allowed at the
+competition site and proof of successful pop testing, without anomalies, is
+required prior to flight.
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 25 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+6.13.5 Flight Test Demonstration
+6.13.5.1 A flight test demonstration is recommended and may be required by flight
+safety personnel in the case of an unusual or untested recovery approach.
+6.13.5.2 In the case of such a flight test, the recovery system flown shall verify the
+intended design by implementing the same major subsystem components
+(e.g., flight computers and parachutes) as will be integrated into the launch
+vehicle intended for the IREC.
+6.13.5.3 Video(s) of the test flight(s) shall be included, or linked to, in the third
+progress report.
+6.14 STORED-ENERGY DEVICES – ENERGETIC DEVICE SAFING AND ARMING
+6.14.1 For the purposes of this section energetics are defined as all stored-energy devices,
+other than propulsion systems, that have reasonable potential to cause bodily injury
+upon energy release.
+6.14.2 An energetic device is considered made safe when two separate events are necessary to
+release the energy.
+6.14.3 An energetic device is considered armed when only one event is necessary to release
+the energy.
+6.14.4 All energetics shall be made safe until the rocket is in the launch position, at which
+point they may be armed at the direction of IREC personnel.
+6.14.5 The following table lists some common types of stored-energy devices and overviews
+in what configuration they are considered non-energetic, made safe, or armed.
+DEVICE CLASS NON-ENERGETIC MADE SAFE ARMED
+Igniters/Squibs Small igniters/squibs,
+nichrome, wire or similar
+Large igniters with leads
+shunted
+Large igniters without
+shunted leads
+Pyrogens (e.g., black
+powder)
+Very small quantities
+contained in non-shrapnel
+producing devices (e.g.,
+pyro-cutters or pyrovalves)
+Large quantities with no
+igniter, shunted igniter
+leads, or igniter(s)
+connected to unpowered
+avionics
+Large quantities with
+non-shunted igniter or
+igniter(s) connected to
+powered avionics
+Mechanical Devices
+(e.g., powerful
+springs)
+De-energized/relaxed
+state, small devices, or
+captured devices (i.e., no
+jettisoned parts)
+Mechanically locked and
+not releasable by a single
+event
+Unlocked and releasable
+by a single event
+Pressure Vessels Non-charged pressure
+vessels
+Charged vessels with two
+events required to open
+main valve
+Charged vessels with one
+event required to open
+main valve
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 26 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+6.14.6 Teams shall not bring amounts of pyrogenic materials to the event greater than the
+amount required for ground testing and the competition flight.
+6.14.7 All stored-energy devices (aka energetics) used in recovery systems shall comply with
+the energetic device requirements defined in this section.
+6.15 ARMING DEVICES
+6.15.1 All energetic device arming features shall be externally actuatable and controllable.
+Magnetic switches and the Multitronix turn-on coil shall be understood to be externally
+actuatable and controllable.
+6.15.2 Access panels which may be secured for flight while the vehicle is in the launch
+position are acceptable.
+6.15.3 All energetic device arming features shall be accessible without any person placing
+their head against the rocket or within 100 mm of the rocket.
+6.15.4 All energetic device arming features shall be operable while wearing a face shield and
+any other required PPE.
+6.15.5 All energetic device arming features shall be located on the airframe such that any
+inadvertent energy release will not impact personnel arming them.
+6
+6.15.6 Teams are responsible for verifying that they will be able to reach their arming
+switches. Currently, rockets in the solids area are supported approximately 2 feet above
+the ground with (at least) 10-foot stepladders available. In the two-stage area, rockets
+are supported approximately 4 feet above the ground with 20-foot extension ladders
+available.
+6.16 ARMING DEVICE VERIFICATION
+6.16.1 Arming shall be verified without any person placing their head against the rocket or
+within 100 mm of the rocket. A stethoscope may be used to increase the distance
+between an audio source and a human ear.
+6.16.2 Arming verification shall be designed to be completed in an environment with at least
+76 dBA background noise plus at least 32 km/h (20 mph) wind.
+6.16.3 Arming verification shall be designed to be completed while wearing a face shield and
+any other required PPE.
+6.17 BATTERIES CONTAINED IN THE ROCKET
+6.17.1 Prohibited Batteries
+6.17.1.1 Lithium-Polymer (LiPo) batteries are not permitted due to fire hazard.
+6.17.1.2 Li-Ion batteries in a rectangular form factor and/or with plastic casing are
+prohibited.
+6.17.1.3 Wet cell lead acid batteries are prohibited.
+6.17.1.4 Any nuclear batteries
+6 For example, the arming key switch for an energetic device used to deploy a hatch panel shall not be located at the
+same airframe clocking position as the hatch panel deployed by that charge.
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 27 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+6.17.2 Allowed Batteries
+6.17.2.1 LiFePO4 chemistry cells are allowed in any form factor and in any casing
+(plastic or metallic).
+6.17.2.2 NiMH (Nickel-Metal hydride) batteries are allowed in metal casing and any
+form factor.
+6.17.2.3 Alkaline (non-rechargeable) batteries are allowed in metal casing and any
+form factor.
+6.17.2.4 Other Li-Ion batteries are permitted if packaged in a cylindrical metallic
+casing.
+6.17.2.5 Lithium primary coin cell batteries in metal casing are permitted.
+6.17.3 Teams should inquire about battery chemistries and form factors not listed here.
+6.18 SRAD PRESSURE VESSELS
+6.18.1 Teams shall comply with all rules, regulations, and best practices imposed by the
+authorities at their chosen test location(s).
+6.18.2 The following requirements concern design and verification testing of SRAD and
+modified COTS pressure vessels.
+6.18.2.1 Unmodified COTS pressure vessels utilized for other than their advertised
+specifications will be considered modified, and subject to these requirements.
+6.18.3 Relief Device
+6.18.3.1 All SRAD pressure vessels shall implement a relief device, set to open at no
+greater than the proof pressure specified in the following requirements.
+6.18.3.2 SRAD (including modified COTS) rocket motor propulsion system
+combustion chambers are exempted from this requirement.
+6.18.4 Designed burst Pressure for Metallic Pressure Vessels
+6.18.4.1 All SRAD and modified COTS pressure vessels constructed entirely from
+isotropic materials (e.g., metals) shall be designed to a burst pressure no less
+than 2 times the maximum expected operating pressure, where the maximum
+operating pressure is the maximum pressure expected during pre-launch,
+flight, and recovery operations.
+6.18.5 Designed Burst Pressure for Composite Pressure Vessels
+6.18.5.1 All SRAD and modified COTS pressure vessels either constructed entirely
+from non-isotropic materials (e.g., fiber reinforced plastics; FRP; aka
+composites), or implementing composite overwrap of a metallic vessel (aka
+composite overwrapped pressure vessels; COPV), shall be designed to a burst
+pressure no less than 3 times the maximum expected operating pressure,
+where the maximum operating pressure is the maximum pressure expected
+during pre-launch, flight, and recovery operations.
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 28 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+6.18.6 SRAD Pressure Vessel Testing
+6.18.6.1 Proof Pressure Testing – SRAD and modified COTS pressure vessels shall be
+proof pressure tested successfully to 1.5 times the maximum expected
+operating pressure for no less than twice the maximum expected system
+working time. Pressurized water (hydrostatic) testing is recommended unless
+other ‘as safe' methods are available. The intended flight article(s), that is, the
+pressure vessel(s), used in proof testing must be the same one(s) flown at the
+IREC).
+6.18.6.2 Burst Pressure Testing
+6.18.6.2.1 There is no requirement for burst pressure testing, however a rigorous
+verification & validation test plan typically includes a series of both
+non-destructive (i.e., proof pressure) and destructive (e.g., burst
+pressure) tests.
+6.18.6.2.2 A series of burst pressure tests performed on the intended design will
+be viewed favorably; however, this will not be considered an
+alternative to proof pressure testing of the intended flight article.
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 29 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+7.0 ACTIVE FLIGHT CONTROL SYSTEMS
+7.1 RESTRICTED CONTROL FUNCTIONALITY
+7.1.1 All launch vehicle active flight control systems shall be implemented strictly for pitch
+and/or roll stability augmentation, or for aerodynamic braking.
+7.1.2 Under no circumstances will a launch vehicle entered in the IREC be actively guided
+towards a designated spatial target or GPS location.
+7.1.3 ESRA reserves the right to make additional requests for information and draft unique
+requirements depending on the team’s specific design.
+7.2 UNNECESSARY FOR STABLE FLIGHT
+7.2.1 Launch vehicles implementing active flight controls shall be naturally stable without
+those controls being implemented (e.g., the launch vehicle may be flown with the
+control actuator system (CAS) – including any control surfaces – either removed or
+rendered inert and mechanically neutral, without becoming unstable during ascent).
+7.2.2 Attitude control systems (ACS) shall only mitigate small perturbations which affect the
+trajectory of a stable rocket that implements only fixed aerodynamic surfaces for
+stability.
+7.2.3 Stability is defined in Section 10.2 of this document.
+7.2.4 ESRA reserves the right to make additional requests for information and draft unique
+requirements depending on the team’s specific design.
+7.3 DESIGNED TO FAIL SAFE
+7.3.1 Control actuator systems (CAS) shall default to a neutral state whenever either an abort
+signal is received for any reason, primary system power is lost, or the launch vehicle’s
+attitude exceeds 30° from its launch elevation.
+7.3.2 A neutral state is defined as one which does not apply any moments to the launch
+vehicle (e.g., aerodynamic surfaces trimmed or retracted, gas jets off, etc.).
+7.4 BOOST PHASE DORMANCY
+7.4.1 Control actuator systems (CAS) shall remain in a neutral state until one of the
+following conditions is met:
+7.4.1.1 The launch vehicle’s boost phase has ended (i.e., all propulsive stages have
+ceased producing thrust).
+7.4.1.2 The launch vehicle has crossed the point of maximum aerodynamic pressure
+(max Q) in its trajectory.
+7.4.1.3 The launch vehicle has reached the following:
+7.4.1.3.1 For 30K and 45K flights: an altitude of 6,000 m (19,600 ft) AGL.
+7.4.1.3.2 For 10K flights: an altitude of 2,000 m (6,500 ft) AGL.
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 30 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+7.5 ACTIVE FLIGHT CONTROL SYSTEM ELECTRONICS
+7.5.1 All active control systems shall comply with the “safety critical wiring” requirements,
+6.12.
+7.5.2 Flight control systems are exempt from the requirement for COTS redundancy, given
+that such components are generally unavailable as COTS to the amateur high-power
+rocketry community.
+7.6 ACTIVE FLIGHT CONTROL SYSTEM ENERGETICS
+7.6.1 All stored-energy devices used in an active flight control system (aka energetics) shall
+comply with the energetic device requirements defined in Section 6.14 of this
+document.
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 31 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+8.0 AIRFRAME STRUCTURES
+8.1 ADEQUATE VENTING
+8.1.1 Launch vehicles shall be adequately vented to prevent internal pressures developing
+during flight and causing either damage to the airframe or any other unplanned
+configuration changes.
+8.1.2 Teams shall discuss airframe and altimeter bay venting as part of their Video Flight
+Readiness Review.
+8.2 OVERALL STRUCTURAL INTEGRITY
+8.2.1 Launch vehicles shall be constructed to withstand the operating stresses and retain
+structural integrity under the conditions encountered during handling and
+transportation and during rocket flight.
+8.2.2 Teams shall ensure that the fin flutter velocity of the rocket is at least 50% higher than
+the maximum expected rocket velocity.
+8.2.3 Teams shall provide a value for the shear modulus used in the calculation of the fin
+flutter velocity. Values may be calculated, based on supplier information, or
+determined from actual measurements.
+8.3 MATERIAL PROHIBITIONS
+8.3.1 Rockets shall be built using lightweight materials, e.g., fiberglass and carbon fiber, or
+when necessary ductile lightweight metals, e.g., aluminum, and construction
+techniques suitable for the planned flight. Teams should refer to the Tripoli Unified
+Safety Code, and specifically, to “additional information” presented on the Tripoli
+Website regarding the use of metal in rocket construction.
+8.3.2 PVC (and similar low-temperature polymers), Public Missiles Ltd. (PML) Quantum
+Tube, and steel (including stainless-steel) shall not be used in any rocket airframe
+structure. This includes fins, body tubes, and nosecones.
+8.3.3 PVC (and similar low-temperature polymers), stainless steel, or other frangible
+materials shall not be used for a solid or hybrid propulsion system combustion
+chamber.
+8.3.4 Environmentally hazardous materials shall not be used as ballast. This includes lead,
+mercury, and uranium.
+8.4 LOAD BEARING EYE BOLTS AND U-BOLTS
+8.4.1 All load bearing eye bolts shall be of the closed-eye, forged type.
+8.4.2 All load bearing eye bolts, U-bolts, and links shall be steel.
+8.4.3 This requirement extends to any bolt and eye-nut assembly used in place of an eyebolt.
+8.4.4 Stainless steel components (eye bolts, U-bolts, links, etc.) are permissible for use in
+recovery systems.
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 32 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+8.5 JOINTS IMPLEMENTING COUPLING TUBES
+8.5.1 Airframe-to-coupler sliding joints intended to separate during a recovery event
+8.5.1.1 Joints shall be designed such that the coupling tube extends no less than 1
+body tube diameter (1 caliber) into the airframe section from which the
+coupler will separate during flight.
+8.5.2 Joints not intended to separate during flight
+8.5.2.1 Joints shall be designed such that the coupling tube extends into the mating
+component to the lesser of 1 body tube diameter (1 caliber) or the maximum
+depth possible by the design of the mating components.
+8.5.2.2 Joints shall be affixed by mechanical fasteners and/or permanent adhesive.
+8.5.3 Regardless of implementation (e.g., RADAX or other joint types) airframe joints shall
+prevent bending, see https://www.osti.gov/biblio/5007820.
+8.6 RAIL BUTTONS
+8.6.1 Rail buttons shall implement “hard points” for sliding mechanical attachment of the
+rocket to the IREC supplied 1515 launch rail, serving to guide the rocket during the
+initial phase of boost until the rocket achieves sufficient velocity for the fins to provide
+aerodynamic stabilization.
+8.6.2 A minimum of two (2) rail buttons shall be used.
+8.6.3 Airframe attachment points for rail buttons shall be reinforced.
+8.6.4 Rail buttons shall be attached using at least one metallic fastener through the reinforced
+airframe.
+8.6.5 Adhesive-only attachment is not permitted.
+8.6.6 Fly-away rail guides are not permitted.
+8.6.7 Rail buttons 3D printed in a polymer material are not permitted.
+8.6.8 Conformal, adhesively attached rail guides of a linear shape sliding in the slot in the
+launch rail are not permitted.
+8.6.9 The rail buttons shall be capable of supporting the launch vehicle’s fully loaded weight
+while the rocket is horizontal and hung from a rail (underslung). The attachment
+procedure and strength of the attachment will be evaluated during the Horseshoe
+Pavillion Flight Safety Review.
+8.6.10 Rail button placement shall not result in the rail blocking access to arming electronics.
+8.6.11 Teams utilizing launch towers shall provide the launch tower and are exempt from the
+Rail Button requirements.
+8.7 SHEAR PINS
+8.7.1 Teams shall indicate the locations of shear pins on drawings or simulations of their
+rocket.
+8.7.2 Teams shall describe the number and size of shear pins used in various sections of the
+rocket, and how this was determined, as part of the recovery system discussion in
+Progress Report 2.
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 33 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+8.8 IDENTIFYING MARKINGS
+8.8.1 All rockets shall be labeled with the School name, the Team ID number, and the
+assigned GPS tracking frequency.
+8.8.1.1 This label shall be duplicated on each part of the rocket which could separate
+either as designed or accidentally.
+8.8.1.2 There are no specific size or format requirements for these labels.
+8.8.2 The booster airframe shall prominently display the Team ID number forward of each
+fin. The digits of the Team ID shall be marked in sequence, longitudinally, from fore to
+aft along the booster airframe. See Appendix F for an example.
+8.8.2.1 Individual digits shall be oriented with their vertical axis in-line with the
+longitudinal axis of the rocket and shall be readable with the rocket in a
+vertical position.
+8.8.2.2 The Team ID digits shall each be at least 75 mm (3 in) high, at least 12 mm
+(½ in) stroke width, and a solid color that clearly contrasts with a solid
+background color.
+8.8.2.3 The Team ID number should be clear to livestream viewers when the rocket
+is on the pad.
+8.9 OTHER MARKINGS
+8.9.1 There are no requirements for airframe coloration or markings beyond those specified
+in Section 8.8 of this document; however, ESRA offers the following
+recommendations to student teams.
+8.9.1.1 Mostly white or lighter tinted color (e.g., yellow, red, orange, etc.) airframes
+are especially conducive to mitigating some of the solar heating experienced
+in the IREC launch environment.
+8.9.1.2 High-visibility schemes (e.g., high-contrast black, orange, red, etc.) and roll
+patterns (e.g., contrasting stripes, etc.) may allow ground-based observers to
+more easily track and record the vehicle’s trajectory with high-power optics.
+8.9.1.3 Any form of green or brown, or other colors associated with camouflage
+patterns, are highly discouraged.
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 34 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+9.0 PAYLOAD
+9.1 PAYLOAD RECOVERY
+9.1.1 Payloads may be deployable independent of the launch vehicle, remain inside the
+launch vehicle airframe, or be deployed and remain attached to the launch vehicle
+throughout the flight.
+9.1.2 Deployable payloads not remaining attached to the launch vehicle airframe shall:
+9.1.2.1 Incorporate an independent recovery system, reducing the payload’s descent
+velocity to less than 11 m/s (36 ft/s) at touchdown.
+9.1.2.2 Contains a COTS GPS tracking system that complies with section 4.
+9.1.3 Deployable payloads may not implement gliders, drones, balloons, or any other UAS
+system.
+9.1.4 Rockets with deployed payloads shall contain no more than a single (1) independently
+recoverable body.
+9.2 PAYLOAD RECOVERY SYSTEMS
+9.2.1 Payloads shall implement recovery systems that comply with all the requirements
+outlined in Sections 6.1 through 6.17. Mentions of "rocket" shall be understood to be
+the payload.
+9.2.2 Payload batteries shall conform to requirements in Section 6.17.
+9.3 PAYLOAD ENERGETIC DEVICES
+9.3.1 Payload energetics shall be limited to the Payload Recovery Systems (Section 9.2). All
+other forms and uses of pyrotechnics and other energetics are not permitted.
+9.4 PAYLOAD IDENTIFYING MARKINGS
+9.4.1 All payloads shall be labeled with the School name, Team ID number, and the assigned
+GPS tracking frequency.7
+9.4.2 This label shall be duplicated on each part of the payload which could separate either
+as designed or accidentally.
+9.5 PAYLOAD LOCATION
+9.5.1 The payload on two-stage rockets shall be in the sustainer.
+7
+In some cases, frequencies will not be assigned until the time of the Final Flight Safety Review, and the
+requirement to list the assigned GPS tracking frequency on the payload is waived.
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 35 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+10.0 LAUNCH AND ASCENT TRAJECTORY REQUIREMENTS
+10.1 LAUNCH AZIMUTH AND ELEVATION
+10.1.1 Launch vehicles will nominally launch at an elevation angle of 84° ±2° and a launch
+azimuth defined by competition officials at the IREC.
+10.1.2 Range Safety Officers reserve the right to require certain vehicles’ launch elevation be
+lower or higher if flight safety issues are identified during pre-launch activities.
+10.1.3 Competition officials may allow staged flights to launch at 87°±2°.
+10.2 ASCENT STABILITY
+10.2.1 Launch vehicles shall maintain a specified minimum static stability margin through the
+flight, regardless of Cg movement and/or shifting center of pressure Cp location, from
+launch through the first recovery system deployment event.
+10.2.1.1 For subsonic flights, the minimum static stability margin is 7.5% of the
+length of the rocket.
+10.2.1.2 For supersonic flights, the minimum static stability margin is 10% of the
+length of the rocket.
+10.2.2 For two-stage rockets, the above minimum static stability margins shall be determined
+separately for the stack and for the sustainer.
+10.2.3 Teams shall provide simulation results showing the static stability margin in calibers
+through the flight where the simulation is performed with no wind. The initial
+stability, in percent, shall be provided.
+10.2.4 Regardless of the above stability results, Teams shall not design rockets with a fin span
+less than 0.8 calibers, based on the largest diameter tube in the rocket (or in the stage
+for two-stage rockets).8
+10.3 OVER-STABILITY
+10.3.1 Launch vehicles shall not exceed a specified maximum static stability margin.
+10.3.1.1 The static stability margin at launch shall not exceed 18% of the length of the
+rocket.
+10.3.1.2 The static stability margin through the flight shall not exceed 25% of the
+length of the rocket.
+10.3.2 Over-stability will be evaluated based on the simulation results described in 10.2.3.
+8 The intent of the fin span rule is to discourage the use of unreasonably small fins, even if stability measurements
+show that the rocket is stable. Small fin spans are particularly discouraged if the fin is “shadowed” by a largerdiameter tube above the fins.
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 36 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+11.0 ESRA PROVIDED LAUNCH SUPPORT EQUIPMENT
+11.1 ESRA-PROVIDED LAUNCH RAILS
+11.1.1 All teams competing in the solids (COTS or SRAD) and two-stage categories shall use
+IREC supplied launch control systems.
+11.1.2 ESRA shall provide launch rails for single-stage rockets measuring at least 5.2 m (17
+ft) long, 1.5” x 1.5” (aka 1515) aluminum guide rails of the 80/20® type, see
+https://8020.net/.
+11.1.3 ESRA shall provide launch rails for two-stage rockets measuring at least 6.4 m (21 ft)
+long.
+11.1.4 Rockets shall be loaded horizontally from the top of the guide rail and the rail then
+erected to the required launch elevation.
+11.1.5 Once erected, the launch vehicle shall be supported vertically by a submerged
+mechanical stop (aka “standoff”) in the rail.
+11.1.5.1 The position of the mechanical stop may be adjusted.
+11.1.5.2 Teams can provide their own standoff. Team-provided standoffs will be
+subject to safety review, must be clearly marked with the Team ID number,
+and must be removable with commonly available tools.9
+11.1.6 Teams whose designs anticipate requiring a longer launch rail to achieve stability
+during launch shall provide their own launch pad and rail.
+11.2 ESRA-PROVIDED LAUNCH CONTROL SYSTEM
+11.2.1 The IREC will utilize a Wilson F/X Wireless Launch Control System consisting of one
+LCU-64x launch control unit and PBU-8w encrypted wireless pad relay boxes.
+11.2.2 Solids and two-stage rockets must use the ESRA-provided launch control equipment.
+11.3 TEAM-PROVIDED LAUNCH SUPPORT EQUIPMENT
+11.3.1 Teams are allowed to provide their own launch pads or towers.
+11.3.2 Team-provided launch pads or towers shall be subject to safety review by ESRA
+personnel prior to use. Pads or towers deemed unsafe will not be permitted. Teams in
+this situation will be allowed to use ESRA-provided launch pads.
+11.3.3 Hybrid and liquid launch controllers shall include instrumentation for
+monitoring oxidizer fill level. This instrumentation shall function in potentially low
+relative humidity of the launch site (<5%). Instrumentation relying on condensation of
+water in the air is unlikely to function.
+9 Standoffs may be designed using the types of fittings commonly used for 1515 rails. The rails used in the Solids
+pad area also have holes through the sides of the rail that can be used to attach standoffs. Details on the location and
+size of these holes will be provided at a later time.
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 37 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+11.3.4 Frequency Coordination
+11.3.4.1 All team-provided launch control systems utilizing wireless communication
+shall manage frequency allocations with their flight safety reviewers and with
+MCC.
+11.3.4.2 All team-provided launch control systems utilizing wireless communication
+shall be able to displace their antennas at least 30 meters in any direction
+from the launch point.
+11.3.4.3 Teams should elevate any antennas to provide line of sight clearance above
+bushes and terrain
+11.3.5 Ground Power
+11.3.5.1 Ground power umbilicals are permitted.
+11.3.5.2 Team ground power equipment shall not be connected to any ESRA
+equipment.
+11.3.5.3 Generators are prohibited.
+11.3.5.4 Excessive noise from the ground power support equipment (affecting launch
+operations) is prohibited.
+11.3.5.5 Teams shall collect ground power equipment as soon as practical after use
+(i.e., the next time the pad bank opens for access).
+11.3.5.6 Team ground power equipment shall be labeled with team number and
+contact information.
+11.3.5.7 Wet cell lead acid batteries are prohibited.
+11.3.5.8 Teams anticipating the use of Li-Po batteries shall provide details in their
+progress reports.
+11.4 OPERATIONAL RANGE
+11.4.1 All team-provided launch control systems shall be electronically operated and have a
+minimum operational range of no less than 610 m (2,000 ft) from the launch rail.
+11.4.2 The maximum operational range is defined as the range at which abort and launch may
+be commanded reliably.
+11.5 FAULT TOLERANCE AND ARMING
+11.5.1 All team-provided launch control systems shall be at least single fault tolerant by
+implementing a removable safety interlock (i.e., a jumper or key to be kept in
+possession of the arming crew during arming) in series with the launch switch.
+11.5.2 Appendix C of this document provides general guidance on assuring fault tolerance in
+high power rocketry launch control systems.
+11.5.3 Hybrid/Liquid launch controllers shall include a failsafe mechanism providing
+automatic venting of oxidizer in the event of power or communication loss during fill.
+11.6 SAFETY CRITICAL SWITCHES
+11.6.1 All team-provided launch control systems shall implement ignition switches of the
+momentary, normally open (aka “deadman”) type so that they will remove the signal
+when released.
+11.6.2 Mercury or “pressure roller” switches are not permitted anywhere in team-provided
+launch control systems.
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 38 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+APPENDIX A: ACRONYMS, ABBREVIATIONS AND TERMS
+ACRONYMS & ABBREVIATIONS
+ACS Attitude Control System
+AGL Above Ground Level
+APCP Ammonium Perchlorate Composite Propellant
+AWG American Wire Gauge
+CAS Control Actuator System
+CFR Code of Federal Regulations
+Cg Center of Gravity
+CONOPS Concept of Operations
+COPV Composite Overwrapped Pressure Vessel
+COTS Commercial Off-the-Shelf
+Cp Center of Pressure
+EIRP Equivalent Isotropic Radiated Power
+ESRA Experimental Sounding Rocket Association
+FoR Flyer of Record
+FRP Fiber Reinforced Plastic
+IREC International Rocket Engineering Competition
+LOX Liquid Oxygen
+MCC Mission Control Center
+MCOTS Modified Commercial Off The Shelf
+MSL Mean Sea Level
+NFPA National Fire Protection Association
+SRAD Student Researched & Developed
+TBD To Be Determined
+TBR To Be Resolved
+TRA Tripoli Rocketry Association
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 39 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+TERMS
+Amateur Rocket
+14 CFR, Part 1, 1.1 defines an amateur rocket as an unmanned rocket that is
+"propelled by a motor, or motors having a combined total impulse of 889,600
+Newton-seconds (200,000 pound-seconds) or less, and cannot reach an
+altitude greater than 150 kilometers (93.2 statute miles) above the earth's
+surface".
+Body Caliber A unit of measure equivalent to the diameter of the launch vehicle airframe in
+question.
+Excessive Damage
+Excessive damage is defined as any damage to the point that, if the systems
+intended consumables were replenished, it could not be launched again
+safely. Intended Consumables refers to those items which are - within reason
+- expected to be serviced/replaced following a nominal mission (e.g.,
+propellants, pressurizing gases, energetic devices), and may be extended to
+include replacement of damaged fins or boat tails, specifically designed for
+easy, rapid replacement if such components are on hand and can reasonably
+be replaced within 30 minutes.
+FAA Class 2 Amateur Rocket
+14 CFR, Part 101, Subpart C, 101.22 defines a Class 2 Amateur Rocket (aka
+High Power Rocket) as "an amateur rocket other than a model rocket that is
+propelled by a motor or motors having a combined total impulse of 40,960
+Newton-seconds (9,208 pound-seconds) or less."
+Non-toxic Propellants
+For the purposes of the IREC, the event organizers consider ammonium
+perchlorate composite propellant (APCP), potassium nitrate and sugar (aka
+"rocket candy"), nitrous oxide, liquid oxygen (LOX), kerosene, propane and
+similar, as non-toxic propellants. Toxic propellants are defined as requiring
+breathing apparatus, special storage and transport infrastructure, or extensive
+personal protective equipment, etc. Hydrogen peroxide is considered a toxic
+propellant.10
+10 As indicated in the table, hydrogen peroxide is considered a toxic propellant. The current Rules & Requirements
+document indicates hydrogen peroxide as non-toxic. This DTEG designation for hydrogen peroxide will be used for
+the 2026 IREC.
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 40 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+APPENDIX B: SAFETY CRITICAL WIRING GUIDELINES
+Introduction
+● With the aim of supporting recovery reliability and overall safety, this Appendix sets
+out guidelines for all safety critical wiring. This is defined as wiring associated with
+recovery system deployments, any air-start rocket motors, location beacons (e.g.,
+GPS), and any systems that can affect the rocket trajectory or stability.
+● The wiring techniques described here are suggested for inspection and ease of field
+repair. While non-critical wiring is outside the scope of this white paper the practices
+described herein are recommended.
+Hazard Identification
+● Any electronic system that utilizes voltages 50 volts (AC or DC) or higher shall be
+identified with the following warning external to the electronics enclosure;
+"CAUTION: High voltage inside. Internal access by team personnel only."
+● Teams shall provide the rationale, in their progress reports, for the use of voltages
+exceeding 24 volts.
+Wiring Guidelines
+● All airborne wiring shall be stranded, insulated, 22 American Wire Gauge (AWG) or
+lower numerical AWG (the lower the AWG wire gauge the larger the conductor
+diameter) as appropriate (based on industry practice) to conduct expected currents.
+Copper conductors are required except as noted below.
+○ Copper conductors plated with either silver or tin (entire wire, not just the
+ends) are desirable but not required.
+○ When an off-the-shelf component includes flying leads, those leads may be
+used unmodified. For example, an E-match may contain solid wire, a battery
+connector may integrate 26 AWG wire, etc.
+○ Stranded wire of a smaller diameter than 24 AWG may be used only when
+needed by an off-the-shelf component. For example, if the terminal block on
+an altimeter is sized to accept 24 AWG wires then that is the size of wire that
+should be used for that portion of the circuit.
+● Wire should be stripped only with a wire stripping tool of the correct gauge. Any
+severed strands are cause for rejection.
+● Each end of a wire should be terminated in one of the following approved methods:
+○ Crimped into a crimp terminal (preferred). This includes crimp terminals on
+multi-conductor connectors such as 9-pin D-sub connectors (see table below).
+○ Screwed into a binding screw terminal (acceptable).
+○ Wires should be terminated into a terminal block, only if a piece of off-theshelf equipment (i.e., an altimeter) has built-in terminal blocks and so there is
+no other choice. Two-piece terminal blocks must be positively secured
+together – friction fit is insufficient.
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 41 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+o Removal of wire strands to allow a wire to fit into a smaller hole or terminal is
+prohibited. Consider a smaller diameter conductor or different terminal type.
+o Wires will be terminated by soldering only if a piece of off-the-shelf
+equipment (e.g., an arming switch) has built-in solder terminals and so there is
+no other choice. The reliability of solder joints cannot be fully established by
+visual inspection alone.
+o All crimp operations shall be performed with the correct tooling, using crimp
+terminals sized for the appropriate wire gauge.
+○ Where multiple wires are crimped into a single terminal, calculate the
+effective gauge (for example, two 22 AWG are effectively 19 AWG) and use
+the appropriately sized terminal.
+● Terminals with insulated plastic sleeves (usually color-coded to indicate barrel size)
+should be avoided because of the difficulty of inspection.
+○ If a terminal is supplied with an insulated plastic sleeve it may be removed
+and clear heat shrink applied instead.
+○ Insulated plastic sleeves on terminals are typically not required if they are
+mounted properly in barrier blocks. If insulation is needed, use clear heatshrink tubing.
+● When a bare wire is held down by a binding screw terminal the wire shall make a
+180-degree hook, and strands shall be visible exiting the screw head. Only one wire
+shall be permitted per screw.
+○ The wire bend shall be clockwise, so that it will tighten as the screw is
+torqued.
+● When ring or spade terminals are held down by binding screw terminals, a maximum
+of two terminals are allowed per screw.
+● A maximum of three wires shall be crimped into a single terminal barrel. Butt-splice
+terminals are considered to have separate barrels on each end.
+● If two or more wires must be joined, one of the following approved methods should
+be used:
+○ Crimp a ring terminal onto each wire, and then screw them into a barrier
+block. Add approved barrier block jumper pieces if many wires must be
+joined.
+○ Screw the bare wire under a binding head screw in a barrier block. Add
+approved barrier block jumper pieces if many wires must be joined.
+○ Crimp the wires into an uninsulated butt-splice terminal, and then insulate
+with clear heat-shrink tubing.
+● Any wire-twisting splice method (including wire nuts) is explicitly forbidden.
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 42 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+● All wire terminations shall be inspected before flight.
+○ Inspections will be visual to determine compliance with this document.
+○ All terminations will be examined for exposed conductors that may have a
+potential for electrical shorts.
+○ All terminations will be pull tested by exerting a moderate pull on the wiring
+to verify that it remains attached.
+● All insulating tubing (usually heat-shrink) shall be transparent. This allows inspection
+of the underlying hardware.
+○ No tape, glue or RTV shall be used to insulate or bundle any element of the
+wire harness.
+Connector/Harness Guidelines
+● Connectors shall be identified by labels and/or color coding to allow determination of
+the associated system and mating parts.
+● Connectors (except coaxial connectors) shall use crimp contacts unless no alternative
+can be procured.
+○ Coaxial connectors may be soldered.
+● Mated connectors (except threaded coaxial connectors) shall utilize a positive locking
+mechanism to keep the two halves mated under vibration and tension.
+○ If the mated connectors do not have a positive locking mechanism built-in,
+they shall utilize an external means of preventing connection separation, e.g.,
+tie wraps, lacing, mechanical clamps.
+○ Threaded coaxial connectors will be checked for finger tightness.
+● Plastic connector latches are allowed but subject to inspection for damage and
+engagement.
+● Power connectors shall be polarized to prevent reversed power application.
+● Good practice recommends that individual wires be bundled together to make a
+harness (factory multi-conductor wiring in a common outer jacket is acceptable).
+○ Safety critical harnesses shall be kept separate from payload harnessing (as
+applicable).
+○ Bundling may be accomplished by:
+■ A light twist (for mechanical reasons only, no EMC mitigation is
+intended).
+■ Short (1 cm) lengths of clear heat-shrink tubing, zip-ties, or lacing every 5
+cm.
+■ Wire mesh sleeving, provided it allows for inspection of the wiring inside.
+● The harness may be supported by plastic P-clamps, tie bases, or by tie wraps to
+structure. Harness routing shall not be in contact with sharp edges, e.g., screw
+threads, that may damage wiring.
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 43 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+● All items that are connected by the harness (barrier blocks, sensors, batteries,
+actuators, switches, etc.) should be rigidly fixed to the rocket structure so that they
+cannot move.
+○ Rigid fixing implies attachment with clamps using threaded fasteners or a
+solid glue bond. Cable ties and/or tape are not acceptable examples of rigid
+fixing.
+○ All wiring should have strain relief (small amount of slack) to prevent
+terminations and connections from demating.
+● Batteries should be mounted and connected appropriately:
+○ "Velcro" (or similar hook and loop material) and/or tie wraps shall not be used
+as the sole method of mounting batteries.
+○ Batteries that are subject to puncture damage should be mounted in a fashion
+and location to mitigate the likelihood of such damage during a hard landing
+or other high impact event.
+○ 9V alkaline batteries shall be secured to prevent motion and connected using
+proper snap terminals.
+■ Batteries shall be mounted in a direction and manner that prevents
+acceleration forces from disconnecting the battery connector.
+○ Gel-cell lead acid battery connections shall be color coded (typically red for
+positive, black for negative) to avoid reversed connection polarity. Insulated
+"faston" terminals may be used in this application subject to visual inspection
+and pull testing.
+■ Gel cell batteries, because of their weight, will be inspected for rigid and
+captive mounting. Tie wraps and/or Velcro hook and loop alone is not
+acceptable.
+○ Cylindrical batteries (AAA, AA, C, D, 18650, etc.) may be mounted into
+commercial holders. Battery holders, if used, shall be rigidly secured to the
+structure, and the batteries shall then be strapped (e.g., tie wrap, lacing) into
+the holders.
+■ Battery holders shall be mounted in a direction and manner that prevents
+acceleration forces from compressing contact springs.
+Circuit Board Guidelines
+● All components greater than 7g shall be staked to prevent motion under acceleration.
+○ The use of conformal coatings is suggested to provide a degree of staking for
+all components and to avoid electrical shorts.
+● All socketed components (e.g., integrated circuits) and press-fit contacts shall be
+positively restrained so that they cannot come loose under vibration.
+● Wire wrap, through-hole solder, and surface-mount solder are acceptable fabrication
+methods.
+● Solderless breadboards (also known as plug-in breadboards) shall not be used.
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 44 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+● Any commercial board for the high-power rocketry market should be considered to be
+of sufficient quality, provided it is in an undamaged factory state.
+● The connector between the motherboard and daughterboards shall not be the sole
+means of support. Mechanical supports for the daughterboard are required.
+● Cuts and jumpers are permitted if the jumpers are staked to prevent damage.
+Recommended Sources
+● Suggested components can be purchased from Digikey, Mouser, Omron, and Amazon
+that will help to satisfy the wiring guidelines.
+● These are recommendations only, and you are free to choose other parts and buy from
+other suppliers.
+● Look up the catalog pages associated with each Digikey or Mouser number to find
+similar parts of different sizes.
+PART NUMBER NOTES
+Wire Digikey A5855W-100-ND
+This is good 22-gauge, tinned,
+Teflon insulated wire. Cold-flow is
+a long-term consideration, but
+shouldn't be a problem for a short
+lifetime rocket.
+Wire Digikey C2016L-100-ND
+22-gauge tinned PVC-insulated
+wire. Note that the “L” designates
+the insulation color (other colors
+are B,R,A,Y,N,W)
+Wire Digikey W120-100-ND Digikey
+W121-100-ND
+2-conductor, 22-gauge 3-conductor,
+22-gauge
+Wire Amazon “Tinned marine grade
+wire”
+18-gauge, available in 35-ft or 100-
+ft rolls
+Ring terminals, uninsulated Digikey A27021-ND (#6 hole)
+The Solistrand series is a high
+quality terminal. Various crimp
+tools are available. You get what
+you pay for – the expensive ones
+are very nice, but the basic ones
+will do in a pinch.
+Butt-splice terminal Digikey A09012-ND Another Solistrand series terminal
+“Faston” terminal Digikey 298-10011-ND (check
+size)
+These terminals are useful for
+connecting switches, gel cell
+batteries, and many automotive
+devices
+9V battery holder, with solder
+terminals Digikey 708-1409-ND Screw this holder to your chassis,
+and then cable tie the battery in.
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 45 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+PART NUMBER NOTES
+9V battery connector, snap on Digikey BS12I-ND Cable tie connector to battery and
+battery to chassis.
+4 AA battery holder Digikey 708-1399-ND This is a nice enclosed battery box
+for 4 AA cells
+P-clamp Digikey 7624K-ND (check size) This particular unit is for a 0.25”
+dia. harness. Select the correct size.
+Heat-shrink tubing Digikey A014C-4-ND (check size)
+Mouser 650-RNF100 (check size)
+Material is clear polyolefin with
+low shrink temperature. Shrink with
+hot-air gun or oven.
+Barrier block (double row)
+Digikey CBB206-ND Mouser 538-
+2140 or 4140 (0.375” pitch), 538-
+2141 or 4141 (0.438” pitch)
+Available in a range of lengths. Can
+accept ring or spade terminals
+(preferred), or bare wire
+(acceptable).
+Barrier block jumper Digikey CBB314-ND Connect adjacent strips when many
+wires need to be connected together
+D-sub connectors (9 contact)
+Digikey A31886-ND (male shell)
+Digikey A34104-ND (female shell)
+Digikey A1679-ND (male pins)
+Digikey A1680-ND (female pins)
+The connectors and contacts are
+cheap, but the crimp tools are
+expensive.
+D-sub fixing hardware Digikey MDVS22-ND (screw)
+Digikey MDVS44-ND (socket)
+These kits convert the D-sub
+friction fit into a proper positive
+lock.
+MIL-C-38999 connectors
+Digikey 956-1017-ND (13 pin
+panel mount receptacle with pins)
+Digikey 956-1020-ND (13 pin plug
+with sockets)
+These connectors approach the
+style and quality used on orbital
+launch vehicles. Extremely robust,
+but very expensive!
+Switch for pull-pin Omron SS-5G
+This switch is rated to 30G.
+Available direct or as part of some
+commercial pull-pin switches
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 46 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+APPENDIX C: FIRE CONTROL SYSTEM DESIGN GUIDELINES
+Introduction
+● The following Appendix is written, for hybrid and liquids teams, to illustrate safe fire
+control system design best practices and philosophy to student teams participating in the
+IREC. When it comes to firing (launch) systems for large amateur rockets, safety is
+paramount. This is a concept that everyone agrees with, but it is apparent that few truly
+appreciate what constitutes a “safe” firing system. Whether they’ve ever seen it codified
+or not, most rocketeers understand the basics:
+● The control console should be designed such that two deliberate actions are required to
+fire the system.
+● The system should include a power interrupt such that firing current cannot be sent to the
+firing leads while personnel are at the pad and this interrupt should be under the control
+of personnel at the pad.
+● These are good design concepts and if everything is working as it should they result in a
+perfectly safe firing system. But “everything is working as it should” is a dangerous
+assumption to make. Control consoles bounce around in the backs of trucks during
+transport. Cables get stepped on, tripped over, and run over. Switches get sand and grit
+in them. In other words, components fail. As such, there is one more concept that should
+be incorporated into the design of a firing system.
+● The failure of any single component should not compromise the safety of the firing
+system.
+Proper Fire Control System Design Philosophy
+● Let us examine a firing system that may at first glance appear to be simple, well
+designed, and safe (Figure 1). If everything is functioning as designed, this is a perfectly
+safe firing system, but let’s examine the system for compliance with proper safe design
+practices.
+● The control console should be designed such that two deliberate actions are required to
+launch the rocket. Check! There are actually three deliberate actions required at the
+control console: (1) insert the key, (2) turn the key to arm the system, (3) press the fire
+button.
+● The system should include a power interrupt such that ignition current cannot be sent to
+the firing leads while personnel are at the pad and this interrupt should be under control
+of personnel at the pad. Check and check! The Firing relay effectively isolates the
+electric match from the firing power supply (battery) and as the operator at the pad
+should have the key in his pocket, there is no way that a person at the control console can
+accidentally fire the rocket.
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 47 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+● But all of this assumes that everything in the firing system is working as it should. Are
+there any single component failures that can cause a compromise in the safety of this
+system? Yes. In a system that only has five components beyond the firing lines and ematch, three of those components can fail with potentially lethal results.
+Figure 1: A simple high current fire control system.
+Firing Relay
+● If the firing relay was stuck in the ON position: The rocket would fire the moment it was
+hooked to the firing lines.
+● This is a serious safety failure with potentially lethal consequences as the rocket would be
+igniting with pad personnel in immediate proximity.
+Arming Switch
+● If the arm key switch failed in the ON position simply pushing the fire button would
+result in a fired rocket whether intentional or not. This is particularly concerning as the
+launch key – intended as a safety measure controlled by pad personnel – becomes utterly
+meaningless.
+● Assuming all procedures were followed, the launch would go off without a hitch.
+Regardless, this is a safety failure as only one action (pressing the fire button) would be
+required at the control console to launch the rocket. Such a button press could easily
+happen by accident.
+● If personnel at the pad were near the rocket at the time we are again dealing with a
+potentially lethal outcome
+CAT5 Cable
+● If the CAT5 cable was damaged and had a short in it the firing relay would be closed and
+the rocket would fire the moment it was hooked to the firing lines. This too is a
+potentially lethal safety failure.
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 48 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+Notice that all three of these failures could result in the rocket being fired while there are still
+personnel in immediate proximity to the rocket. A properly designed firing system does not
+allow single component failures to have such drastic consequences. Fortunately, the system can
+be fixed with relative ease.
+Consider the revised system (Figure 2). It has four additional features built into it: (1) A
+separate battery to power the relay (as opposed to relying on the primary battery at the pad), (2) a
+flip cover over the fire button, (3) a lamp/buzzer in parallel with the firing leads (to provide a
+visual/auditory warning in the event that voltage is present at the firing lines), and (4) a switch to
+short the firing leads during hookup (pad personnel should turn the shunt switch ON anytime
+they approach the rocket).
+Figure 2: An improved high current fire control system.
+In theory, these simple modifications to the previous firing circuit have addressed all identified
+single point failures in the system. The system has 8 components excluding the firing lines and
+e-match (part of the rocket itself). Can the failure of any of these components cause an
+inadvertent firing? That is the question. Let us examine the consequences of the failure of each
+of these components.
+Fire Button
+● If the fire button fails in the ON position, there are still two deliberate actions at the
+control console required to fire the rocket. (1) The key must be inserted into the arming
+switch, and (2) the key must be rotated.
+● The firing will be a bit of a surprise, but it will not result in a safety failure as all
+personnel should have been cleared by the time possession of the key is transferred to the
+Firing Officer.
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 49 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+Arm Switch
+● If the arm switch were to fail in the ON position, there are still two deliberate actions at
+the control console required to fire the rocket. (1) The cover over the fire button would
+have to be removed, and (2) the fire button would have to be pushed.
+● This is not an ideal situation as the system would appear to function flawlessly even
+though it is malfunctioning and the key in the possession of personnel at the launch pad
+adds nothing to the safety of the overall system.
+● It is for this reason that the shunting switch should be used. Use of the shunting switch
+means that any firing current would be dumped through the shunting switch rather than
+the e-match until the pad personnel are clear of the rocket.
+● Thus, personnel at the pad retain a measure of control even in the presence of a
+malfunctioning arming switch and grossly negligent use of the control console.
+Batteries
+● If either battery (control console or pad box) fails, firing current cannot get to the e-match
+either because the firing relay does not close or because no firing current is available.
+● No fire means no safety violation.
+CAT5 Cable
+● If the CAT5 cable were to be damaged and shorted, the system would simply not work as
+the current intended to pull in the firing relay would simply travel through the short. No
+fire means no safety violation.
+Firing Relay
+● If the firing relay fails in the ON position the light/buzzer should alert the pad operator of
+the failure before he even approaches the pad to hook up the e-match.
+Shunt Switch, Lamp/Buzzer
+● These are all supplementary safety devices.
+● They are intended as added layers of safety to protect and/or warn of failures of other
+system components.
+● Their correct (or incorrect) function cannot cause an inadvertent firing.
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 50 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+Concluding Remarks
+Is this a perfect firing system? No. There is always room for improvement. Lighted switches or
+similar features could be added to provide feedback on the health of all components. Support for
+firings at multiple launch pads could be included. Support for the fueling of hybrids and/or
+liquids could be required. A wireless data link could provide convenient and easy to set up
+communications at greater ranges. The list of desired features is going to be heavily situation
+dependent and is more likely to be limited by money than good ideas.
+The circuit should be designed such that no single equipment failure can result in the inadvertent
+firing of the e-match and thus, the rocket motor. Whether or not a particular circuit is applicable
+to any given scenario is beside the larger point that in the event of any single failure a firing
+system should always fail-safe and never fail in a dangerous manner. No matter how
+complicated the system may be, it should be analyzed in depth and the failure of any single
+component should never result in the firing of a rocket during an unsafe range condition. Note
+that this is the bare minimum requirement; ideally, a firing system can handle multiple failures in
+a safe manner.
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 51 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+APPENDIX D: AIR START IGNITION WIRING DIAGRAM
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 52 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+APPENDIX E: ESRA & TRIPOLI ROCKET ASSOCIATION PARTNERSHIP
+Summary
+The Experimental Sounding Rocket Association (ESRA) and the Tripoli Rocketry Association
+(TRA) are now formally working together to continue to improve overall flight safety and
+efficient flight operations at the annual IREC. In addition, student teams flying in the
+Commercial Off the Shelf (COTS), Student Research and Design SOLID (SRAD SOLID)
+categories, along with both COTS and SRAD hybrid motors will begin flying under TRA
+Unified Safety Code. Details of how these impacts competing teams are described below.
+Background
+TRA and ESRA share common goals to create safe and exciting launch opportunities for the next
+generation of Aerospace engineers as they progress from hobby to industry environments. Our
+organizations are highly aligned: ESRA provides the educational framework and administration
+of the world’s largest international collegiate rocketry event; and TRA provides the safety/flight
+operations framework, incredible membership expertise and an amazing insurance program.
+Stated simply, we have assembled outstanding partners to build and safely operate the greatest
+rocketry competition in history.
+The IREC has relied on the TRA Unified Safety Code and membership expertise/guidance to
+create a safe launching environment for its event since 2017. IREC’s Range Safety and Launch
+Operations teams are filled with a significant number of Senior Level 3 high power rocketry
+experts (>30). A growing number of competing teams utilize TRA prefectures for mentorship,
+certification flights and test flights of their competition projects.
+Benefits:
+● Student Team Liability Insurance - In previous years, students were either insured by
+their university or through a 3rd party insurance provider. By becoming a TRA student
+member and following the TRA Unified Safety Code, the student is insured by TRA’s
+insurance program. TRA insurance covers COTS and SRAD solid and hybrid flights.
+TRA insurance DOES NOT cover liquid teams or flights.
+● Teams flying liquid motors will have to provide their own insurance and submit proof of
+insurance to ESRA as specified in paragraph 2.6.6.2 of the IREC Rules and Requirements
+document.
+● Student teams will have improved access to TRA mentors, certifications, and launch sites
+- TRA has a growing list of US and international prefectures with active launch sites.
+Student teams are highly recommended to engage with their local TRA prefectures for
+mentoring, certification flights and additional launch experience.
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 53 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+Tripoli Flight Requirements for All Solid and Hybrid Categories:
+● A TRA-certified Level 3 Flyer of Record shall be required for all solids and hybrids
+categories and must be present for launch preparation, pad loading and recovery
+activities. There are three options to satisfy the requirement for a Level 3 certified Flyer
+of Record.
+● Recommended - each team will secure a TRA Level 3 certified Senior mentor who works
+closely with the team and is present as the Flyer of Record for the launch preparation, pad
+loading and recovery activities. Student teams ARE HIGHLY RECOMMENDED to
+subsidize the travel expenses of their Flyer of Record or mentor, both to and from the
+event.
+● Also recommended - team will have a TRA Level 3 certified student member onsite for
+the launch preparation, pad loading and recovery activities. The student L3 member will
+be the Flyer of Record and must be onsite with the team for all aspects of launch.
+● International Teams should begin their FoR search immediately and utilize social media
+platforms, forums and other community outlets to secure a Flyer of Record. ESRA
+WILL NOT BE PROVIDING L3 FoR’s.
+● TRA membership is required to be on the range or to work on safety-related systems on
+the rocket.
+● Motors or energetic materials may only be possessed or handled by TRA members with
+appropriate high power rocketry certification.
+● Student teams flying in all solid and hybrid categories are required to meet all TRA
+launch safety requirements to ensure TRA insurance covers their flight.
+TRA Student Membership
+● TRA Student membership is $20 per year per student. This is a requirement for ANY
+student who will be at the launch site.
+● A maximum of 5 additional team members who are TRA student members may be on the
+pad loading team. These student team members do not have to be HPR certified but must
+be TRA student members. All students are highly recommended to secure HPR
+certification.
+Liquid rockets excluded from this policy change
+● TRA brings world-class expertise in the area of solid and hybrid rocket motors.
+● The policies and rules for these motors are well established with a robust system of
+mentors and specific certification levels.
+● Liquid rockets are inherently more complex with dangers and risks that are substantially
+different from solid motors. Accordingly, TRA insurance does not cover these rockets,
+and teams must provide proof of adequate insurance to ESRA prior to the competition.
+● ESRA is committed to continuing to search for viable means to support the establishment
+of such an organization to provide similar expertise for liquid rockets.
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 54 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+APPENDIX F: EXAMPLE BOOSTER AIRFRAME MARKINGS
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 55 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+APPENDIX G: STANDARD WEATHER CONDITIONS
+The following weather conditions are standard at the launch site:
+WEATHER PARAMETERS
+Temperature Min: 20° C (69° F)
+Max: 34° C (95° F) typical Can get as high as 42° C (108° F)
+Windspeed Average: 26 km/h (16 mph)
+Precipitation Month Average: 1.5mm/day (0.06
+in/day)
+Occasional heavy rain affecting road access
+to the launch area.
+UV Index Average Max: 11
+Dust Everywhere
+Background
+Noise at Pad 76 dBA (typical) ESRA generator with no wind
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 56 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+APPENDIX H: DOCUMENT REVISIONS
+REVISION DESCRIPTION DATE
+2026 V1.0 Initial release for 2026 IREC Competition
+There are numerous edits throughout the document intended to
+improve the clarity of the document. ESRA recommends that
+teams carefully review any sections that may affect their
+participation in the 2026 IREC. Listed section numbers refer to
+the section numbers in this document and not the prior version.
+Amend 1.2.3. References the use of Discord and not HeroX for
+IREC communications.
+Modified 4.1.1. Modified the table of COTS GPS solutions to
+recommend solutions that can be tracked by MCC.
+Added 4.1.2. Specifies the requirements for a Qualified COTS
+GPS transmitter.
+Clarify 4.1.3. Clarifies that tracking solutions will be both
+switched and powered independently of any flight computer.
+Amend 4.2. This section is amended to specify the
+development of COTS GPS frequency ranges and the
+procedures that will be used to assign COTS GPS frequencies to
+teams that do and do not have access to HAM licenses or
+reciprocal HAM license agreements.
+Add 4.2.2.4. Specifies requirements for Qualified SRAD GPS
+and other SRAD transmitters.
+Amend 4.2.3. Defines procedures for using multiple COTS
+GPS solutions in a rocket or a section of a rocket.
+Amend 4.2.4. Specifies procedures for testing GPS transmitters
+in the pits.
+Amend 4.2.8. Amended for a minor change in the assignment
+of custom names for GPS trackers.
+Added 4.2.10. Specifies the use of 1.2, 2.4 and 5.8GHz for
+hybrid/liquid ground support systems.
+Amend 4.3.2. Amended to recommend the use of APRS
+protocol via 1200 baud AFSK for SRAD GPS transmitters.
+Clarify 5.1.2.2. Clarifies that commercial propellant grains
+cannot be used in SRAD motors.
+10/15/2025
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 57 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+REVISION DESCRIPTION DATE
+Clarify 5.1.2.3. Clarifies that SRAD motor testing and
+propellant characterization must be completed prior to the
+submission of the Technical Report.
+Added 5.2.3.4. Specifies that the use of oxidizers other than
+nitrous oxide must be reviewed by ESRA.
+Amend 5.3.1. Specifies a revised minimum rail exit velocity of
+25 m/s and defines the procedure for determining “effective” rail
+length.
+Added 5.3.3. Defines procedures for determining the rail exit
+velocity for tower launchers.
+Amend 5.4.3. Requires double-headed igniters for ground-start
+motors and lists other igniter requirements.
+Amend 5.5. Clarify that hydrogen peroxide is considered a
+toxic propellant.
+Amend 5.14.2. Requires the use of a shunt on air-start motors.
+Added 5.14.2.4. Includes information on allowable interactions
+between SRAD electronics and air-start motor igniter circuits.
+Clarify 5.14.3. Clarifies that flight computers cannot be
+“powered up” until the rocket is vertical.
+Amend 6.1.3. Requires dual-deploy recovery on two-stage
+boosters.
+Remove footnote specifically recommending the use of a Blue
+Raven or a separate Blue Raven as the official altitude logging
+altimeter.
+Added 6.15.6. Documents anticipated ladders at the solids and
+two-stage pads.
+Amend 6.17.1.1. Prohibits the use of Li-Po batteries for rockets
+and payloads.
+Amend 6.19 Prohibits the use of >200mw transmitters in the
+2m, 70cm and 33cm bands.
+Added 8.2.3 Requires teams to provide the value of the shear
+modulus used in their fin flutter calculation.
+Amend 8.3.1. References sections of the Tripoli Unified Safety
+Code dealing with the use of metal in rockets.
+Various sections. Added reporting requirements for rocket
+design features such as rail buttons, shear pins, and venting.
+Amend 10.2. Includes specific requirements for minimum
+stability subsonic and supersonic flights.
+IREC Revision: 2026 V1.0
+Design, Test, & Evaluation Guide Effective Date: 10-15-25
+Page 58 of 58
+The electronic version is the official, approved document.
+Verify this is the correct version before use.
+REVISION DESCRIPTION DATE
+Added 10.2.4 Prohibits fin semi-spans less than 0.8 calibers.
+Amend 10.3. Includes specific requirements for maximum
+stability on the pad and during the flight.
+Added 11.1.5 Allows teams to provide custom rail standoffs.
+Modified 11.3.5. Requires teams to notify ESRA is using LiPo
+batteries in their ground power systems.
